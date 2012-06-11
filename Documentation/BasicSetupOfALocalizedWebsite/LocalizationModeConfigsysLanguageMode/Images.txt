@@ -1,0 +1,7 @@
+﻿.. |img-27|     image:: ../../Images/manual_html_m44126170.png
+   :height: 49
+   :width: 515
+.. :align: left
+.. :border: 0
+.. :name: Graphic42
+

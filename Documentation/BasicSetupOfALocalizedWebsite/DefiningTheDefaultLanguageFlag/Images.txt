@@ -1,0 +1,7 @@
+﻿.. |img-6|      image:: ../../Images/manual_html_m15cbf8d7.jpg
+   :height: 109
+   :width: 505
+.. :align: left
+.. :border: 0
+.. :name: Grafik74
+
