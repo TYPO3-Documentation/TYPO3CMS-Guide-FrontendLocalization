@@ -1,18 +1,10 @@
-﻿.. include:: Images.txt
-
 .. ==================================================
 .. FOR YOUR INFORMATION
 .. --------------------------------------------------
 .. -*- coding: utf-8 -*- with BOM.
 
-.. ==================================================
-.. DEFINE SOME TEXTROLES
-.. --------------------------------------------------
-.. role::   underline
-.. role::   typoscript(code)
-.. role::   ts(typoscript)
-   :class:  typoscript
-.. role::   php(code)
+.. include:: ../../Includes.txt
+.. include:: Images.txt
 
 
 FlexForm - Containter Elements
@@ -77,9 +69,7 @@ This is the difference:
   technically.
 
 The “Free” paradigm is configured by setting this line in Page
-TSconfig:
-
-::
+TSconfig::
 
    mod.web_txtemplavoilaM1.translationParadigm = free
 
@@ -221,9 +211,7 @@ elements with “Inheritance” mode:
 |img-65|
 
 In case you use “Inheritance” on purpose for your container elements
-you can disable this warning using Page TSconfig:
-
-::
+you can disable this warning using Page TSconfig::
 
    mod.web_txtemplavoilaM1.disableContainerElementLocalizationWarning_warningOnly = 1
 

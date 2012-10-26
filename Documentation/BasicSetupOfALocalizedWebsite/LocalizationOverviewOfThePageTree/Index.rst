@@ -1,18 +1,10 @@
-﻿.. include:: Images.txt
-
 .. ==================================================
 .. FOR YOUR INFORMATION
 .. --------------------------------------------------
 .. -*- coding: utf-8 -*- with BOM.
 
-.. ==================================================
-.. DEFINE SOME TEXTROLES
-.. --------------------------------------------------
-.. role::   underline
-.. role::   typoscript(code)
-.. role::   ts(typoscript)
-   :class:  typoscript
-.. role::   php(code)
+.. include:: ../../Includes.txt
+.. include:: Images.txt
 
 
 Localization Overview of the page tree
@@ -84,9 +76,7 @@ Inverse control of hidden translations
 
 If you prefer that all pages are hidden by default (reverse action of
 the “Localization Settings” check boxes) you can set a
-TYPO3\_CONF\_VARS option:
-
-::
+TYPO3\_CONF\_VARS option::
 
    $TYPO3_CONF_VARS['FE']['hidePagesIfNotTranslatedByDefault'] = '1';
 

@@ -1,18 +1,10 @@
-﻿.. include:: Images.txt
-
 .. ==================================================
 .. FOR YOUR INFORMATION
 .. --------------------------------------------------
 .. -*- coding: utf-8 -*- with BOM.
 
-.. ==================================================
-.. DEFINE SOME TEXTROLES
-.. --------------------------------------------------
-.. role::   underline
-.. role::   typoscript(code)
-.. role::   ts(typoscript)
-   :class:  typoscript
-.. role::   php(code)
+.. include:: ../../Includes.txt
+.. include:: Images.txt
 
 
 TemplaVoilà Page Module
@@ -100,14 +92,14 @@ otherwise the page is blank.
 .. container:: table-row
 
    a
-   
-   
+
+
    Disabled
          Disabled
-   
+
    Inheritance
          Inheritance
-   
+
    Separate
          Separate
 
@@ -116,15 +108,15 @@ otherwise the page is blank.
 
    a
          Usage
-   
+
    Disabled
          All pages must have exact same structure.
-   
+
    Inheritance
          All pages will have same structure by default - but switching to
          another language will allow separate structures to be built for some
          languages
-   
+
    Separate
          All pages must be separately built for each language.
 
@@ -133,15 +125,15 @@ otherwise the page is blank.
 
    a
          Rating
-   
+
    Disabled
          Recommended for most projects
-   
+
    Inheritance
          Recommended if more flexibility is needed for localization of certain
          pages, or if the Data Structure with the container fields also needs
          to carry content like a background image or header text.
-   
+
    Separate
          Most like you will not need this mode unless all pages are sure to be
          different in all language. But you will not loose anything by using
@@ -156,15 +148,15 @@ otherwise the page is blank.
 
    a
          Philosophy
-   
+
    Disabled
          Translation 1-1
-         
+
          ***Recommended***
-   
+
    Inheritance
          Translation / Localization (customized)
-   
+
    Separate
          Localization (customized)
 
@@ -377,7 +369,7 @@ For Danish, the structure shown in the page module is different.
 |img-89|
 
 - Left column:
-  
+
   - Element [7] is meant to be a localization of Element[5] from the
     default view (typically created under the “Free” paradigm), but
     essentially it is just an unrelated copy of that element with Danish
@@ -385,12 +377,12 @@ For Danish, the structure shown in the page module is different.
     true localized version of the default element pointing back to it with
     its “transOrigPointerField”. However, that is what the “Free” paradigm
     does when the “Localize” link is clicked for a default record.).
-  
+
   - Element [8] is essentially Element [4] which in the “Inheritance” mode
     is moved to the Danish structure.
 
 - Right column [8]
-  
+
   - This is empty - but because of the “Inheritance” mode it will inherit
     the content from default language (=Element [6]). Since Element [6]
     has the [All] language set it will also render for the danish view.
@@ -440,9 +432,7 @@ had two columns (which is probably more typical).
 
 Also, the Page TSconfig was set to disable the warnings/errors display
 when container elements has localization mode set to “Inheritance” or
-“Separate”:
-
-::
+“Separate”::
 
    mod.web_txtemplavoilaM1.disableContainerElementLocalizationWarning = 1
 

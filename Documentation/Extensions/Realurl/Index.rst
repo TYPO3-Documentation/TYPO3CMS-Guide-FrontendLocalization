@@ -1,18 +1,9 @@
-﻿
-
 .. ==================================================
 .. FOR YOUR INFORMATION
 .. --------------------------------------------------
 .. -*- coding: utf-8 -*- with BOM.
 
-.. ==================================================
-.. DEFINE SOME TEXTROLES
-.. --------------------------------------------------
-.. role::   underline
-.. role::   typoscript(code)
-.. role::   ts(typoscript)
-   :class:  typoscript
-.. role::   php(code)
+.. include:: ../../Includes.txt
 
 
 realurl
@@ -22,9 +13,7 @@ Realurl produces URLs which are human-readable. Eg.
 “mysite.com/products/” or “mysite.com/dk/products/”.
 
 If you wish realurl to encode the &L-variable nicely into the URL,
-here is a configuration which will work for you:
-
-::
+here is a configuration which will work for you::
 
       1: $TYPO3_CONF_VARS['EXTCONF']['realurl'] = array(
       2:     '_DEFAULT' => array(
@@ -72,7 +61,7 @@ This table shows the mapping of “L” with realurl
 
    Without realurl
          Without realurl:
-   
+
    With realurl
          With realurl:
 
@@ -81,7 +70,7 @@ This table shows the mapping of “L” with realurl
 
    Without realurl
          index.php?id=22&L=0
-   
+
    With realurl
          products/
 
@@ -90,7 +79,7 @@ This table shows the mapping of “L” with realurl
 
    Without realurl
          index.php?id=22&L=1
-   
+
    With realurl
          dk/products/
 
@@ -99,7 +88,7 @@ This table shows the mapping of “L” with realurl
 
    Without realurl
          index.php?id=22&L=2
-   
+
    With realurl
          ru/products/
 

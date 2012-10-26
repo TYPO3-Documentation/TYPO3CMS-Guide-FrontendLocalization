@@ -1,18 +1,10 @@
-﻿.. include:: Images.txt
-
 .. ==================================================
 .. FOR YOUR INFORMATION
 .. --------------------------------------------------
 .. -*- coding: utf-8 -*- with BOM.
 
-.. ==================================================
-.. DEFINE SOME TEXTROLES
-.. --------------------------------------------------
-.. role::   underline
-.. role::   typoscript(code)
-.. role::   ts(typoscript)
-   :class:  typoscript
-.. role::   php(code)
+.. include:: ../../Includes.txt
+.. include:: Images.txt
 
 
 Language Selector Menu
@@ -40,9 +32,7 @@ Here is example configurations:
 GMENU example
 """""""""""""
 
-|img-32|
-
-::
+|img-32| ::
 
    ## Localization menu:
    lib.langMenu = HMENU
@@ -58,27 +48,25 @@ GMENU example
                    5.file = EXT:cms/tslib/media/flags/flag_uk.gif  || EXT:cms/tslib/media/flags/flag_dk.gif  || EXT:cms/tslib/media/flags/flag_fr.gif
                    5.offset = 2,2
            }
-   
+
            1.ACT < lib.langMenu.1.NO
            1.ACT=1
            1.ACT.backColor = black
-   
+
            1.USERDEF1 < lib.langMenu.1.NO
            1.USERDEF1=1
            1.USERDEF1.5.file = EXT:cms/tslib/media/flags/flag_uk_d.gif  || EXT:cms/tslib/media/flags/flag_dk_d.gif  || EXT:cms/tslib/media/flags/flag_fr_d.gif
            1.USERDEF1.noLink = 0
-   
+
            1.USERDEF2 < lib.langMenu.1.USERDEF1
            1.USERDEF2.backColor = green
-   }  
+   }
 
 
 TMENU example
 """""""""""""
 
-|img-33|
-
-::
+|img-33| ::
 
    lib.langMenu = HMENU
    lib.langMenu {
@@ -93,11 +81,11 @@ TMENU example
                    NO.linkWrap = <b style="background-color : grey"> | </b>
                    NO.stdWrap.setCurrent = English || Danish || Russian
                    NO.stdWrap.current = 1
-   
+
                            # Current language selected:
                    ACT < .NO
                    ACT.linkWrap = <b style="background-color : red"> | </b>
-   
+
                            # Language that is NOT available:
                    USERDEF1 < .NO
                    USERDEF1.linkWrap = <span style="background-color : yellow"> | </span>

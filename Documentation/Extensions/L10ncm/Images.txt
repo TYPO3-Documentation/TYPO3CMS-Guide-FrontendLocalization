@@ -1,6 +1,6 @@
 ﻿.. |img-103|    image:: ../../Images/manual_html_m489b09a1.jpg
-   :height: 271
-   :width: 263
+.. :height: 271
+.. :width: 263
 .. :align: left
 .. :border: 0
 .. :name: Grafik73

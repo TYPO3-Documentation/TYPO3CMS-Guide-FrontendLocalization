@@ -1,18 +1,9 @@
-﻿
-
 .. ==================================================
 .. FOR YOUR INFORMATION
 .. --------------------------------------------------
 .. -*- coding: utf-8 -*- with BOM.
 
-.. ==================================================
-.. DEFINE SOME TEXTROLES
-.. --------------------------------------------------
-.. role::   underline
-.. role::   typoscript(code)
-.. role::   ts(typoscript)
-   :class:  typoscript
-.. role::   php(code)
+.. include:: ../../Includes.txt
 
 
 Character sets
@@ -20,9 +11,7 @@ Character sets
 
 Recommended for all new TYPO3 websites is to set the global character
 set to UTF-8. This is done by putting a line like this into the
-localconf.php file of the site:
-
-::
+localconf.php file of the site::
 
    $TYPO3_CONF_VARS['BE']['forceCharset'] = 'utf-8';
 

@@ -1,18 +1,10 @@
-﻿.. include:: Images.txt
-
 .. ==================================================
 .. FOR YOUR INFORMATION
 .. --------------------------------------------------
 .. -*- coding: utf-8 -*- with BOM.
 
-.. ==================================================
-.. DEFINE SOME TEXTROLES
-.. --------------------------------------------------
-.. role::   underline
-.. role::   typoscript(code)
-.. role::   ts(typoscript)
-   :class:  typoscript
-.. role::   php(code)
+.. include:: ../../Includes.txt
+.. include:: Images.txt
 
 
 Localization mode: “config.sys\_language\_mode”
@@ -69,55 +61,55 @@ This is how the localization overview is set for the page tested:
 
    config.sys\_language\_mode
          config.
-         
-         
+
+
          sys\_
-         
-         
+
+
          language\_
-         
-         
+
+
          mode
-   
+
    config.sys\_language\_uid(set by &L)
          config.
-         
-         
+
+
          sys\_
-         
-         
+
+
          language
-         
-         
+
+
          \_uid
-         
-         
+
+
          (set by &L)
-   
+
    TSFE->sys\_language\_uid
          TSFE->
-         
-         
+
+
          sys\_
-         
-         
+
+
          language
-         
-         
+
+
          \_uid
-   
+
    TSFE->sys\_language\_content
          TSFE->
-         
-         
+
+
          sys\_
-         
-         
+
+
          language
-         
-         
+
+
          \_content
-   
+
    Result
          Result
 
@@ -126,65 +118,65 @@ This is how the localization overview is set for the page tested:
 
    config.sys\_language\_mode
          **[blank]**
-   
+
    config.sys\_language\_uid(set by &L)
-   
-   
+
+
    TSFE->sys\_language\_uid
          0
-   
+
    TSFE->sys\_language\_content
          0
-   
+
    Result
          - Content: English
-         
+
          - Menu: English
 
 
 .. container:: table-row
 
    config.sys\_language\_mode
-   
-   
+
+
    config.sys\_language\_uid(set by &L)
          1
-   
+
    TSFE->sys\_language\_uid
          1
-   
+
    TSFE->sys\_language\_content
          1
-   
+
    Result
          - Content: Danish
-         
+
          - Menu: Danish
 
 
 .. container:: table-row
 
    config.sys\_language\_mode
-   
-   
+
+
    config.sys\_language\_uid(set by &L)
          2
-   
+
    TSFE->sys\_language\_uid
          0
-   
+
    TSFE->sys\_language\_content
          0
-   
+
    Result
          Behaviour: All site content behaves like for the default language
          except “&L=2” is passed on in links and any settings made with
          TypoScript conditions selecting on “GP:L” will take effect.
-         
+
          - Content: English
-         
+
          - Menu: English
-         
+
          - Warning: “Localization Settings” for pages are not observed correctly!
            See more info where “Localization Settings” are discussed (eg. “Hide
            page if no translation exists”)
@@ -194,64 +186,64 @@ This is how the localization overview is set for the page tested:
 
    config.sys\_language\_mode
          **content\_fallback**
-   
+
    config.sys\_language\_uid(set by &L)
-   
-   
+
+
    TSFE->sys\_language\_uid
          0
-   
+
    TSFE->sys\_language\_content
          0
-   
+
    Result
          - Content: English
-         
+
          - Menu: English
 
 
 .. container:: table-row
 
    config.sys\_language\_mode
-   
-   
+
+
    config.sys\_language\_uid(set by &L)
          1
-   
+
    TSFE->sys\_language\_uid
          1
-   
+
    TSFE->sys\_language\_content
          1
-   
+
    Result
          - Content: Danish
-         
+
          - Menu: Danish
 
 
 .. container:: table-row
 
    config.sys\_language\_mode
-   
-   
+
+
    config.sys\_language\_uid(set by &L)
          2
-   
+
    TSFE->sys\_language\_uid
          2
-   
+
    TSFE->sys\_language\_content
          0
-   
+
    Result
          Behavior: Content displayed in default language while menus are
          rendered in Russian. This mode lets the user “stay” in the selected
          language, even when visiting pages that has no translated content and
          falls back to default content.
-         
+
          - Content: English
-         
+
          - Menu: Russian
 
 
@@ -259,68 +251,68 @@ This is how the localization overview is set for the page tested:
 
    config.sys\_language\_mode
          **content\_fallback : 1,0**
-   
+
    config.sys\_language\_uid(set by &L)
-   
-   
+
+
    TSFE->sys\_language\_uid
          0
-   
+
    TSFE->sys\_language\_content
          0
-   
+
    Result
          - Content: English
-         
+
          - Menu: English
 
 
 .. container:: table-row
 
    config.sys\_language\_mode
-   
-   
+
+
    config.sys\_language\_uid(set by &L)
          1
-   
+
    TSFE->sys\_language\_uid
          1
-   
+
    TSFE->sys\_language\_content
          1
-   
+
    Result
          - Content: Danish
-         
+
          - Menu: Danish
 
 
 .. container:: table-row
 
    config.sys\_language\_mode
-   
-   
+
+
    config.sys\_language\_uid(set by &L)
          2
-   
+
    TSFE->sys\_language\_uid
          2
-   
+
    TSFE->sys\_language\_content
          1
-   
+
    Result
          Behavior: Like the setting “content\_fallback” but the added values
          “1,0” means that the content displays first looks for content in the
          language “1” (in this case Danish) and shows that if available,
          otherwise looks for content in language “0”.
-         
+
          Of course it makes no sense to display Danish instead of Russian, but
          in cases like Portuguese/Brazil Portuguese it might make sense to
          define such a second priority language.
-         
+
          - Content: Danish
-         
+
          - Menu: Russian
 
 
@@ -328,56 +320,56 @@ This is how the localization overview is set for the page tested:
 
    config.sys\_language\_mode
          **strict**
-   
+
    config.sys\_language\_uid(set by &L)
-   
-   
+
+
    TSFE->sys\_language\_uid
          0
-   
+
    TSFE->sys\_language\_content
          0
-   
+
    Result
          - Content: English
-         
+
          - Menu: English
 
 
 .. container:: table-row
 
    config.sys\_language\_mode
-   
-   
+
+
    config.sys\_language\_uid(set by &L)
          1
-   
+
    TSFE->sys\_language\_uid
          1
-   
+
    TSFE->sys\_language\_content
          1
-   
+
    Result
          - Content: Danish
-         
+
          - Menu: Danish
 
 
 .. container:: table-row
 
    config.sys\_language\_mode
-   
-   
+
+
    config.sys\_language\_uid(set by &L)
          2
-   
+
    TSFE->sys\_language\_uid
          -
-   
+
    TSFE->sys\_language\_content
          -
-   
+
    Result
          Error message: “Page is not available in the requested language
          (strict).”
@@ -387,62 +379,62 @@ This is how the localization overview is set for the page tested:
 
    config.sys\_language\_mode
          **ignore**
-   
+
    config.sys\_language\_uid(set by &L)
-   
-   
+
+
    TSFE->sys\_language\_uid
          0
-   
+
    TSFE->sys\_language\_content
          0
-   
+
    Result
          - Content: English
-         
+
          - Menu: English
 
 
 .. container:: table-row
 
    config.sys\_language\_mode
-   
-   
+
+
    config.sys\_language\_uid(set by &L)
          1
-   
+
    TSFE->sys\_language\_uid
          1
-   
+
    TSFE->sys\_language\_content
          1
-   
+
    Result
          - Content: Danish
-         
+
          - Menu: Danish
 
 
 .. container:: table-row
 
    config.sys\_language\_mode
-   
-   
+
+
    config.sys\_language\_uid(set by &L)
          2
-   
+
    TSFE->sys\_language\_uid
          2
-   
+
    TSFE->sys\_language\_content
          2
-   
+
    Result
          Behavior: Doesn't consider if there is an Alternative Page Record or
          not for the language, just sets the value.
-         
+
          - Content: Russian (nothing shown of course)
-         
+
          - Menu: Russian
 
 
@@ -487,9 +479,7 @@ A few additional technical notes:
 Best-practice localization mode
 """""""""""""""""""""""""""""""
 
-It is recommended to use
-
-::
+It is recommended to use ::
 
    config.sys_language_mode = content_fallback
 

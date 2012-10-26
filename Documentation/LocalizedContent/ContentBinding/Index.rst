@@ -1,18 +1,10 @@
-﻿.. include:: Images.txt
-
 .. ==================================================
 .. FOR YOUR INFORMATION
 .. --------------------------------------------------
 .. -*- coding: utf-8 -*- with BOM.
 
-.. ==================================================
-.. DEFINE SOME TEXTROLES
-.. --------------------------------------------------
-.. role::   underline
-.. role::   typoscript(code)
-.. role::   ts(typoscript)
-   :class:  typoscript
-.. role::   php(code)
+.. include:: ../../Includes.txt
+.. include:: Images.txt
 
 
 Content binding
@@ -103,9 +95,7 @@ decide over the element order and appearance on the page.
 Overlay modes
 """""""""""""
 
-When using the overlay mode you can choose a few variants:
-
-::
+When using the overlay mode you can choose a few variants::
 
    config.sys_language_overlay = hideNonTranslated
 
@@ -116,9 +106,7 @@ This will change the output to this:
 As you can see, the element that was not translated is simply not
 displayed in the default language.
 
-Another one is this setting:
-
-::
+Another one is this setting::
 
    config.sys_language_softMergeIfNotBlank = tt_content:image, tt_content:header
 

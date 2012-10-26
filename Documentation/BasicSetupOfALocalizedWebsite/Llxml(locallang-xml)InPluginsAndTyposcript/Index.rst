@@ -1,18 +1,10 @@
-﻿.. include:: Images.txt
-
 .. ==================================================
 .. FOR YOUR INFORMATION
 .. --------------------------------------------------
 .. -*- coding: utf-8 -*- with BOM.
 
-.. ==================================================
-.. DEFINE SOME TEXTROLES
-.. --------------------------------------------------
-.. role::   underline
-.. role::   typoscript(code)
-.. role::   ts(typoscript)
-   :class:  typoscript
-.. role::   php(code)
+.. include:: ../../Includes.txt
+.. include:: Images.txt
 
 
 llXML (locallang-XML) in plugins and TypoScript
@@ -25,9 +17,7 @@ Using llXML labels in TypoScript structures
 llXML files are XML files containing labels that the system can fetch
 in a localized version if a language pack is installed. If you want to
 retrieve values from llXML files in TypoScript you can do it like
-this:
-
-::
+this::
 
    page.20 = TEXT
    page.20.data = LLL:EXT:indexed_search/pi/locallang.xml:submit_button_label
@@ -55,9 +45,7 @@ is installed you will see this page for “indexed search”:
 |img-28| You can use TypoScript to override with custom values
 (supported by most extensions made by kickstarter and using the piBase
 API). Here is an example for how the search button label can be
-overridden:
-
-::
+overridden::
 
    plugin.tx_indexedsearch._LOCAL_LANG.dk.submit_button_label = SØØG!
 
@@ -87,15 +75,13 @@ Well, we can actually do that using the “\_LOCAL\_LANG” overriding
 feature!
 
 So a setup like this will translate the search button label to
-“Marsian”:
-
-::
+“Marsian”::
 
    config.language = marsian
-   
+
    plugin.tx_indexedsearch._LOCAL_LANG.marsian {
      submit_button_label = !"#€%&/(
    }
-   |img-31| 
-   
+   |img-31|
+
 

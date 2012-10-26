@@ -1,18 +1,10 @@
-﻿.. include:: Images.txt
-
 .. ==================================================
 .. FOR YOUR INFORMATION
 .. --------------------------------------------------
 .. -*- coding: utf-8 -*- with BOM.
 
-.. ==================================================
-.. DEFINE SOME TEXTROLES
-.. --------------------------------------------------
-.. role::   underline
-.. role::   typoscript(code)
-.. role::   ts(typoscript)
-   :class:  typoscript
-.. role::   php(code)
+.. include:: ../../Includes.txt
+.. include:: Images.txt
 
 
 TCA, TCEmain, TCEforms
@@ -39,9 +31,7 @@ The first field (referring to the language of the record) is defined
 by [languageField]. The value of this field is also used to control
 access to localized content (see later)
 
-The [columns] configuration of this field can look like this:
-
-::
+The [columns] configuration of this field can look like this::
 
    'sys_language_uid' => Array (
        'exclude' => 1,
@@ -67,9 +57,7 @@ languages.
 The second field (referring to the default language record) is defined
 by [transOrigPointerField].
 
-The configuration of this field could look like this:
-
-::
+The configuration of this field could look like this::
 
    'l18n_parent' => Array (
        'displayCond' => 'FIELD:sys_language_uid:>:0',

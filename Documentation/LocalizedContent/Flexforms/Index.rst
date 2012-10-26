@@ -1,18 +1,10 @@
-﻿.. include:: Images.txt
-
 .. ==================================================
 .. FOR YOUR INFORMATION
 .. --------------------------------------------------
 .. -*- coding: utf-8 -*- with BOM.
 
-.. ==================================================
-.. DEFINE SOME TEXTROLES
-.. --------------------------------------------------
-.. role::   underline
-.. role::   typoscript(code)
-.. role::   ts(typoscript)
-   :class:  typoscript
-.. role::   php(code)
+.. include:: ../../Includes.txt
+.. include:: Images.txt
 
 
 FlexForms
@@ -81,14 +73,14 @@ to subsequent chapters.
 .. container:: table-row
 
    a
-   
-   
+
+
    Disabled
          Disabled
-   
+
    Inheritance
          Inheritance
-   
+
    Separate
          Separate
 
@@ -97,14 +89,14 @@ to subsequent chapters.
 
    a
          **Description:**
-   
+
    Disabled
          No inline localization of the element.
-   
+
    Inheritance
          Each default value in the FlexForm can be translated 1-1. The
          translations follows the default language.
-   
+
    Separate
          Each localization of the element can have a separate, independent
          structure. Translation has no technical relation to default language.
@@ -114,14 +106,14 @@ to subsequent chapters.
 
    a
          **Usage:**
-   
+
    Disabled
          **Universal:** For all languages
-   
+
    Inheritance
          **Translation:** Default content is faithfully translated 1-1 in each
          language.
-   
+
    Separate
          **Localization:** Content in other languages can divert from the
          structure of the default language
@@ -131,18 +123,18 @@ to subsequent chapters.
 
    a
          **Record language**
-         
+
          **(“languageField” value)**
-   
+
    Disabled
          Use: [All] language
-         
+
          Alternatively you can of course localize the record with the core
          supported localization like any other record.
-   
+
    Inheritance
          Use: [All] language
-   
+
    Separate
          Use: [All] language
 
@@ -151,32 +143,32 @@ to subsequent chapters.
 
    a
          **Data Structure configuration:**
-   
+
    Disabled
          <meta>
-         
+
          <langDisable>1</langDisable>
-         
+
          </meta>
-         
+
          *Notice:* <langChildren> is insignificant in this case.
-   
+
    Inheritance
          <meta>
-         
+
          <langChildren>1</langChildren>
-         
+
          <langDisable>0</langDisable>
-         
+
          </meta>
-   
+
    Separate
          <meta>
-         
+
          <langChildren>0</langChildren>
-         
+
          <langDisable>0</langDisable>
-         
+
          </meta>
 
 
@@ -184,16 +176,16 @@ to subsequent chapters.
 
    a
          **Inheriting default content:**
-   
+
    Disabled
          Not Applicable
-   
+
    Inheritance
          Default content is inherited if there is no translated content
          (“blank” string or zero).
-         
+
          Configurations apply, see later
-   
+
    Separate
          Not possible since there is no technical relation between localized
          content.
@@ -203,30 +195,30 @@ to subsequent chapters.
 
    a
          **Recommended usage:**
-   
+
    Disabled
          Use this type for FlexForm fields working as “container elements”
          providing structures for other content elements. In such cases it is
          unlikely that you want localization of the content element
          references(\*).
-         
+
          Could also be Plugin configuration (also independent of language)
-         
+
          **Recommended for container elements!**
-   
+
    Inheritance
          Recommended typesince most websites only need a 1-1 translation of
          content. In cases where certain elements should be ignored in the
          translation there are ways to work around that.
-         
+
          **Recommended for content!**
-   
+
    Separate
          Could be considered for Data Structures with substructures of
          sections/arrays (like the link list below) but for any Data Structure
          with only a single level you should avoid this type since its less
          flexible.
-         
+
          **Avoid, unless expert**
 
 
@@ -234,13 +226,13 @@ to subsequent chapters.
 
    a
          **Warnings:**
-   
+
    Disabled
-   
-   
+
+
    Inheritance
          - Be careful if using them as “container elements”
-   
+
    Separate
          - Never use as “container element”
 
@@ -250,26 +242,26 @@ to subsequent chapters.
    a
          **Special notice related to “Free” paradigm (see later) and container
          elements**
-   
+
    Disabled
          In the “Free” paradigm, “Disabled” usually indicates that no
          localization is intended for a container element. This is opposite to
          the “Bound” paradigm where “Disabled” is the recommended mode.
-         
+
          The reason is that the “Free” paradigm doesn't expect localization
          overlays of default language records but rather base itself on
          building separate structures of localized elements, hence needing
          either “Inheritance” or “Separate” modes. However, there are some
          flaws which makes that paradigm problematic. Please refer to
          discussion later.
-   
+
    Inheritance
          In the “Free” paradigm, this mode is recommended since a separate
          structure of content elements is built. However, as a content
          structure grows deeper than a single level this makes it impossible to
          keep the order in sync with the default language since that will be
          located in another element.
-   
+
    Separate
          See note for “Inheritance” mode, same applies.
 
@@ -429,7 +421,7 @@ compare these listings:
      50:         </sheet>
      51:     </data>
      52: </T3FlexForms>
-    
+
 
 
 “Inheritance”:

@@ -1,18 +1,10 @@
-﻿.. include:: Images.txt
-
 .. ==================================================
 .. FOR YOUR INFORMATION
 .. --------------------------------------------------
 .. -*- coding: utf-8 -*- with BOM.
 
-.. ==================================================
-.. DEFINE SOME TEXTROLES
-.. --------------------------------------------------
-.. role::   underline
-.. role::   typoscript(code)
-.. role::   ts(typoscript)
-   :class:  typoscript
-.. role::   php(code)
+.. include:: ../../Includes.txt
+.. include:: Images.txt
 
 
 Inheritance settings (specific for TemplaVoilà!)
@@ -21,15 +13,11 @@ Inheritance settings (specific for TemplaVoilà!)
 The “Inheritance” localization mode of FlexForms can be modified
 further. It is possible to completely disable inheritance by the
 “dontInheritValueFromDefault” property of the tx\_templavoila\_pi1”
-plugin. For content elements this can be done with
-
-::
+plugin. For content elements this can be done with ::
 
    plugin.tx_templavoila_pi1.dontInheritValueFromDefault = 1
 
-It can also be used for TemplaVoilà page templates, typically
-
-::
+It can also be used for TemplaVoilà page templates, typically ::
 
    page.10.dontInheritValueFromDefault = 1
 
@@ -93,9 +81,7 @@ Well, you can set it in the Data Structure (DS), but alternatively you
 can set it in a Template Objects (TO) “Local processing” field. This
 allows you to vary the setting based on which TO renders the DS.
 
-The “Local processing” field looked like this:
-
-::
+The “Local processing” field looked like this::
 
    <T3DataStructure>
        <ROOT type="array">
@@ -134,9 +120,7 @@ could be an image field where you want to inherit the default image -
 but translators would mistakenly insert new images if they see the
 field is blank. Well, what you can do is use a special display
 condition in the Data Structure to block display of some fields for
-translators:
-
-::
+translators::
 
    <TCEforms type="array">
            <displayCond>HIDE_L10N_SIBLINGS:except_admin</displayCond>

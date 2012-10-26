@@ -1,13 +1,13 @@
 ﻿.. |img-32|     image:: ../../Images/manual_html_m485bbca4.png
-   :height: 39
-   :width: 157
+.. :height: 39
+.. :width: 157
 .. :align: left
 .. :border: 0
 .. :name: Graphic26
 
 .. |img-33|     image:: ../../Images/manual_html_m3711aa0b.png
-   :height: 39
-   :width: 256
+.. :height: 39
+.. :width: 256
 .. :align: left
 .. :border: 0
 .. :name: Graphic27

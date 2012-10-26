@@ -1,34 +1,34 @@
 ﻿.. |img-94|     image:: ../../Images/manual_html_m1303e3b7.jpg
-   :height: 551
-   :width: 669
+.. :height: 551
+.. :width: 669
 .. :align: left
 .. :border: 0
 .. :name: Grafik64
 
 .. |img-95|     image:: ../../Images/manual_html_69eb6086.jpg
-   :height: 625
-   :width: 669
+.. :height: 625
+.. :width: 669
 .. :align: left
 .. :border: 0
 .. :name: Grafik65
 
 .. |img-96|     image:: ../../Images/manual_html_239339a4.jpg
-   :height: 251
-   :width: 669
+.. :height: 251
+.. :width: 669
 .. :align: left
 .. :border: 0
 .. :name: Grafik66
 
 .. |img-97|     image:: ../../Images/manual_html_5a05657c.jpg
-   :height: 128
-   :width: 313
+.. :height: 128
+.. :width: 313
 .. :align: left
 .. :border: 0
 .. :name: Grafik67
 
 .. |img-98|     image:: ../../Images/manual_html_605372d2.jpg
-   :height: 63
-   :width: 204
+.. :height: 63
+.. :width: 204
 .. :align: left
 .. :border: 0
 .. :name: Grafik68

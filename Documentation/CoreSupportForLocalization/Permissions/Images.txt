@@ -1,13 +1,13 @@
 ﻿.. |img-101|    image:: ../../Images/manual_html_m2a9ab502.jpg
-   :height: 127
-   :width: 299
+.. :height: 127
+.. :width: 299
 .. :align: left
 .. :border: 0
 .. :name: Grafik71
 
 .. |img-102|    image:: ../../Images/manual_html_m2b5bf416.jpg
-   :height: 291
-   :width: 465
+.. :height: 291
+.. :width: 465
 .. :align: left
 .. :border: 0
 .. :name: Grafik72

@@ -1,20 +1,20 @@
 ﻿.. |img-20|     image:: ../../Images/manual_html_14ee9424.png
-   :height: 67
-   :width: 161
+.. :height: 67
+.. :width: 161
 .. :align: left
 .. :border: 0
 .. :name: Graphic6
 
 .. |img-21|     image:: ../../Images/manual_html_4ead3224.png
-   :height: 205
-   :width: 584
+.. :height: 205
+.. :width: 584
 .. :align: left
 .. :border: 0
 .. :name: Graphic7
 
 .. |img-22|     image:: ../../Images/manual_html_5b448694.png
-   :height: 225
-   :width: 584
+.. :height: 225
+.. :width: 584
 .. :align: left
 .. :border: 0
 .. :name: Graphic8
