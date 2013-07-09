@@ -11,7 +11,7 @@ TemplaVoilà: Best-practice
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 This table shows various best-practice recommendations for localized
-websites when using TemplaVoilà. The assumption is that the “Bound”
+websites when using TemplaVoilà. The assumption is that the "Bound"
 paradigm is used.
 
 .. ### BEGIN~OF~TABLE ###
@@ -32,7 +32,7 @@ paradigm is used.
 
    Recommendation
          A typical, generic TypoScript configuration for setting up support for
-         one additional language (here “dk”) looks like this::
+         one additional language (here "dk") looks like this::
 
             # Localization:
             config {
@@ -49,10 +49,10 @@ paradigm is used.
             }
             [global]
 
-         Setting “sys\_language\_overlay” to at least “1” is mandatory for the
-         “Bound” paradigm and TemplaVoilà (only column based websites and the
-         “Free” paradigm can do without) and most likely you would like to set
-         the more strict “hideNonTranslated” keyword which requires a record to
+         Setting "sys\_language\_overlay" to at least "1" is mandatory for the
+         "Bound" paradigm and TemplaVoilà (only column based websites and the
+         "Free" paradigm can do without) and most likely you would like to set
+         the more strict "hideNonTranslated" keyword which requires a record to
          have a translation before it can be displayed.
 
 
@@ -63,12 +63,12 @@ paradigm is used.
 
    Recommendation
          Create a page template using TemplaVoilà's wizard. Modify the Data
-         Structure XML so localization is “Disabled”. In rare cases you might
+         Structure XML so localization is "Disabled". In rare cases you might
          like the ability to localize some pages with entirely different
-         structures of content elements in which case “Inheritance” is a good
+         structures of content elements in which case "Inheritance" is a good
          option.
 
-         Stay clear of “Separate” mode.
+         Stay clear of "Separate" mode.
 
 
 .. container:: table-row
@@ -80,25 +80,25 @@ paradigm is used.
          For Flexible Content Elements you should localize them according to
          their characteristics:
 
-         - Pure container elements: Use “Disabled” localization mode (least
+         - Pure container elements: Use "Disabled" localization mode (least
            complex)
 
-         - Pure hierarchical content: Use “Inheritance” localization mode (least
+         - Pure hierarchical content: Use "Inheritance" localization mode (least
            complex, most features)
 
-         - Mixed containers and content: Use “Inheritance” localization (least
+         - Mixed containers and content: Use "Inheritance" localization (least
            complex)
 
-         Stay clear of “Separate” mode.
+         Stay clear of "Separate" mode.
 
-         *Always use the “[All]” language for a Flexible Content Element! See
+         *Always use the "[All]" language for a Flexible Content Element! See
          below.*
 
 
 .. container:: table-row
 
    Topic
-         “[All]” language?
+         "[All]" language?
 
    Recommendation
          If "sys\_language\_overlay" is set to "hideNonTranslated" it becomes
@@ -106,15 +106,15 @@ paradigm is used.
          Content Elements is set to "[All]" - otherwise they will not be
          selected in translations.
 
-         Generally these content element types should use the “[All]” language:
+         Generally these content element types should use the "[All]" language:
 
-         - “Insert Plugins”
+         - "Insert Plugins"
 
-         - “Insert Records” (and make relations to default language records!)
+         - "Insert Records" (and make relations to default language records!)
 
-         - “Flexible Content Elements” (internally localized in FlexForm)
+         - "Flexible Content Elements" (internally localized in FlexForm)
 
-         The “[All]” langauge is set in the “languageField” of the record, for
+         The "[All]" langauge is set in the "languageField" of the record, for
          Content Elements:
 
          |img-92|

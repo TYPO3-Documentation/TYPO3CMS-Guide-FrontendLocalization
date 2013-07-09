@@ -7,7 +7,7 @@
 .. include:: Images.txt
 
 
-Defining the “default” language flag
+Defining the "default" language flag
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 If you want to specify the name of the default language and a flag

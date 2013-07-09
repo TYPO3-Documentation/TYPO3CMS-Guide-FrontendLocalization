@@ -32,7 +32,7 @@ localization which looks something like this::
    [global]
 
 
-The “&L” variable
+The "&L" variable
 """""""""""""""""
 
 Although it is not a requirement to use the L-variable for
@@ -40,10 +40,10 @@ localization it is highly recommended because it has been hardcoded a
 large number of places to hold the uid of the sys\_language record
 (menus / realurl / TemplaVoilà / Page module / Preview links / etc.).
 
-The lines 1-3 configures that if the GET request variable “&L=X” is
+The lines 1-3 configures that if the GET request variable "&L=X" is
 found it should be passed on to all generated links.
 
-Lines 4 and 11 are conditions which tell that if the GET variable “L”
+Lines 4 and 11 are conditions which tell that if the GET variable "L"
 is 1 or 2 the system language (config.sys\_language\_uid) is set
 accordingly (plus all other TypoScript template related settings you
 might want to change for a localization). Also those conditions are
@@ -57,7 +57,7 @@ language switching work.
 config.language
 """""""""""""""
 
-(line 7 and 14) Setting this configures the system “language key” to
+(line 7 and 14) Setting this configures the system "language key" to
 be used for the language. This is used to select labels from llXML
 (locallang-XML) files. Setting this should make frontend plugins
 respond by showing labels from the correct language (requires
@@ -75,9 +75,9 @@ which will then output month/day names in that language.
 config.metaCharset
 """"""""""""""""""
 
-(line 9) Setting the output charset of the page to “iso-8859-1”. Means
-that content internally rendered in utf-8 (due to “forceCharset”
-setting) is converted to “iso-8859-1” before output:
+(line 9) Setting the output charset of the page to "iso-8859-1". Means
+that content internally rendered in utf-8 (due to "forceCharset"
+setting) is converted to "iso-8859-1" before output:
 
 |img-23|
 
@@ -85,7 +85,7 @@ For default and Russian language:
 
 |img-24|
 
-Even if “config.metaCharset” is set to “iso-8859-1” for Russian the
+Even if "config.metaCharset" is set to "iso-8859-1" for Russian the
 output will be correct since HTML-entities will be used for glyphs
 which cannot be represented in the chosen language:
 

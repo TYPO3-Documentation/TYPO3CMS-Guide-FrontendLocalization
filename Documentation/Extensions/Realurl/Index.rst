@@ -10,7 +10,7 @@ realurl
 ^^^^^^^
 
 Realurl produces URLs which are human-readable. Eg.
-“mysite.com/products/” or “mysite.com/dk/products/”.
+"mysite.com/products/" or "mysite.com/dk/products/".
 
 If you wish realurl to encode the &L-variable nicely into the URL,
 here is a configuration which will work for you::
@@ -37,23 +37,23 @@ here is a configuration which will work for you::
      20:     )
      21: );
 
-The important part is the lines 4-12 where the GET variable “L” is
-mapped to string values. As you can see a string value of “dk” or “ru”
+The important part is the lines 4-12 where the GET variable "L" is
+mapped to string values. As you can see a string value of "dk" or "ru"
 will be translated to a value for L-var which is respectively 1 and 2.
-Also, you can see that an alternative value for “dk” can be used,
-namely “danish”.
+Also, you can see that an alternative value for "dk" can be used,
+namely "danish".
 
-The “noMatch” setting defines that if neither “dk”, “ru” or “danish”
+The "noMatch" setting defines that if neither "dk", "ru" or "danish"
 is found as the first segment of the URL path, then the path is
 forwarded to decoding for the page id and other variables.
 
 An interesting effect is that if you create a page which is called
-“Danish” in the page tree you will never be able to access it in the
-default language! The reason is that if you access the page “/danish/”
-then “danish” is mapped to “&L=1” and nothing is left for page
+"Danish" in the page tree you will never be able to access it in the
+default language! The reason is that if you access the page "/danish/"
+then "danish" is mapped to "&L=1" and nothing is left for page
 decoding!
 
-This table shows the mapping of “L” with realurl
+This table shows the mapping of "L" with realurl
 
 .. ### BEGIN~OF~TABLE ###
 

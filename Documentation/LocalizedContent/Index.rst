@@ -13,8 +13,8 @@ The topic of localizing the actual content of pages is where different
 paradigms and preferences may step in. One clear difference is whether
 you want to localize or translate a page.
 
-- When you wish you translate a page 1:1you might like to using “content
-  binding” which secures exactly that. The pages content is then always
+- When you wish you translate a page 1:1you might like to using "content
+  binding" which secures exactly that. The pages content is then always
   defined by the default language records and any translation is solely
   depending on whether a localized record for the default language
   record exists. This is least flexible but has less room for error.

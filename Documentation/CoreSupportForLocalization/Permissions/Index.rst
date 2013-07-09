@@ -18,13 +18,13 @@ over all tables with the [languageField] set.
 
 Settings from groups and subgroups are all added together.
 
-If a user has no “Limit to languages” checkboxes set at all he can
+If a user has no "Limit to languages" checkboxes set at all he can
 edit  *all languages* .
 
-Regardless of “Limit to languages” all users can edit records with
-“[All]” language.
+Regardless of "Limit to languages" all users can edit records with
+"[All]" language.
 
-Setting “Limit to languages” is not only good to protect translators
+Setting "Limit to languages" is not only good to protect translators
 from editing other languages or default content - it is also helpful
 to limit the confusion a user might have when faced with a Web>List
 display that includes localizations from 10 other languages!

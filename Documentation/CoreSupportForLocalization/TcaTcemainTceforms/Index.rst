@@ -47,7 +47,7 @@ The [columns] configuration of this field can look like this::
        )
    ),
 
-Notice how it includes two static items for “Default” and “[All]”
+Notice how it includes two static items for "Default" and "[All]"
 languages.
 
 
@@ -73,7 +73,7 @@ The configuration of this field could look like this::
        )
    ),
 
-The example is from the “tt\_content” table and the “foreign\_table”
+The example is from the "tt\_content" table and the "foreign\_table"
 settings should be adjusted accordingly when using other tables of
 course!
 
@@ -87,10 +87,10 @@ language record in the current pid. This means that a  **default
 language record an all its translations must be on the same page!**
 Thisprinciple is also respected by the API function
 t3lib\_page::getRecordOverlay() which fetches translations of records
-for the frontend display (when “config.sys\_language\_overlay = 1 /
-hideNonTranslated”)!
+for the frontend display (when "config.sys\_language\_overlay = 1 /
+hideNonTranslated")!
 
-When the “transOrigPointerField” and “languageField” are defined for a
+When the "transOrigPointerField" and "languageField" are defined for a
 table you will have a nice view of the default content shown along
 with the translation in the TCEforms:
 
@@ -105,7 +105,7 @@ support. One is [transOrigDiffSourceField]. This can point to a blob
 field in the record which will store the content of the default
 langauge record as it was when the translation was made. This is then
 used to display any changes that has occured in the default record
-since translation happened. In the “Content Elements” (tt\_content
+since translation happened. In the "Content Elements" (tt\_content
 table) it looks like this:
 
 |img-100|
@@ -117,19 +117,19 @@ adjust his translation accordingly.
 TCEmain commands for localization
 """""""""""""""""""""""""""""""""
 
-Localizing a record can be done by the command “localize” sent in the
-cmd-array to TCEmain. This is documented in “TYPO3 Core API”. This is
+Localizing a record can be done by the command "localize" sent in the
+cmd-array to TCEmain. This is documented in "TYPO3 Core API". This is
 the command sent when you press the localize button in Web>List or
 Web>Page for an element.
 
 When this command is issued what happens is that an ordinary copy is
-made but the fields “languageField” and “transOrigPointerField” are
+made but the fields "languageField" and "transOrigPointerField" are
 updated accordingly.
 
 You can only localize a record which is not already localized and
-which is in “default” or “[All]” language modes.
+which is in "default" or "[All]" language modes.
 
-The “[All]” mode is meant for elements which represent universal
+The "[All]" mode is meant for elements which represent universal
 content that does not need localization (like the insertion of a
 plugin or other records). However they  *can* optionally be translated
 if a special case is needed.
@@ -144,14 +144,14 @@ Localization command options per field
 
 When a localization command is executed from TCEmain the configuration
 of each field can contain special instructions. For instance; You can
-have a label prefixed a field (like you see “[Translate to Danish:]”
+have a label prefixed a field (like you see "[Translate to Danish:]"
 in some screenshots) or you can have the copying of fields disabled
 all together (like an image field where you wish to inherit the
 default value by default).
 
 This is done by the [columns][l10n\_mode] setting, documented in
-“TYPO3 Core API”.
+"TYPO3 Core API".
 
-“l10n\_mode” does not apply to FlexForm fields. Conceptually, it does
+"l10n\_mode" does not apply to FlexForm fields. Conceptually, it does
 not make sense.
 

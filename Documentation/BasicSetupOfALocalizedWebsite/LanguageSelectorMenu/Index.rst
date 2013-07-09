@@ -24,7 +24,7 @@ might like the menu items to appear in 4 variants:
 - Missing translation - currently selected
 
 The way to make such a menu is to use the HMENU cObject from
-TypoScript and use the special type “language”.
+TypoScript and use the special type "language".
 
 Here is example configurations:
 

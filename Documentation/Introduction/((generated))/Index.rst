@@ -9,7 +9,7 @@
 ((generated))
 ^^^^^^^^^^^^^
 
-“Free” and “Bound” paradigms of localization with TemplaVoilà
+"Free" and "Bound" paradigms of localization with TemplaVoilà
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 During the work with this document I realized that it should have been
@@ -22,20 +22,20 @@ recommended we decided to integrate configurable support for this in
 order to stay backwards compatible.
 
 
-“Localization” and “Translation”
+"Localization" and "Translation"
 """"""""""""""""""""""""""""""""
 
 The two terms are often used to express the same. Also in this
 document. But more precisely this is how I understand the difference:
 
-- “ **Translation”** means that a specific composition of words are
+- " **Translation"** means that a specific composition of words are
   translated to another language. In other words: If there is a header
   and an image in the default language, so there will be in the
   translation. No more, no less.
 
-- “ **Localization”** means more broadly that a page is represented in
+- " **Localization"** means more broadly that a page is represented in
   another language. This of course means information in that language
-  (“translation”) but could also include alternative templates,
+  ("translation") but could also include alternative templates,
   additional composition of content directed to another audience etc. In
   other words: There might be another number of headers and images than
   in the default language.

@@ -20,22 +20,22 @@ The result is a view like this:
 
 |img-21|
 
-When a localization does not exist there will be an icon (“Localize
-to”) to click which will localize the element.
+When a localization does not exist there will be an icon ("Localize
+to") to click which will localize the element.
 
 The elements can be localized only to the alternative languages on the
-page and since the page has only a Danish “Alternative Page Language”
-record (named “Ikke-cached”) you see only Danish flags. Adding a
+page and since the page has only a Danish "Alternative Page Language"
+record (named "Ikke-cached") you see only Danish flags. Adding a
 Russian translation will add Russian icons:
 
 |img-22|
 
 
-Technical note about “Localizations”
+Technical note about "Localizations"
 """"""""""""""""""""""""""""""""""""
 
-The “Localize to” links presented by the Web>List module, Web>Page
-module etc. uses the core “localize” command. This command creates a
+The "Localize to" links presented by the Web>List module, Web>Page
+module etc. uses the core "localize" command. This command creates a
 copy of the default language record, changes the language setting to
 the requested language and sets a reference back to the default
 language original. Thus the localized version is bound to the original
@@ -54,6 +54,6 @@ references etc. - data that you might not like to enter a second time
 for the localized record!
 
 Taking advantage of overlays and inheritance is enabled by TypoScript
-config options like “config.sys\_language\_overlay” and
-“config.sys\_language\_softMergeIfNotBlank”
+config options like "config.sys\_language\_overlay" and
+"config.sys\_language\_softMergeIfNotBlank"
 

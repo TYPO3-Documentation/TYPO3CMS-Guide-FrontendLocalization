@@ -13,7 +13,7 @@ TemplaVoilà: Translator workflow
 When you are limited users to languages you effectively define
 translator roles. This can have a few pleasant effects in terms of
 simplified interfaces in TYPO3. One is the use of display conditions
-in FlexForms, “HIDE\_L10N\_SIBLINGS” (see elsewhere).
+in FlexForms, "HIDE\_L10N\_SIBLINGS" (see elsewhere).
 
 Another is that TemplaVoilà's Page module will scale down its buttons
 when a user  *does not* have access to the default language (thus
@@ -43,7 +43,7 @@ see all the additional buttons.
 |img-95|
 
 The concept of the scaled down view for translators is to provide a
-very simply rule for them: “Click the flag!”. All flags either leads
+very simply rule for them: "Click the flag!". All flags either leads
 to localization of a record or to editing of an existing translation.
 No confusion possible.
 
@@ -54,7 +54,7 @@ according to language selected:
 
 |img-97|
 
-Having Danish selected will automatically add “&L=xx” to the preview
+Having Danish selected will automatically add "&L=xx" to the preview
 URL:
 
 |img-98|

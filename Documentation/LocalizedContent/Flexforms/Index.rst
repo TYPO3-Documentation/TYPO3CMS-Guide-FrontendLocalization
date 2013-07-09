@@ -17,17 +17,17 @@ is that an ISO-code has been associated with the system languages:
 
 |img-44|
 
-(This requires “static\_info\_tables”).
+(This requires "static\_info\_tables").
 
 Where localized content in TYPO3 identifies its language by a uid-
-value (the content of [languageField]) pointing to a “Website
-Language” record, flexforms use the universal ISO-code which is a
+value (the content of [languageField]) pointing to a "Website
+Language" record, flexforms use the universal ISO-code which is a
 newer and better architecture of course.
 
 In the following the FlexForm localization modes are described. They
 apply universally to FlexForms but to illustrate the usage they are
 described in the context of a TemplaVoilà based website and in
-relation to “Flexible Content Elements”. This is far the most typical
+relation to "Flexible Content Elements". This is far the most typical
 application of FlexForm fields carrying localized content. Other
 applications are for Plugin configuration but in this case you will
 most likely disable localization all together.
@@ -64,7 +64,7 @@ This overview shows the possible localization modes for a FlexForm
 field.
 
 Where a FlexForm field is used to store references to content elements
-- called “container elements” - additional consideration especially
+- called "container elements" - additional consideration especially
 related to TemplaVoilà applies. For a discussion of this, please refer
 to subsequent chapters.
 
@@ -124,7 +124,7 @@ to subsequent chapters.
    a
          **Record language**
 
-         **(“languageField” value)**
+         **("languageField" value)**
 
    Disabled
          Use: [All] language
@@ -182,7 +182,7 @@ to subsequent chapters.
 
    Inheritance
          Default content is inherited if there is no translated content
-         (“blank” string or zero).
+         ("blank" string or zero).
 
          Configurations apply, see later
 
@@ -197,7 +197,7 @@ to subsequent chapters.
          **Recommended usage:**
 
    Disabled
-         Use this type for FlexForm fields working as “container elements”
+         Use this type for FlexForm fields working as "container elements"
          providing structures for other content elements. In such cases it is
          unlikely that you want localization of the content element
          references(\*).
@@ -231,39 +231,39 @@ to subsequent chapters.
 
 
    Inheritance
-         - Be careful if using them as “container elements”
+         - Be careful if using them as "container elements"
 
    Separate
-         - Never use as “container element”
+         - Never use as "container element"
 
 
 .. container:: table-row
 
    a
-         **Special notice related to “Free” paradigm (see later) and container
+         **Special notice related to "Free" paradigm (see later) and container
          elements**
 
    Disabled
-         In the “Free” paradigm, “Disabled” usually indicates that no
+         In the "Free" paradigm, "Disabled" usually indicates that no
          localization is intended for a container element. This is opposite to
-         the “Bound” paradigm where “Disabled” is the recommended mode.
+         the "Bound" paradigm where "Disabled" is the recommended mode.
 
-         The reason is that the “Free” paradigm doesn't expect localization
+         The reason is that the "Free" paradigm doesn't expect localization
          overlays of default language records but rather base itself on
          building separate structures of localized elements, hence needing
-         either “Inheritance” or “Separate” modes. However, there are some
+         either "Inheritance" or "Separate" modes. However, there are some
          flaws which makes that paradigm problematic. Please refer to
          discussion later.
 
    Inheritance
-         In the “Free” paradigm, this mode is recommended since a separate
+         In the "Free" paradigm, this mode is recommended since a separate
          structure of content elements is built. However, as a content
          structure grows deeper than a single level this makes it impossible to
          keep the order in sync with the default language since that will be
          located in another element.
 
    Separate
-         See note for “Inheritance” mode, same applies.
+         See note for "Inheritance" mode, same applies.
 
 
 .. ###### END~OF~TABLE ######
@@ -276,7 +276,7 @@ Disabled
 
 This is a FlexForm element with localization disabled. It appears
 under the exact same terms as any other content element does: Based on
-its language setting in the field defined by “[languageField]” (see
+its language setting in the field defined by "[languageField]" (see
 later).
 
 Since this Data Structure is used to display the differences between
@@ -285,8 +285,8 @@ localization modes lets take a look at it:
 - There is a Header and Body field on the root level
 
 - Then, there is a link section where we can add zero to many items,
-  which in turn lets us choose between the item type “Link header”
-  (single field) or “Link” (header + url field)
+  which in turn lets us choose between the item type "Link header"
+  (single field) or "Link" (header + url field)
 
 |img-45|
 
@@ -303,13 +303,13 @@ default value. In the FlexForm it looks like this:
 
 |img-47|
 
-Notice that for each field (“Header”) you find a counterpart for the
-available languages (“Header (vDA)”).
+Notice that for each field ("Header") you find a counterpart for the
+available languages ("Header (vDA)").
 
-The code indicating the language (“vDA”) is a “v” + language ISO code.
+The code indicating the language ("vDA") is a "v" + language ISO code.
 
-Notice that the field “Url (vDA)” for the second link is blank. When
-this is the case the value from the “Url” field (default value) is
+Notice that the field "Url (vDA)" for the second link is blank. When
+this is the case the value from the "Url" field (default value) is
 inherited. This can be useful for such as URLs which doesn't change
 between languages - or might just change in which case you can
 optionally supply them!
@@ -330,12 +330,12 @@ is ;-)
 Separate
 """"""""
 
-In the “Separate” mode the two languages are separated completely in
-the form. This doesn't make any difference for the “Header” and “Body”
-fields but the “Link section” can be composed differently in the two
+In the "Separate" mode the two languages are separated completely in
+the form. This doesn't make any difference for the "Header" and "Body"
+fields but the "Link section" can be composed differently in the two
 languages. Below it is very easy to see this difference because for
-the Danish translation (“DA”) there is only one “Link” entry contrary
-to the “Link header” / “Link” / “Link” composition of the default
+the Danish translation ("DA") there is only one "Link" entry contrary
+to the "Link header" / "Link" / "Link" composition of the default
 language.
 
 |img-50|
@@ -346,11 +346,11 @@ First the Default display:
 
 |img-51|
 
-Then the Danish “localization”:
+Then the Danish "localization":
 
 |img-52|
 
-This is the flexibility of the “Separate” approach - that you can
+This is the flexibility of the "Separate" approach - that you can
 truely  *localize* you content, not just translate it. But the price
 is that the relation between the default and translated content is
 lost in a technical sense.
@@ -364,7 +364,7 @@ at how the FlexForm XML data is different in each scenario you can
 compare these listings:
 
 
-“Disabled”:
+"Disabled":
 ~~~~~~~~~~~
 
 ::
@@ -424,7 +424,7 @@ compare these listings:
 
 
 
-“Inheritance”:
+"Inheritance":
 ~~~~~~~~~~~~~~
 
 ::
@@ -497,7 +497,7 @@ compare these listings:
      66: </T3FlexForms>
 
 
-“Separate”:
+"Separate":
 ~~~~~~~~~~~
 
 ::
@@ -591,11 +591,11 @@ compare these listings:
 Conclusion:
 ~~~~~~~~~~~
 
-The interesting difference is that for “Inheritance” you find the
+The interesting difference is that for "Inheritance" you find the
 translation of the default value (<vDEF>) in a tag on the same level
-in the XML (e.g. “<vDA>”) - all within the <language index=”lDEF”>
-tag. With “Separate” you find the translation in a separate structure
-under <language index=”lDA”> while all values are stored with <vDEF>.
+in the XML (e.g. "<vDA>") - all within the <language index="lDEF">
+tag. With "Separate" you find the translation in a separate structure
+under <language index="lDA"> while all values are stored with <vDEF>.
 In both cases the default language content is stored in the same way.
 
 This also tells you why you cannot switch between the two types when

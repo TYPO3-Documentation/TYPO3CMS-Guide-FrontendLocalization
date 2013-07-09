@@ -16,21 +16,21 @@ localconf.php file of the site::
    $TYPO3_CONF_VARS['BE']['forceCharset'] = 'utf-8';
 
 
-Explanation of “forceCharset”
+Explanation of "forceCharset"
 """""""""""""""""""""""""""""
 
-The reason is that without a value for “forceCharset” the backend will
+The reason is that without a value for "forceCharset" the backend will
 use a charset depending on the backend language of the user. So lets
 say User A has a backend in Russian and User B a backend in Danish,
-then User A will enter data in the charset “windows-1251” and User B
-in “iso-8859-1”. Since data stored in TYPO3 is not tagged with a
+then User A will enter data in the charset "windows-1251" and User B
+in "iso-8859-1". Since data stored in TYPO3 is not tagged with a
 charset this will lead to an inconsistent database.
 
 If $TYPO3\_CONF\_VARS['BE']['forceCharset']is set, the same charset is
 used for all users in the backend regardless of their backend language
 and you will get consistent data in your database. But since
-“iso-8859-1” and “windows-1251” are “incompatible” charsets (using the
-same byte values for different glyphs) you will have to choose “utf-8”
+"iso-8859-1" and "windows-1251" are "incompatible" charsets (using the
+same byte values for different glyphs) you will have to choose "utf-8"
 as charset since that can contain both danish and russian chars - and
 all other charsets of the world.
 
@@ -46,21 +46,21 @@ new TYPO3 projects.
 Charset in frontend (advanced)
 """"""""""""""""""""""""""""""
 
-The “forceCharset” value will also be used in the frontend
+The "forceCharset" value will also be used in the frontend
 automatically. But it is possible to change charset settings in
-TypoScript. There are two settings, “config.renderCharset” (don't
-change unless you know what you are doing) and “config.metaCharset”.
+TypoScript. There are two settings, "config.renderCharset" (don't
+change unless you know what you are doing) and "config.metaCharset".
 
 config.metaCharset defines the character set of the HTML output. If
 this is set to another value than renderCharset / forceCharset, all
 content is converted before output although internally processed in
-“renderCharset”. This is useful for special cases like japanese
-websites where they like “shift-jis” used for content delivery.
+"renderCharset". This is useful for special cases like japanese
+websites where they like "shift-jis" used for content delivery.
 
 If config.renderCharset != config.metaCharset there are a few things
 to be aware of:
 
-- Content from “PHP\_SCRIPT\_EXT” is  *not* converted! (everything else
+- Content from "PHP\_SCRIPT\_EXT" is  *not* converted! (everything else
   is, including USER\_INT)
 
 - GET / POST data  *is* automatically converted from metaCharset to
@@ -88,12 +88,12 @@ If you are  *not* using MySQL (or any other DB) that supports UTF-8
 you have to consider this workaround:
 
 As long as a database does not support utf-8 so varchar(10) means
-“store 10 utf-8 characters regardless of byte length” we offer a
+"store 10 utf-8 characters regardless of byte length" we offer a
 setting in TYPO3 which takes care of it:
 
 $TYPO3\_CONF\_VARS['SYS']['multiplyDBfieldSize'] = '3';
 
 This setting will automatically change all varchar(10) fields to
-“varchar(30)”. After changing this setting you must use the Install
-Tool, “Database Analyzer” to alter all fields in tables.
+"varchar(30)". After changing this setting you must use the Install
+Tool, "Database Analyzer" to alter all fields in tables.
 

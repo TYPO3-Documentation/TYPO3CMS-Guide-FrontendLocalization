@@ -7,13 +7,13 @@
 .. include:: Images.txt
 
 
-Localization mode: “config.sys\_language\_mode”
+Localization mode: "config.sys\_language\_mode"
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 The localization mode defines how the system behaves  *if there is no
 translation of a page to the language requested (ie. there is no
 Alternative Page Language record)* . For instance: Would you like a
-“page not found” error? Or should the default language be shown? Or
+"page not found" error? Or should the default language be shown? Or
 should another of the available languages be tried first? And if so,
 would you like the menu to stay in the selected language? These are
 the preferences you can obtain using this setting.
@@ -23,12 +23,12 @@ Overview of combinations
 """"""""""""""""""""""""
 
 Localization mode is defined by the TypoScript configuration
-“config.sys\_language\_mode”.
+"config.sys\_language\_mode".
 
 The table below provides an overview of the combinations of language
 modes (config.sys\_language\_mode) and the language uid
 (config.sys\_language\_uid, which is essentially defined by the input
-“&L=” variable in a typical set-up).
+"&L=" variable in a typical set-up).
 
 - The first two columns displays the configured values (blue)
 
@@ -37,7 +37,7 @@ modes (config.sys\_language\_mode) and the language uid
 
 - The settings are based on a page where:
 
-- none of the “Localization Setting” checkboxes is set (meaning that
+- none of the "Localization Setting" checkboxes is set (meaning that
   neither default language, nor non-existing alternative languages are
   blocked)
 
@@ -48,7 +48,7 @@ modes (config.sys\_language\_mode) and the language uid
   translation is of course to show the translation and hence they are
   not interesting. These scenarios are included in the table but grayed
   out since they are the  *same* for each combination of
-  “sys\_language\_mode”. The interesting rows are those where the
+  "sys\_language\_mode". The interesting rows are those where the
   Russian language is requested.
 
 This is how the localization overview is set for the page tested:
@@ -170,16 +170,16 @@ This is how the localization overview is set for the page tested:
 
    Result
          Behaviour: All site content behaves like for the default language
-         except “&L=2” is passed on in links and any settings made with
-         TypoScript conditions selecting on “GP:L” will take effect.
+         except "&L=2" is passed on in links and any settings made with
+         TypoScript conditions selecting on "GP:L" will take effect.
 
          - Content: English
 
          - Menu: English
 
-         - Warning: “Localization Settings” for pages are not observed correctly!
-           See more info where “Localization Settings” are discussed (eg. “Hide
-           page if no translation exists”)
+         - Warning: "Localization Settings" for pages are not observed correctly!
+           See more info where "Localization Settings" are discussed (eg. "Hide
+           page if no translation exists")
 
 
 .. container:: table-row
@@ -238,7 +238,7 @@ This is how the localization overview is set for the page tested:
 
    Result
          Behavior: Content displayed in default language while menus are
-         rendered in Russian. This mode lets the user “stay” in the selected
+         rendered in Russian. This mode lets the user "stay" in the selected
          language, even when visiting pages that has no translated content and
          falls back to default content.
 
@@ -302,10 +302,10 @@ This is how the localization overview is set for the page tested:
          1
 
    Result
-         Behavior: Like the setting “content\_fallback” but the added values
-         “1,0” means that the content displays first looks for content in the
-         language “1” (in this case Danish) and shows that if available,
-         otherwise looks for content in language “0”.
+         Behavior: Like the setting "content\_fallback" but the added values
+         "1,0" means that the content displays first looks for content in the
+         language "1" (in this case Danish) and shows that if available,
+         otherwise looks for content in language "0".
 
          Of course it makes no sense to display Danish instead of Russian, but
          in cases like Portuguese/Brazil Portuguese it might make sense to
@@ -371,8 +371,8 @@ This is how the localization overview is set for the page tested:
          -
 
    Result
-         Error message: “Page is not available in the requested language
-         (strict).”
+         Error message: "Page is not available in the requested language
+         (strict)."
 
 
 .. container:: table-row
@@ -444,15 +444,15 @@ This is how the localization overview is set for the page tested:
 A few additional technical notes:
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-- Regardless of localization mode the “&L=” variable is always passed on
-  in links (due to “config.linkVars”)
+- Regardless of localization mode the "&L=" variable is always passed on
+  in links (due to "config.linkVars")
 
-- Any TypoScript conditions (for example “[globalVar = GP:L=1]”) are
+- Any TypoScript conditions (for example "[globalVar = GP:L=1]") are
   still effective so any settings there are kept regardless of
   localization mode
 
-- When saying “a translation exists” it is meant that an “Alternative
-  Page Language” record exists (green background in Localization
+- When saying "a translation exists" it is meant that an "Alternative
+  Page Language" record exists (green background in Localization
   Overview in Web>Info). This, however, does not refer to whether or not
   content elements are localized for the page yet. However, it is
   generally assumed that if an Alternative Page Language record has been
@@ -470,8 +470,8 @@ A few additional technical notes:
   possible to request content from another language than that of
   TSFE->sys\_language\_uid
 
-- If the “Localization Setting” of the page is set to “Hide default
-  translation of page” then it will fail when used with
+- If the "Localization Setting" of the page is set to "Hide default
+  translation of page" then it will fail when used with
   content\_fallback and if content\_fallback tries to get content from
   the default language.
 
@@ -485,6 +485,6 @@ It is recommended to use ::
 
 This is so, because the compatibility with other localization
 functions are greatest in this case since the
-“TSFE->sys\_language\_uid” value is set to that of the requested
+"TSFE->sys\_language\_uid" value is set to that of the requested
 language.
 

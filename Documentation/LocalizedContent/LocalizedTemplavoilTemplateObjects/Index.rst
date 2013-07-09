@@ -12,7 +12,7 @@ Localized TemplaVoilà Template Objects
 
 |img-73| TemplaVoilà offers to select an alternative Template Object
 (TO) when the language is changed. What you do is to create an TO as a
-“Sub-template” of the main TO:
+"Sub-template" of the main TO:
 
 Of course you must select the correct language and then provide a
 mapping for this TO as well.
