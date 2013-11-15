@@ -51,7 +51,7 @@ This is the difference:
   structure (order and nesting) of content elements on a page should be
   the same for all languages. Consequently, all container elements
   should have data structures where localization mode is "Disabled". All
-  content carrying elements (such as "Text w/Image") is placed as
+  content carrying elements (such as "Text & Images") is placed as
   default language elements which can have overlaid localizations
   (requiring "config.sys\_language\_overlay" to be set). Elements unique
   to a language can be placed separately if needed and in the rare case
