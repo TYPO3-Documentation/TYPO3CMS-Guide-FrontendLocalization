@@ -20,7 +20,7 @@ retrieve values from llXML files in TypoScript you can do it like
 this::
 
    page.20 = TEXT
-   page.20.data = LLL:EXT:indexed_search/pi/locallang.xml:submit_button_label
+   page.20.stdWrap.data = LLL:EXT:indexed_search/pi/locallang.xml:submit_button_label
 
 This looks for the label "submit\_button\_label" in the file
 "pi/locallang.xml" from the extension "indexed\_search".
