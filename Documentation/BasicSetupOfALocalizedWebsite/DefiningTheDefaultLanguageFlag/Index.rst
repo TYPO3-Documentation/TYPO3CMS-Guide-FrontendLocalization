@@ -18,7 +18,7 @@ If you want to specify the name of the default language and a flag
 icon you can do so for a branch of the page tree by setting this Page
 TSconfig for the root page of your website.
 
-Setup:
+TSConfig:
 
       mod.SHARED {
         defaultLanguageFlag = gb.gif
