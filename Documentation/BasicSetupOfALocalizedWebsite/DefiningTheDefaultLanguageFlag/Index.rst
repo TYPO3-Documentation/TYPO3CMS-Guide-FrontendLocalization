@@ -20,6 +20,8 @@ TSconfig for the root page of your website.
 
 TSConfig:
 
+.. code-block:: typoscript
+
       mod.SHARED {
         defaultLanguageFlag = gb.gif
 
