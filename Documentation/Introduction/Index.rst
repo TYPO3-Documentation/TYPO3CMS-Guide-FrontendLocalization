@@ -87,7 +87,7 @@ Credits
 ^^^^^^^
 
 This document was originally written by Kasper Skårhøj. It is currently
-not maintained.
+not maintained and maybe outdated.
 
 
 .. _credits-dedication:
