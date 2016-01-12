@@ -152,6 +152,5 @@ default value by default).
 This is done by the [columns][l10n\_mode] setting, documented in
 "TYPO3 Core API".
 
-"l10n\_mode" does not apply to FlexForm fields. Conceptually, it does
-not make sense.
+
 
