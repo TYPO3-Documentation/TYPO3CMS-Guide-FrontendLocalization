@@ -439,4 +439,3 @@ when container elements has localization mode set to "Inheritance" or
 Finally "config.sys\_language\_overlay = 1" was set in the TypoScript
 Template record to enable the overlay of localized versions used in
 the "Disabled" mode.
-
