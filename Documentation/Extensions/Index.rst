@@ -21,4 +21,6 @@ to localization.
    Realurl/Index
    L10ncm/Index
    RlmpLanguageDetection/Index
+   
+   Hello
 
