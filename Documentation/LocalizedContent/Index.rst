@@ -11,7 +11,7 @@ Localized content
 
 The topic of localizing the actual content of pages is where different
 paradigms and preferences may step in. One clear difference is whether
-you want to localize or translate a page.
+you want to localize or translate a page of the website.
 
 - When you wish you translate a page 1:1you might like to using "content
   binding" which secures exactly that. The pages content is then always
