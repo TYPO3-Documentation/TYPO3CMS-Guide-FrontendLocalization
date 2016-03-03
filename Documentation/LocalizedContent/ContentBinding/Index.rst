@@ -50,8 +50,11 @@ default language content is (useful for translators):
 The website displays the content like this:
 
 
-|img-37| Binding
-""""""""""""""""
+|img-37|
+
+
+Binding
+"""""""
 
 Binding translations to follow the default language translations
 requires a configuration of both frontend and backend:
@@ -162,9 +165,7 @@ It is reflected in the Web>Page module like this (notice the flag):
 |img-43|
 
 Typical applications of the "[All]" language is for "Insert Record",
-"Plugin" elements (placeholders for something else) or "Flexible
-Content Element" ("templavoila" extension, typically having
-localization enabled in the FlexForm content).
+"Plugin" elements (placeholders for something else).
 
 
 Notes

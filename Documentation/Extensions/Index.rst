@@ -19,6 +19,5 @@ to localization.
    :glob:
 
    Realurl/Index
-   L10ncm/Index
    RlmpLanguageDetection/Index
 

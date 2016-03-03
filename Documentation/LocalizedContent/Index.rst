@@ -34,11 +34,4 @@ context of the classic Page module.
    :glob:
 
    ContentBinding/Index
-   Flexforms/Index
-   Flexform-ContainterElements/Index
-   InheritanceSettings(specificForTemplavoil)/Index
-   LocalizedTemplavoilTemplateObjects/Index
-   TemplavoilPageModule/Index
-   TemplavoilBest-practice/Index
-   TemplavoilTranslatorWorkflow/Index
 

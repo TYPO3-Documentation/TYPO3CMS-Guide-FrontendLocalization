@@ -32,7 +32,9 @@ Here is example configurations:
 GMENU example
 """""""""""""
 
-|img-32| ::
+|img-32|
+
+::
 
    ## Localization menu:
    lib.langMenu = HMENU
@@ -45,7 +47,7 @@ GMENU example
                    XY = [5.w]+4, [5.h]+4
                    backColor = white
                    5 = IMAGE
-                   5.file = EXT:cms/tslib/media/flags/flag_uk.gif  || EXT:cms/tslib/media/flags/flag_dk.gif  || EXT:cms/tslib/media/flags/flag_fr.gif
+                   5.file = EXT:core/Resources/Public/Icons/Flags/SVG/GB.svg  || EXT:core/Resources/Public/Icons/Flags/SVG/DK.svg  || EXT:core/Resources/Public/Icons/Flags/SVG/FR.svg
                    5.offset = 2,2
            }
 
@@ -55,7 +57,7 @@ GMENU example
 
            1.USERDEF1 < lib.langMenu.1.NO
            1.USERDEF1=1
-           1.USERDEF1.5.file = EXT:cms/tslib/media/flags/flag_uk_d.gif  || EXT:cms/tslib/media/flags/flag_dk_d.gif  || EXT:cms/tslib/media/flags/flag_fr_d.gif
+           1.USERDEF1.5.file = EXT:core/Resources/Public/Icons/Flags/SVG/GB_d.svg  || EXT:core/Resources/Public/Icons/Flags/SVG/DK_d.svg  || EXT:core/Resources/Public/Icons/Flags/SVG/FR_d.svg
            1.USERDEF1.noLink = 0
 
            1.USERDEF2 < lib.langMenu.1.USERDEF1
@@ -66,7 +68,9 @@ GMENU example
 TMENU example
 """""""""""""
 
-|img-33| ::
+|img-33|
+
+::
 
    lib.langMenu = HMENU
    lib.langMenu {
@@ -75,18 +79,18 @@ TMENU example
            special.normalWhenNoLanguage = 0
            1 = TMENU
            1 {
-                           # Normal link to language that exists:
+                   # Normal link to language that exists:
                    NO = 1
                    NO.allWrap = |*| | *  |*| |
                    NO.linkWrap = <b style="background-color : grey"> | </b>
                    NO.stdWrap.setCurrent = English || Danish || Russian
                    NO.stdWrap.current = 1
 
-                           # Current language selected:
+                   # Current language selected:
                    ACT < .NO
                    ACT.linkWrap = <b style="background-color : red"> | </b>
 
-                           # Language that is NOT available:
+                   # Language that is NOT available:
                    USERDEF1 < .NO
                    USERDEF1.linkWrap = <span style="background-color : yellow"> | </span>
                    USERDEF1.doNotLinkIt = 1

@@ -21,7 +21,11 @@ this guide I have added two languages, Danish and Russian.
 
 The record for the Danish language record looks like this:
 
-|img-4| |img-5| When you want to localize pages and content in TYPO3
+|img-4| 
+
+|img-5|
+
+When you want to localize pages and content in TYPO3
 you will now have the option between "Default", "Danish" and
 "Russian". Here is a view from the Web>List module:
 

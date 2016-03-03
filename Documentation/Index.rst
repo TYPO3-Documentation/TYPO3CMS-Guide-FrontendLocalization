@@ -4,7 +4,6 @@
 .. -*- coding: utf-8 -*- with BOM.
 
 .. include:: Includes.txt
-.. include:: Images.txt
 
 
 .. _start:
@@ -17,7 +16,7 @@ Frontend Localization Guide
       doc_guide_l10n, doc_l10nguide
 
 :Version:
-      1.1.0
+      1.5.0
 
 :Language:
       en
@@ -29,7 +28,7 @@ Frontend Localization Guide
       forAdmins, forDevelopers, forIntermediates
 
 :Copyright:
-      2000-2013
+      2000-2016
 
 :Author:
       Documentation Team
@@ -83,6 +82,5 @@ given task.
    LocalizedContent/Index
    CoreSupportForLocalization/Index
    Extensions/Index
-   TodoListForLocalizationFeatures/Index
    Targets
 

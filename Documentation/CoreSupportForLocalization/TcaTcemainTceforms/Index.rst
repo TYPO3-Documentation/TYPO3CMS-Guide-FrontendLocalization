@@ -35,14 +35,14 @@ The [columns] configuration of this field can look like this::
 
    'sys_language_uid' => Array (
        'exclude' => 1,
-       'label' => 'LLL:EXT:lang/locallang_general.php:LGL.language',
+       'label' => 'LLL:EXT:lang/locallang_general.xlf:LGL.language',
        'config' => Array (
            'type' => 'select',
            'foreign_table' => 'sys_language',
            'foreign_table_where' => 'ORDER BY sys_language.title',
            'items' => Array(
-               Array('LLL:EXT:lang/locallang_general.php:LGL.allLanguages',-1),
-               Array('LLL:EXT:lang/locallang_general.php:LGL.default_value',0)
+               Array('LLL:EXT:lang/locallang_general.xlf:LGL.allLanguages',-1),
+               Array('LLL:EXT:lang/locallang_general.xlf:LGL.default_value',0)
            )
        )
    ),
@@ -62,7 +62,7 @@ The configuration of this field could look like this::
    'l18n_parent' => Array (
        'displayCond' => 'FIELD:sys_language_uid:>:0',
        'exclude' => 1,
-       'label' => 'LLL:EXT:lang/locallang_general.php:LGL.l18n_parent',
+       'label' => 'LLL:EXT:lang/locallang_general.xlf:LGL.l18n_parent',
        'config' => Array (
            'type' => 'select',
            'items' => Array (

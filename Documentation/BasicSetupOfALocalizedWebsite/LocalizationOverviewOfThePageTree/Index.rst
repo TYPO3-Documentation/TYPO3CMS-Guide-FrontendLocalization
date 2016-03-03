@@ -10,7 +10,9 @@
 Localization Overview of the page tree
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-|img-9| You can get a complete overview of the page tree and according
+|img-9|
+
+You can get a complete overview of the page tree and according
 translations by using the Web>Info module, choosing the function menu
 item "Localization Overview":
 
@@ -27,7 +29,9 @@ If a translation of a page does not exist it will by default still
 appear in the website menu when using that language. Here the
 "Contact" page is still shown with default, English content:
 
-|img-10| If you check the "Hide page if no translation for current
+|img-10|
+
+If you check the "Hide page if no translation for current
 language exists" checkbox for the "Contact" page in "page properties"
 you can avoid this:
 
@@ -35,11 +39,15 @@ you can avoid this:
 
 This will be reflected in the Localization Overview:
 
-|img-12| From this it is clear that when viewing the website in
+|img-12|
+
+From this it is clear that when viewing the website in
 Russian the "Contact" page is not accessible. And the menu will
 reflect this since now the "Contact" page is not shown.
 
-|img-13| Trying to access the "Contact" page with the id will even
+|img-13|
+
+Trying to access the "Contact" page with the id will even
 show an error.
 
 
@@ -51,9 +59,13 @@ create a default language page in the page tree which simply acts as a
 placeholder. Setting this status is done by selecting the checkbox
 "Hide default translation of page":
 
-|img-14| This is reflected like this in the Localization Overview:
+|img-14|
 
-|img-15| On the website it will look like this:
+This is reflected like this in the Localization Overview:
+
+|img-15|
+
+On the website it will look like this:
 
 Danish:
 
@@ -61,7 +73,9 @@ Danish:
 
 English:
 
-|img-17| Trying to access the page "Visioner" in default language will
+|img-17|
+
+Trying to access the page "Visioner" in default language will
 yield an error.
 
 Hiding pages in the default language is probably a rare thing to do,
@@ -128,7 +142,7 @@ exists or not.
 
 If you wish not to use "config.sys\_language\_mode =
 content\_fallback" you can also choose to set the property
-"protectLvar" for the HMENU objects; this will correct the L-variable
+"protectLvar" for the HMENU objects; this will correct the L variable
 for those menu items which are not available. See TSref for details
 about that option.
 

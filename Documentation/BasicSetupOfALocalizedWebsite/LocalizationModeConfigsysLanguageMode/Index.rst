@@ -60,67 +60,10 @@ This is how the localization overview is set for the page tested:
 .. container:: table-row
 
    config.sys\_language\_mode
-         config.
-
-
-         sys\_
-
-
-         language\_
-
-
-         mode
-
-   config.sys\_language\_uid(set by &L)
-         config.
-
-
-         sys\_
-
-
-         language
-
-
-         \_uid
-
-
-         (set by &L)
-
-   TSFE->sys\_language\_uid
-         TSFE->
-
-
-         sys\_
-
-
-         language
-
-
-         \_uid
-
-   TSFE->sys\_language\_content
-         TSFE->
-
-
-         sys\_
-
-
-         language
-
-
-         \_content
-
-   Result
-         Result
-
-
-.. container:: table-row
-
-   config.sys\_language\_mode
          **[blank]**
 
    config.sys\_language\_uid(set by &L)
-
+         -
 
    TSFE->sys\_language\_uid
          0
@@ -462,8 +405,7 @@ A few additional technical notes:
   TSFE->sys\_language\_content maintains different functions:
 
 - TSFE->sys\_language\_uid defines the  *overall language* that content
-  should be displayed in. This affects templates in TemplaVoilà, menu
-  generations etc.
+  should be displayed in. This affects menu generations etc.
 
 - TSFE->sys\_language\_content defines the language of the  *page
   content* and may be different, especially this is what makes it

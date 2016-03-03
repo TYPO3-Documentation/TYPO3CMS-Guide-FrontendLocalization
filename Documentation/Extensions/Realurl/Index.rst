@@ -12,7 +12,7 @@ realurl
 Realurl produces URLs which are human-readable. Eg.
 "mysite.com/products/" or "mysite.com/dk/products/".
 
-If you wish realurl to encode the &L-variable nicely into the URL,
+If you wish realurl to encode the &L variable nicely into the URL,
 here is a configuration which will work for you::
 
       1: $TYPO3_CONF_VARS['EXTCONF']['realurl'] = array(
@@ -39,7 +39,7 @@ here is a configuration which will work for you::
 
 The important part is the lines 4-12 where the GET variable "L" is
 mapped to string values. As you can see a string value of "dk" or "ru"
-will be translated to a value for L-var which is respectively 1 and 2.
+will be translated to a value for L variable which is 1 and 2 respectively.
 Also, you can see that an alternative value for "dk" can be used,
 namely "danish".
 
@@ -56,15 +56,6 @@ decoding!
 This table shows the mapping of "L" with realurl
 
 .. ### BEGIN~OF~TABLE ###
-
-.. container:: table-row
-
-   Without realurl
-         Without realurl:
-
-   With realurl
-         With realurl:
-
 
 .. container:: table-row
 

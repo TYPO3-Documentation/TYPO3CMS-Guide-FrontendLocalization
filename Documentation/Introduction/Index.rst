@@ -29,8 +29,7 @@ feature and what it is good for. You must however make sure to use
 reference documents like TSref, TYPO3 Core API etc. to look up the
 exact syntaxes for the features mentioned.
 
-Both the classic column-based web designs and the modern TemplaVoilà
-approaches are covered by the document.
+The classic column-based web designs is covered by the document.
 
 Since the main goal of this document is to include all knowledge areas
 of localization it might suffer from bad composition where advanced
@@ -38,22 +37,6 @@ content is mixed in here and there. A later revision could maybe make
 up for this by prioritizing content better. For now that has not been
 a priority. On the other hand you will come out as an expert in the
 other end.
-
-
-.. _about-paradigms:
-
-Free and Bound paradigms of localization with TemplaVoilà
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-
-During the work with this document I realized that it should have been
-around many years ago; it turned out that many people are already
-localizing websites but in a less efficient way than it could have
-been done. It lead to a lot of debate and eventually we realized that
-there exists different paradigms of how localization should be done.
-Since many existing websites are using a paradigm that is not
-recommended we decided to integrate configurable support for this in
-order to stay backwards compatible.
-
 
 
 .. _about-terms:
@@ -102,7 +85,6 @@ privilege that a non-native like me after all chose to communicate in
 a foreign language to the best of my abilities.
 
 \- kasper
-
 
 
 .. _feedback:
