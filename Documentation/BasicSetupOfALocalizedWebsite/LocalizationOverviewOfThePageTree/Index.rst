@@ -90,9 +90,9 @@ Inverse control of hidden translations
 
 If you prefer that all pages are hidden by default (reverse action of
 the "Localization Settings" check boxes) you can set a
-TYPO3\_CONF\_VARS option::
+$GLOBALS['TYPO3\_CONF\_VARS'] option::
 
-   $TYPO3_CONF_VARS['FE']['hidePagesIfNotTranslatedByDefault'] = '1';
+   $GLOBALS['TYPO3_CONF_VARS']['FE']['hidePagesIfNotTranslatedByDefault'] = '1';
 
 The Localization Overview will reflect this immediately:
 

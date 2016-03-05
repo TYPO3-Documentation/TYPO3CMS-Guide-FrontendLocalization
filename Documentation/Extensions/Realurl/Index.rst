@@ -15,7 +15,7 @@ Realurl produces URLs which are human-readable. Eg.
 If you wish realurl to encode the &L variable nicely into the URL,
 here is a configuration which will work for you::
 
-      1: $TYPO3_CONF_VARS['EXTCONF']['realurl'] = array(
+      1: $GLOBALS['TYPO3_CONF_VARS']['EXTCONF']['realurl'] = array(
       2:     '_DEFAULT' => array(
       3:         'preVars' => array(
       4:             array(
@@ -29,13 +29,10 @@ here is a configuration which will work for you::
      12:             )
      13:         ),
      14:         'pagePath' => array(
-     15:             'type' => 'user',
-     16:             'userFunc' => 'EXT:realurl/class.tx_realurl_advanced.php:&tx_realurl_advanced->main',
-     17:             'spaceCharacter' => '-',
-     18:             'expireDays' => 3,
-     19:         ),
-     20:     )
-     21: );
+     15:             'spaceCharacter' => '-',
+     16:         ),
+     17:     )
+     18: );
 
 The important part is the lines 4-12 where the GET variable "L" is
 mapped to string values. As you can see a string value of "dk" or "ru"
@@ -87,5 +84,5 @@ This table shows the mapping of "L" with realurl
 .. ###### END~OF~TABLE ######
 
 Notice, that when a new language is added to the website you will have
-to update the real-url configuration!
+to update the realurl configuration!
 
