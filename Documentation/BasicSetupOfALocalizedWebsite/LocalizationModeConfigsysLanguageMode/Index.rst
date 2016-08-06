@@ -25,7 +25,7 @@ modes (config.sys\_language\_mode) and the language uid
 (config.sys\_language\_uid, which is essentially defined by the input
 "&L=" variable in a typical set-up).
 
-- The first two columns displays the configured values (blue)
+- The first two columns display the configured values (blue)
 
 - The last three columns display the value of internal variables in
   TYPO3 plus a description of the behavior
