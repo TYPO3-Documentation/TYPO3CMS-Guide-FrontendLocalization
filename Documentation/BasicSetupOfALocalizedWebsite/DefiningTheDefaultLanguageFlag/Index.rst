@@ -9,10 +9,6 @@ If you want to specify the name of the default language and a flag
 icon you can do so for a branch of the page tree by setting this Page
 TSconfig for the root page of your website:
 
-If you want to specify the name of the default language and a flag
-icon you can do so for a branch of the page tree by setting this Page
-TSconfig for the root page of your website.
-
 TSconfig:
 
 .. code-block:: typoscript
