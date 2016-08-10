@@ -130,7 +130,7 @@ plugin or other records). However they  *can* optionally be translated
 if a special case is needed.
 
 It is possible to manually create two or more localizations of the
-same record but this is considered an error in the system, although
+same record but this is considered as error in the system, although
 not fatal, yet producing unpredictable results.
 
 
