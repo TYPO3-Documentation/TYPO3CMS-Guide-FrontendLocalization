@@ -68,10 +68,9 @@ given task.
 **Table of Contents**
 
 .. toctree::
-   :maxdepth: 5
-   :titlesonly:
-   :glob:
+   :hidden:
 
+   Sitemap/Index
    Introduction/Index
    BasicSetupOfALocalizedWebsite/Index
    LocalizedContent/Index
