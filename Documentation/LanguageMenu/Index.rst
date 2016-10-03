@@ -1,9 +1,9 @@
-.. include:: ../../Includes.txt
+.. include:: ../Includes.txt
 
 
-.. _basic-setup-language-menu:
+.. _language-menu:
 
-Language Selection Menu
+Language selection menu
 ^^^^^^^^^^^^^^^^^^^^^^^
 
 To properly navigate a multilingual web site, you probably want
@@ -28,7 +28,7 @@ different item states, respectively "NO", "ACT", "USERDEF1"
 and "USERDEF2".
 
 
-.. _basic-setup-language-menu-tmenu:
+.. _language-menu-tmenu:
 
 TMENU example
 """""""""""""
@@ -36,7 +36,7 @@ TMENU example
 The Introduction Package comes with a text-based rendering of the
 language menu, located in the footer.
 
-.. figure:: ../../Images/SetupLanguageMenuText.png
+.. figure:: ../Images/LanguageMenuText.png
    :alt: Text-based language menu
 
    A text-based language menu, with active and disabled states
@@ -94,7 +94,7 @@ This is the corresponding code:
    }
 
 
-.. _basic-setup-language-menu-gmenu:
+.. _language-menu-gmenu:
 
 GMENU example
 """""""""""""
@@ -138,7 +138,7 @@ with something like:
 
 which will result in:
 
-.. figure:: ../../Images/SetupLanguageMenuGraphical.png
+.. figure:: ../Images/LanguageMenuGraphical.png
    :alt: Graphical language menu
 
    A graphical language menu, with active and disabled states

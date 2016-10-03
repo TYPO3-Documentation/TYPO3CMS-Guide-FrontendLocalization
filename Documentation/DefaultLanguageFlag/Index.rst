@@ -1,10 +1,10 @@
-.. include:: ../../Includes.txt
+.. include:: ../Includes.txt
 
 
-.. _basic-setup-default-language-flag:
+.. _default-language-flag:
 
-Defining the "default" language flag
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+The "default" language flag
+^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 As mentioned already, the default language is whatever you
 decide it to be. In order to help editors, you can define
@@ -19,10 +19,10 @@ placed on the root page of your web site:
       }
 
 
-This setting is used in particular by the **Web > Page** and the
-**Web > List** modules.
+This setting is used in particular by the **WEB > Page** and the
+**WEB > List** modules.
 
-.. figure:: ../../Images/SetupDefaultLanguageFlag.png
+.. figure:: ../Images/DefaultLanguageFlag.png
    :alt: Default language flag
 
    The flag for the default language used in the Web > Page module

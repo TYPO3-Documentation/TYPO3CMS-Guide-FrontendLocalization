@@ -72,7 +72,15 @@ given task.
 
    Sitemap/Index
    Introduction/Index
-   BasicSetup/Index
+   CharacterSets/Index
+   SettingUpLanguages/Index
+   DefaultLanguageFlag/Index
+   PageTranslations/Index
+   LocalizationOverview/Index
+   TyposcriptConfiguration/Index
+   LocalizationModes/Index
+   LocalizedLabels/Index
+   LanguageMenu/Index
    LocalizedContent/Index
    CoreSupportForLocalization/Index
    Extensions/Index

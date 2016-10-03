@@ -1,17 +1,17 @@
-.. include:: ../../Includes.txt
+.. include:: ../Includes.txt
 
 
-.. _basic-setup-page-translations:
+.. _page-translations:
 
-Translations of pages
-^^^^^^^^^^^^^^^^^^^^^
+Translating pages
+^^^^^^^^^^^^^^^^^
 
 When you want a translation of a page in the page tree you create an
 "Alternative Page Language" record on that page. This contains fields
 similar to that of the page record which you fill in with translated
 content:
 
-.. figure:: ../../Images/SetupAlternativePageLanguage.png
+.. figure:: ../Images/AlternativePageLanguage.png
    :alt: Defining an alternative page language
 
    Editing form for an alternative page language

@@ -1,10 +1,10 @@
-.. include:: ../../Includes.txt
+.. include:: ../Includes.txt
 
 
-.. _basic-setup-localization-modes:
+.. _localization-modes:
 
-Localization mode: "config.sys\_language\_mode"
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Localization modes
+^^^^^^^^^^^^^^^^^^
 
 The localization mode defines how the system behaves if there is no
 translation of a page to the language requested (ie. there is no
@@ -15,7 +15,7 @@ would you like the menu to stay in the selected language? These are
 the preferences you can obtain using this setting.
 
 
-.. _basic-setup-localization-modes-combinations:
+.. _localization-modes-combinations:
 
 Overview of combinations
 """"""""""""""""""""""""
@@ -36,7 +36,7 @@ modes (:code:`config.sys_language_mode`) and the language uid
 
 - The settings are based on a page where:
 
-  - none of the :ref:`Localization Setting checkboxes <basic-setup-localization-overview>`
+  - none of the :ref:`Localization Setting checkboxes <localization-overview>`
     are set (meaning that neither default language, nor non-existing alternative languages are
     blocked)
 
@@ -52,7 +52,7 @@ modes (:code:`config.sys_language_mode`) and the language uid
 This is the corresponding Localization overview for the example
 being discussed:
 
-.. figure:: ../../Images/SetupLocalizationModesOverview.png
+.. figure:: ../Images/LocalizationModesOverview.png
    :alt: Localization overview for the home page
 
    The home page, translated to German but not to Danish
@@ -110,7 +110,7 @@ config.sys\_language\_mode config.sys\_language\_uid(set by &L) TSFE->sys\_langu
 ========================== ==================================== ======================== ============================ ==============================================================================
 
 
-.. _basic-setup-localization-modes-notes:
+.. _localization-modes-notes:
 
 A few additional technical notes
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -146,7 +146,7 @@ A few additional technical notes
   the default language.
 
 
-.. _basic-setup-localization-modes-best-practice:
+.. _localization-modes-best-practice:
 
 Best-practice localization mode
 """""""""""""""""""""""""""""""

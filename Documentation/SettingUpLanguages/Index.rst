@@ -1,7 +1,7 @@
-.. include:: ../../Includes.txt
+.. include:: ../Includes.txt
 
 
-.. _basic-setup-languages:
+.. _languages:
 
 Setting up languages
 ^^^^^^^^^^^^^^^^^^^^
@@ -14,14 +14,14 @@ to be.
 The system languages are added on the root level of the page tree.
 The Introduction Package comes with Danish and German predefined.
 
-.. figure:: ../../Images/SetupSystemLanguages.png
+.. figure:: ../Images/SystemLanguages.png
    :alt: List of system languages
 
    Viewing the list of system languages
 
 The record for the Danish language record looks like this:
 
-.. figure:: ../../Images/SetupSystemLanguageDetail.png
+.. figure:: ../Images/SystemLanguageDetail.png
    :alt: Details of a system languages
 
    Input form for a system language
@@ -33,7 +33,7 @@ for translating, provided you have translated the page
 and checked the "Localization view" at the bottom of
 the scren.
 
-.. figure:: ../../Images/SetupLocalizeLinks.png
+.. figure:: ../Images/LocalizeLinks.png
    :alt: Content elements with localize links
 
    The Web > List view, with page translations and localize links for content elements
@@ -41,13 +41,13 @@ the scren.
 Translated elements appears nested "under" their default language
 parent element in the **Web > List** view.
 
-.. figure:: ../../Images/SetupNestedTranslations.png
+.. figure:: ../Images/NestedTranslations.png
    :alt: Nested translations
 
    The Web > List view shows translations nested under their parent
 
 
-.. _basic-setup-technical-note:
+.. _technical-note:
 
 Technical note about "Localizations"
 """"""""""""""""""""""""""""""""""""

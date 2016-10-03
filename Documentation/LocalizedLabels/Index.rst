@@ -1,13 +1,13 @@
-.. include:: ../../Includes.txt
+.. include:: ../Includes.txt
 
 
-.. _basic-setup-localized-labels:
+.. _localized-labels:
 
-XLF (locallang) in plugins and TypoScript
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Localized labels
+^^^^^^^^^^^^^^^^
 
 
-.. _basic-setup-localized-labels-typoscript:
+.. _localized-labels-typoscript:
 
 Using XLF labels in TypoScript structures
 """""""""""""""""""""""""""""""""""""""""
@@ -31,7 +31,7 @@ are installed in :file:`typo3conf/l10n/de/`, the output should be "Suche"
 for the default language).
 
 
-.. _basic-setup-localized-labels-plugins:
+.. _localized-labels-plugins:
 
 Using XLF labels in frontend plugins
 """"""""""""""""""""""""""""""""""""
@@ -46,7 +46,7 @@ output when a specific language is requested.
 For instance, if :code:`config.language = de` and the German translations
 are installed, you will see this page for "indexed search":
 
-.. figure:: ../../Images/SetupIndexedSearchGerman.png
+.. figure:: ../Images/IndexedSearchGerman.png
    :alt: Indexed search in German
 
    Output from the indexed search plugin in German

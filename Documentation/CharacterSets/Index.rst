@@ -1,7 +1,7 @@
-.. include:: ../../Includes.txt
+.. include:: ../Includes.txt
 
 
-.. _basic-setup-character-sets:
+.. _character-sets:
 
 Character sets
 ^^^^^^^^^^^^^^
@@ -12,7 +12,7 @@ store any glyph from any language without thinking more about
 charsets.
 
 
-.. _basic-setup-character-sets-frontend:
+.. _character-sets-frontend:
 
 Charset in frontend (advanced)
 """"""""""""""""""""""""""""""
@@ -32,7 +32,7 @@ If :code:`config.metaCharset` is *not* UTF-8, GET / POST data *is* automatically
 converted from :code:`config.metaCharset` to UTF-8.
 
 
-.. _basic-setup-character-sets-database:
+.. _character-sets-database:
 
 Database field lengths
 """"""""""""""""""""""
