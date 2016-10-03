@@ -64,8 +64,7 @@ to choose for your project!
 Credits
 ^^^^^^^
 
-This document was originally written by Kasper Skårhøj. It is currently
-not maintained.
+This document was originally written by Kasper Skårhøj.
 
 
 .. _credits-dedication:

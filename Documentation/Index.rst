@@ -11,7 +11,7 @@ Frontend Localization Guide
       doc_guide_l10n, doc_l10nguide
 
 :Version:
-      1.5.0
+      7 LTS
 
 :Language:
       en
@@ -72,7 +72,7 @@ given task.
 
    Sitemap/Index
    Introduction/Index
-   BasicSetupOfALocalizedWebsite/Index
+   BasicSetup/Index
    LocalizedContent/Index
    CoreSupportForLocalization/Index
    Extensions/Index
