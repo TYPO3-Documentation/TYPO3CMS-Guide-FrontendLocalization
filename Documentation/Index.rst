@@ -82,6 +82,5 @@ given task.
    LanguageMenu/Index
    LocalizedContent/Index
    CoreSupportForLocalization/Index
-   Extensions/Index
    Targets
 
