@@ -68,7 +68,6 @@ given task.
 **Table of Contents**
 
 .. toctree::
-   :hidden:
 
    Sitemap/Index
    Introduction/Index
