@@ -81,6 +81,6 @@ given task.
    LocalizedLabels/Index
    LanguageMenu/Index
    LocalizedContent/Index
-   CoreSupportForLocalization/Index
+   CoreSupport/Index
    Targets
 

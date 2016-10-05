@@ -1,6 +1,8 @@
 .. include:: ../Includes.txt
 
 
+.. _core-support:
+
 Core support for localization
 -----------------------------
 
@@ -10,6 +12,6 @@ Core support for localization
    :titlesonly:
    :glob:
 
-   TcaTcemainTceforms/Index
+   Tca/Index
    Permissions/Index
 
