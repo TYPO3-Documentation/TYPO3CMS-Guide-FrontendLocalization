@@ -94,7 +94,7 @@ Here is how such a field is configured (example from the "tt\_content" table):
 
 .. note::
 
-   This field is traditionally named "l18n\_parent", but any name can be used
+   This field is traditionally named "l10n\_parent", but any name can be used
    since it is registered with the "transOrigPointerField" property.
 
    The "l18n\_parent" name used in table "tt\_content" is a historical mistake.
