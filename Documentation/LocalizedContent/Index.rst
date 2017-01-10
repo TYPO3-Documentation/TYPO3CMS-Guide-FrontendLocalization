@@ -95,13 +95,21 @@ so that overlays happen only if those fields are not empty. This
 allows the values of those fields to "float through" the overlay from
 the default version into the translated one.
 
-For example, by setting the following TypoScript:
+For example, by setting the following TypoScript in case of using
+css_styled_content:
 
 .. code-block:: typoscript
 
    config.sys_language_softMergeIfNotBlank = tt_content:image
 
-we allow the image field of the "tt_content" table to be used
+or
+
+.. code-block:: typoscript
+
+   config.sys_language_softMergeIfNotBlank = tt_content:assets
+
+in case of using fluid_styled_content, we allow the image
+field of the "tt_content" table to be used
 in translations if the translation itself does not contain any
 images. Assuming we still have :code:`config.sys_language_overlay = 1`,
 the result in the frontend will be:
