@@ -71,6 +71,7 @@ config.sys\_language\_uid
 The :code:`config.sys_language_uid` property indicates to which system
 language each possible value of the :code:`L` GET variable
 corresponds (with :code:`0` for the default language).
+The value is the uid of the corresponding „Website language“ record.
 TypoScript conditions are used to make the definition vary
 with the value of the GET variable. These conditions also
 imply separate caches, which explains how caching supports
