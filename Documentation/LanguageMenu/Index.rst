@@ -58,6 +58,7 @@ This is the corresponding code:
                noBlur = 1
                NO = 1
                NO {
+                   doNotLinkIt = 1
                    linkWrap = <li>|</li>
                    stdWrap.override = English || Deutsch || Dansk
                    stdWrap {
@@ -76,6 +77,7 @@ This is the corresponding code:
 
                ACT < .NO
                ACT.linkWrap = <li class="active">|</li>
+               
                USERDEF1 < .NO
                USERDEF1 {
                    linkWrap = <li class="text-muted">|</li>
