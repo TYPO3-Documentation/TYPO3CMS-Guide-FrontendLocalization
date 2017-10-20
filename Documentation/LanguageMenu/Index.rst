@@ -3,25 +3,23 @@
 
 .. _language-menu:
 
+=======================
 Language selection menu
-^^^^^^^^^^^^^^^^^^^^^^^
+=======================
 
-To properly navigate a multilingual web site, you probably want
+To properly navigate a multilingual web site you probably want
 to have a language selection menu somewhere. This menu should
 show an entry for each possible, with variation of aspect
 depending on translation availability, i.e.:
 
 - Translation exists
-
 - Translation exists - currently selected
-
 - Missing translation
-
 - Missing translation - currently selected
 
-The way to make such a menu is to use the TypoScript
+This kind of menu can be made by TypoScript and the
 :ref:`HMENU content object <t3tsref:cobj-hmenu>`
-with the special type :ref:`language <t3tsref:hmenu-special-language>`.
+with special type :ref:`language <t3tsref:hmenu-special-language>`.
 
 Such a menu answers to the above requirements by using four
 different item states, respectively "NO", "ACT", "USERDEF1"
@@ -31,7 +29,7 @@ and "USERDEF2".
 .. _language-menu-tmenu:
 
 TMENU example
-"""""""""""""
+=============
 
 The Introduction Package comes with a text-based rendering of the
 language menu, located in the footer.
@@ -73,16 +71,13 @@ This is the corresponding code:
                        }
                    }
                }
-
                ACT < .NO
                ACT.linkWrap = <li class="active">|</li>
-               
                USERDEF1 < .NO
                USERDEF1 {
                    linkWrap = <li class="text-muted">|</li>
                    stdWrap.typolink >
                }
-
                USERDEF2 < .ACT
                USERDEF2 {
                    linkWrap = <li class="text-muted">|</li>
@@ -90,15 +85,24 @@ This is the corresponding code:
                }
            }
        }
-
        wrap = <ul id="language_menu" class="language-menu">|</ul>
    }
+
+.. hint::
+
+   Having "Page not found (404) trouble?"
+
+   The reason may be a 'cHash' problem.
+   See if you can find help in `this discussion
+   <https://github.com/dmitryd/typo3-realurl/issues/315>`__. Check whether
+   you have 'cHash' in line :ts:`addQueryString.exclude = L,id,no_cache`
+   above.
 
 
 .. _language-menu-gmenu:
 
 GMENU example
-"""""""""""""
+=============
 
 It is also possible to go for a graphical rendering, with the
 :ref:`GMENU <t3tsref:gmenu>` object, for example to create a menu based
@@ -121,7 +125,6 @@ with something like:
           5.file = fileadmin/flags/gb.png  || fileadmin/flags/de.png  || fileadmin/flags/dk.png
           5.offset = 2,2
       }
-
       1.ACT < .1.NO
       1.ACT = 1
       1.ACT.backColor = white
