@@ -67,9 +67,8 @@ This is the corresponding code:
                            additionalParams = &L=0 || &L=1 || &L=2
                            ATagParams = hreflang="en-GB" || hreflang="de-DE" || hreflang="da-DK"
                            addQueryString = 1
-                           addQueryString.exclude = L,id,cHash,no_cache
+                           addQueryString.exclude = L,id,no_cache
                            addQueryString.method = GET
-                           useCacheHash = 1
                            no_cache = 0
                        }
                    }
