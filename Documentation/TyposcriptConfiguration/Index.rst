@@ -44,7 +44,7 @@ one by one. A link to the TypoScript reference is given for each of them.
 
 The :code:`config.sys_language_mode` and :code:`config.sys_language_overlay`
 properties are described more in detail in the :ref:`Localization modes chapter <localization-modes>`
-and the :ref:`Localization modes chapter <localized-content>` respectively.
+and the :ref:`Localized content chapter <localized-content>` respectively.
 
 
 .. _typoscript-configuration-linkvars:
