@@ -18,7 +18,9 @@ tables which we want to be available for translation:
 #. A field holding the reference to the default language record must be
    defined
 
-Both these fields are declared in the :ref:`"[ctrl]" section <t3tca:ctrl>`
+#. Optionally a field holding the reference to the record it was translated from can be defined.
+
+These fields are declared in the :ref:`"[ctrl]" section <t3tca:ctrl>`
 of the TCA for the table.
 
 
@@ -133,9 +135,9 @@ record when editing the translation:
 There is one more field which can be used on translatable table,
 defined by property :ref:`"languageField" <t3tca:ctrl-reference-transorigdiffsourcefield>`.
 It is optional. It points to blob database field which will store
-the content of the default langauge record as it was when the
+the content of the default language record as it was when the
 translation was made. This is then used to display any changes
-that have occured in the default record since translation happened.
+that have occurred in the default record since translation happened.
 For example, in the "tt\_content" table, it may look like this for
 the header field:
 
@@ -146,6 +148,26 @@ the header field:
 
 This allows a translator to easily spot what has changed in order
 to adjust the translation accordingly.
+
+
+.. _core-support-tca-translationSource:
+
+[translationSource]
+"""""""""""""""""""
+The :ref:`"translationSource" <t3tca:ctrl-reference-translationsource>` property defines a name of the field
+used by translations to point back to the original record
+(i.e. the record in any language of which they are a translation).
+This property is often set to "l10n_source" in core tables.
+
+This property is similar to transOrigPointerField.
+In connected mode, while "transOrigPointerField" always contains the uid of the default language record,
+this field contains the uid of the record the translation was created from.
+
+For example, if a tt_content record in default language english with uid 13 exists,
+this record is translated to french with uid 17, and the danish translation is later created based on the french translation,
+then the danish translation has uid 13 set as l10n_parent and 17 as l10n_source.
+
+This setting is available since TYPO3 8.6.
 
 
 .. _core-support-tca-localization-command:
