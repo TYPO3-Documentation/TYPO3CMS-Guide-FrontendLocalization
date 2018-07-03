@@ -24,8 +24,6 @@ feature and what it is good for. You must however make sure to use
 reference documents like TSref, TYPO3 Core API etc. to look up the
 exact syntaxes for the features mentioned.
 
-The classic column-based web designs is covered by the document.
-
 Since the main goal of this document is to include all knowledge areas
 of localization it might suffer from bad composition where advanced
 content is mixed in here and there. A later revision could maybe make
