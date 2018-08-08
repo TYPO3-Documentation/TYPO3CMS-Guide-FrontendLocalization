@@ -17,7 +17,7 @@ Introduction Package:
 		linkVars = L(int)
 		sys_language_uid = 0
 		sys_language_overlay = 1
-		# Fallback to language da, then to de and as last case use en
+		# fall back to language 'da', then to 'de' and as last resort use 'en'
 		sys_language_mode = content_fallback;2,1,0
 		language = en
 		locale_all = en_US.UTF-8
