@@ -26,7 +26,7 @@ This looks for the label :code:`form.submit` in the file
 "indexed\_search".
 
 If the :code:`config.language` value is set to "de" and the German translations
-are installed in :file:`typo3conf/l10n/de/`, the output should be "Suche"
+are installed in :ref:`t3coreapi:Environment-labels-path`/:file:`de/`, the output should be "Suche"
 (instead "Search" which is what you will get if the label is retrieved
 for the default language).
 
