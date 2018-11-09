@@ -153,3 +153,13 @@ module:
 
 Note that no "Translate" button appears, the new content element
 is valid for all languages.
+
+Unbound contents
+
+In default configuration unbound contents having no related content in default language are not rendered in frontend. To force rendering of these contents you have to define the following TypoScript:
+
+.. code-block:: typoscript
+
+   styles.content.get.select.includeRecordsWithoutDefaultTranslation = 1
+   styles.content.getLeft.select.includeRecordsWithoutDefaultTranslation = 1
+   styles.content.getRight.select.includeRecordsWithoutDefaultTranslation = 1
