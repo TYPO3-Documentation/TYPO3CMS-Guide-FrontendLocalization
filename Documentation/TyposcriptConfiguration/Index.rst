@@ -6,6 +6,11 @@
 TypoScript configuration
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
+.. tip::
+    This section is outdated. For TYPO3 9 LTS and newer with Site Configurations, please see
+    https://docs.typo3.org/m/typo3/reference-coreapi/master/en-us/ApiOverview/SiteHandling/AddLanguages.html
+    
+
 A working multilingual site implies some TypoScript configuration
 in order to function properly. This is what is defined in the
 Introduction Package:
