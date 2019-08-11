@@ -3,15 +3,12 @@
 
 .. _start:
 
-===========================
-Frontend Localization Guide
-===========================
-
-:Previous Key:
-      doc_guide_l10n, doc_l10nguide
+======================================
+Frontend Localization Guide (Outdated)
+======================================
 
 :Version:
-      7 LTS
+      7.6 LTS
 
 :Language:
       en
@@ -19,39 +16,42 @@ Frontend Localization Guide
 :Description:
       This guide contains all the information you need, if you localize websites with TYPO3!
 
-:Keywords:
-      forAdmins, forDevelopers, forIntermediates
-
 :Copyright:
-      2000-2016
+      Since 2000
 
-:Author:
-      Documentation Team
-
-:Email:
-      documentation@typo3.org
+:Authors:
+      Documentation Team & community
 
 :License:
       Open Publication License available from `www.opencontent.org/openpub/
       <http://www.opencontent.org/openpub/>`_
 
-:Rendered:
-      |today|
+:Target Audience:
+      Admins, developers, intermediates
 
-The content of this document is related to TYPO3,
-
-a GNU/GPL CMS/Framework available from `www.typo3.org
-<https://typo3.org/>`_
+:Status:
+      The information in this branch may be partly outdated.
 
 
-**Official Documentation**
+.. important::
 
-This document is included as part of the official TYPO3 documentation.
-It has been approved by the TYPO3 Documentation Team following a peer-
-review process. The reader should expect the information in this
-document to be accurate - please report discrepancies to the
-Documentation Team (documentation@typo3.org). Official documents are
-kept up-to-date to the best of the Documentation Team's abilities.
+   The information in this branch has not yet been thoroughly reviewed.
+   `Contact the Documentation Team ➜ <https://typo3.org/community/teams/documentation/#c9886>`__
+   if you want to help with this task.
+
+**TYPO3**
+
+   The content of this document is related to TYPO3 CMS,
+   a GNU/GPL CMS/Framework available from `typo3.org
+   <https://typo3.org/>`_ .
+
+
+**Official documentation:**
+
+   This document is included as part of the official TYPO3 documentation.
+
+   If you find an error or something is missing, please:
+   `Report a Problem <https://github.com/TYPO3-Documentation/TYPO3CMS-Guide-FrontendLocalization/issues/new>`__
 
 
 **Guide**
@@ -65,11 +65,29 @@ will refer to as needed. Guides offer advice on how best to achieve a
 given task.
 
 
+**For Contributors**
+
+   You are welcome to help in improving this guide. Just click on "Edit me on GitHub"
+   on the top right to submit your change request.
+
+   General information:
+
+   * :ref:`Contribute (in "Writing Documentation")  ➜  <h2document:docs-contribute>`
+   * `Contact the Documentation Team ➜ <https://typo3.org/community/teams/documentation/#c9886>`__
+
+   Links for this manual:
+
+   :ref:`Linktargets` | `GitHub repository ➜ <https://github.com/TYPO3-Documentation/TYPO3CMS-Guide-FrontendLocalization/>`__
+   | `Issues ➜ <https://github.com/TYPO3-Documentation/TYPO3CMS-Guide-FrontendLocalization/issues>`__
+
+
 **Table of Contents**
 
-.. toctree::
+* :ref:`Sitemap`
 
-   Sitemap/Index
+.. toctree::
+   :hidden:
+
    Introduction/Index
    CharacterSets/Index
    SettingUpLanguages/Index
@@ -82,5 +100,6 @@ given task.
    LanguageMenu/Index
    LocalizedContent/Index
    CoreSupport/Index
+   Sitemap/Index
    Targets
 
