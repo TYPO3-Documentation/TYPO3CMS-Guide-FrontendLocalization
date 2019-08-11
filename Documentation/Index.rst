@@ -37,7 +37,7 @@ Frontend Localization Guide (Outdated)
 
    The information in this branch has not yet been thoroughly reviewed.
    `Contact the Documentation Team ➜ <https://typo3.org/community/teams/documentation/#c9886>`__
-   if you want to help with this task.
+   if you want to help with this task. Also, check out :ref:`h2document:how-you-can-help-review-manuals`.
 
 **TYPO3**
 
