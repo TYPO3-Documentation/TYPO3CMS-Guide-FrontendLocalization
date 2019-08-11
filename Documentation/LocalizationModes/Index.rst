@@ -147,19 +147,20 @@ A few additional technical notes
 
 Content Fallback to Non-Default Language
 """"""""""""""""""""""""""""""""""""""""
-By setting: code:`config.sys_language_mode=content_fallback; 2,0` the language with uid 2 (Danish) will be used as Content Fallback for all non-default languages like German and Chinese. Only if the content is not available in Danish it will be displayed in the default language, English.
 
-If the original page, was not translated into into the desired language, I.E. German, there are two possibilities:
+By setting :typoscript:`config.sys_language_mode=content_fallback; 2,0` the language with uid 2 (Danish) will be used as content fallback for all non-default languages like German and Chinese. Only if the content is not available in Danish it will be displayed in the default language, English.
+
+If the original page was not translated into into the desired language, i.E. German, there are two possibilities:
 
 If the page-option "Show page even if no translation exists" was set, the page will be shown with the content fallback in Danish as described above. However information corresponding to the page itself i.e. pagetitle, meta tags, .. will be in the default language, English. The page will also be displayed in the menu as with its default English title and not its Danish title.
 
-If the page-option "Show page even if no translation exists" was *not* set an errror "Page is not available in the requested language". Will be displayed. Nevertheless the page will be displayed in the menu with it's default language (English) title.
+If the page-option "Show page even if no translation exists" was *not* set an error "Page is not available in the requested language" will be displayed. Nevertheless, the page will be displayed in the menu with it's default language (English) title.
 
 Until TYPO3 LTS 8 in order to translate page information and page titles in menus it was necessary to employ a patch, see  `Forge Issue 17354 <https://forge.typo3.org/issues/17354>`__
 
-With the page by setting code:`config.languageFallbackChain =2,0`it was possible to display the page in menus in the Fallback Language Danish.
+By setting :typoscript:`config.languageFallbackChain =2,0` it was possible to display the page in menus in the fallback language Danish.
 
-Starting with LTS 9 the feature has been included into core: `TYPO3 9.5.x Changelog <https://docs.typo3.org/c/typo3/cms-core/master/en-us/Changelog/9.5.x/Feature-86762-EnhancedFallbackModesForTranslatedContent.html>`__
+Starting with LTS 9 the feature has been included in the core: `TYPO3 9.5.x Changelog <https://docs.typo3.org/c/typo3/cms-core/master/en-us/Changelog/9.5.x/Feature-86762-EnhancedFallbackModesForTranslatedContent.html>`__
 
 
 .. _localization-modes-best-practice:
