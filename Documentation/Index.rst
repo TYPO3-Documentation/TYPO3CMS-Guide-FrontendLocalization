@@ -8,7 +8,7 @@ Frontend Localization Guide (Outdated)
 ======================================
 
 :Version:
-      7.6 LTS
+      |release|
 
 :Language:
       en
