@@ -37,7 +37,7 @@ Using XLF labels in frontend plugins
 """"""""""""""""""""""""""""""""""""
 
 Making your code ready for internationalization is covered in
-:ref:`Inside TYPO3 <t3inside:internationalization-localization>` and
+:ref:`Inside TYPO3 <t3coreapi:internationalization>` and
 basics about XLIFF files are found in :ref:`Core APIs <t3coreapi:xliff>`.
 Properly made plugins should use XLIFF files for every label that
 they used, so that they can be translated and thus generate a proper
