@@ -154,7 +154,12 @@ to adjust the translation accordingly.
 
 [translationSource]
 """""""""""""""""""
-The :ref:`"translationSource" <t3tca:ctrl-reference-translationsource>` property defines a name of the field
+
+.. todo:: translationSource can't be found in 7.6 version of TCA ref
+
+.. The :ref:`"translationSource" <t3tca:ctrl-reference-translationsource>` property defines a name of the field
+
+The "translationSource" property defines a name of the field
 used by translations to point back to the original record
 (i.e. the record in any language of which they are a translation).
 This property is often set to "l10n_source" in core tables.
