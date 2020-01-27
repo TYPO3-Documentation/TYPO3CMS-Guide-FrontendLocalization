@@ -9,7 +9,7 @@ Permissions
 You can restrict backend users and groups to edit records
 only in specific languages. The permissions are enforced
 over all tables by checking the language defined in the
-:rec:`"languageField" of the table <core-support-tca-languagefield>`.
+:ref:`"languageField" of the table <core-support-tca-languagefield>`.
 The "Limit to languages" setting is found in the "Access Lists" tab:
 
 .. figure:: ../../Images/CoreSupportLimitToLanguages.png
