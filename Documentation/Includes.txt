@@ -12,3 +12,13 @@
 
 .. highlight:: php
 .. default-role:: code
+
+.. ---------------------------------------------------------------------
+.. Add content below, which should be displayed at the top of EVERY page.
+.. ---------------------------------------------------------------------
+
+.. warning::
+
+   The information for this version |release| has not yet been thoroughly reviewed.
+   `Contact the Documentation Team <https://typo3.org/community/teams/documentation/#c9886>`__
+   if you want to help with this task. Also, check out :ref:`h2document:how-you-can-help-review-manuals`.
