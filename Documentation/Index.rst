@@ -3,9 +3,9 @@
 
 .. _start:
 
-======================================
-Frontend Localization Guide (Outdated)
-======================================
+===========================
+Frontend Localization Guide
+===========================
 
 :Version:
       |release|
@@ -30,28 +30,22 @@ Frontend Localization Guide (Outdated)
       Admins, developers, intermediates
 
 :Status:
-      The information in this branch may be partly outdated.
+      The information for this version may be partly outdated.
 
-
-.. important::
-
-   The information in this branch has not yet been thoroughly reviewed.
-   `Contact the Documentation Team ➜ <https://typo3.org/community/teams/documentation/#c9886>`__
-   if you want to help with this task. Also, check out :ref:`h2document:how-you-can-help-review-manuals`.
 
 **TYPO3**
 
-   The content of this document is related to TYPO3 CMS,
-   a GNU/GPL CMS/Framework available from `typo3.org
-   <https://typo3.org/>`_ .
+The content of this document is related to TYPO3 CMS,
+a GNU/GPL CMS/Framework available from `typo3.org
+<https://typo3.org/>`_ .
 
 
 **Official documentation:**
 
-   This document is included as part of the official TYPO3 documentation.
+This document is included as part of the official TYPO3 documentation.
 
-   If you find an error or something is missing, please:
-   `Report a Problem <https://github.com/TYPO3-Documentation/TYPO3CMS-Guide-FrontendLocalization/issues/new>`__
+If you find an error or something is missing, please:
+`Report a Problem <https://github.com/TYPO3-Documentation/TYPO3CMS-Guide-FrontendLocalization/issues/new>`__
 
 
 **Guide**
@@ -67,18 +61,18 @@ given task.
 
 **For Contributors**
 
-   You are welcome to help in improving this guide. Just click on "Edit me on GitHub"
-   on the top right to submit your change request.
+You are welcome to help in improving this guide. Just click on "Edit me on GitHub"
+on the top right to submit your change request.
 
-   General information:
+General information:
 
-   * :ref:`Contribute (in "Writing Documentation")  ➜  <h2document:docs-contribute>`
-   * `Contact the Documentation Team ➜ <https://typo3.org/community/teams/documentation/#c9886>`__
+* :ref:`Contribute (in "Writing Documentation")  ➜  <h2document:docs-contribute>`
+* `Contact the Documentation Team ➜ <https://typo3.org/community/teams/documentation/#c9886>`__
 
-   Links for this manual:
+Links for this manual:
 
-   :ref:`Linktargets` | `GitHub repository ➜ <https://github.com/TYPO3-Documentation/TYPO3CMS-Guide-FrontendLocalization/>`__
-   | `Issues ➜ <https://github.com/TYPO3-Documentation/TYPO3CMS-Guide-FrontendLocalization/issues>`__
+:ref:`Linktargets` | `GitHub repository ➜ <https://github.com/TYPO3-Documentation/TYPO3CMS-Guide-FrontendLocalization/>`__
+| `Issues ➜ <https://github.com/TYPO3-Documentation/TYPO3CMS-Guide-FrontendLocalization/issues>`__
 
 
 **Table of Contents**
