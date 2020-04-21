@@ -4,6 +4,6 @@
     "description": "This guide contains all the information you need, if you localize websites with TYPO3!",
     "license": "OPL-1.0",
     "require": {
-      "typo3/cms-core": "^10.0"
+      "typo3/cms-core": "^10.4"
     }
 }
