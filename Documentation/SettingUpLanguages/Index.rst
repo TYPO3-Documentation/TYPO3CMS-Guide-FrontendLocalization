@@ -6,27 +6,28 @@
 Setting up languages
 ^^^^^^^^^^^^^^^^^^^^
 
-Each language into which you want your web site to be translated
-must be defined explicitely. These come in addition to the so-called
-"default" language. That default language is whatever you decide it
-to be.
+Languages are defined in the site configuration on a per-rootpage
+basis. When creating a new page on root level via TYPO3 Backend,
+a very basic site configuration is generated on the fly.
+It prevents immediate errors due to missing configuration and can
+also serve as a starting point for all further actions.
 
-The system languages are added on the root level of the page tree.
-The Introduction Package comes with Danish and German predefined.
+The Introduction Package's default languages are English, Danish
+and German languages. Adding a new language is done in the
+"Sites" module in the "Site Management" area of the backend.
 
-.. figure:: ../Images/SystemLanguages.png
-   :alt: List of system languages
+.. figure:: ../Images/SiteConfiguration.png
+   :alt: Editing a site configuration
 
-   Viewing the list of system languages
+   Editing form for a site configuration
 
-The record for the Danish language record looks like this:
+.. tip::
 
-.. figure:: ../Images/SystemLanguageDetail.png
-   :alt: Details of a system languages
+   Detailed information on how to extend the site configuration
+   with additional languages can be found in the
+   :ref:`Site Handling Documentation <coreapi:sitehandling-basics>`.
 
-   Input form for a system language
-
-Once you have defined at least one system language,
+Once you have defined at least one additional language,
 you have the option of translating pages and content.
 For example, the **WEB > List** module will show links
 for translating, provided you have translated the page
