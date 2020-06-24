@@ -88,7 +88,7 @@ Links for this manual:
    DefaultLanguageFlag/Index
    PageTranslations/Index
    LocalizationOverview/Index
-   TyposcriptConfiguration/Index
+   AddingLanguages/Index
    LocalizationModes/Index
    LocalizedLabels/Index
    LanguageMenu/Index
