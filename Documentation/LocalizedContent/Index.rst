@@ -8,16 +8,21 @@ Localized content
 
 There are two strategies for handling the translation of content on pages:
 
-- If you wish you translate a page 1:1 you might like to using "content
-  binding" which secures exactly that. The page's content is then always
-  defined by the default language records and any translation is solely
-  depending on whether a localized record for the default language
-  record exists. This is the least flexible method but leaves less room for errors.
+-  **Connected mode:** Translating content will create a direct connection between the original
+   language and the language you translate to. This means that moving and
+   element or setting meta information like start- or endtime will be taken
+   from the original content and you will not be able to set these values
+   on a translated content element. Translated records will hold the
+   connection to their original language record in the "l10n_parent" field.
+   This mode is best for a strict translation workflow.
 
-- If you wish to localize a page you can build up a separate set of
-  content elements for the page in their own order. You can still
-  maintain references between original and translation if you wish. Most
-  flexible, but could be too much freedom.
+-  **Free mode:** Copying content will take the content elements from the source language
+   and create copies in a different language. This means that you will be able
+   to move content elements around freely, but you will not have the benefit of
+   being able to compare changes made in the source language later on.
+   Use this mode, when the translated pages content can largely differ from
+   the original language and you want to have that freedom in designing your
+   translated website.
 
 When you start translating a page, the **WEB > Page** module will
 ask you about this choice.
@@ -28,105 +33,93 @@ ask you about this choice.
    The translation wizard asks for a choice of localization strategy
 
 
-The "Translate" button corresponds to the first way, the "Copy"
-button to the second way. Furthers details on how to proceed with
+The "Translate" button corresponds to the connected mode, the "Copy"
+button to the free mode. Furthers details on how to proceed with
 translations are found in the :ref:`Editor's Tutorial <t3editors:languages>`.
 
 
-.. _localized-content-bound:
+.. _localized-connected-content:
 
-Bound content
+Connected content
 """""""""""""
 
-If you opted for the bound content strategy, there are additional
-settings to consider. You will want to make sure to have the
-following TypoScript defined:
+If you opted for the connected content strategy, this is the default way
+that translated pages will be handled in the frontend and requires
+no further configuration in the site config.
+In the site config, the fallbackType "strict" would look like this:
 
-.. code-block:: typoscript
+.. code-block:: yaml
 
-   config.sys_language_overlay = 1
+   languages:
+     -
+       # ... other language settings ...
+       fallbackType: strict
 
-This will force the :ref:`CONTENT content object <t3tsref:cobj-content>`
-and the :ref:`RECORDS content object <t3tsref:cobj-records>`
-to fetch content elements in the default language first, then
-overlay them with the translation.
+In this connected mode, TYPO3 will first internally fetch the records of the
+default language, then overlay them with the target language. If a record is
+not translated into the target language, then it is discarded and not shown at all.
 
-Associated with :code:`config.sys_language_mode = content_fallback`, this
-will produce the following result in the frontend:
+The German version will be reduced to the actually translated elements:
+
+.. figure:: ../Images/LocalizedContentNoOverlay.png
+   :alt: English and German translation without overlays
+
+
+
+Another way to view "connected" content in the frontend is by creating a fallback
+chain. For this we have to adjust the site configuration and provide a comma separated
+list of fallback languages:
+
+.. code-block:: yaml
+
+   languages:
+     -
+       # ... other language settings ...
+       fallbackType: fallback
+       # 1 = Danish, 0 = English
+       fallbacks: '1,0'
+
+In this mode, TYPO3 will also first internally fetch the records of the
+default language and then overlay them with the target language. If no translation
+exists for the target language, it will now go from left to right through the
+fallback chain and first try to find a translation for the languageId 1 (Danish) and
+if that is a miss as well, fall back to languageId 0 (English).
 
 .. figure:: ../Images/LocalizedContentTranslationOverlay.png
    :alt: English and German translation with overlays
 
    The English version and its German translation, with overlays
 
-
-The German version is based on the English version. Whatever element was
-translated is then overlaid on the English original. If we don't use
-overlays, by setting:
-
-.. code-block:: typoscript
-
-   config.sys_language_overlay = 0
-
-the German version will be reduced to the actually translated elements:
-
-.. figure:: ../Images/LocalizedContentNoOverlay.png
-   :alt: English and German translation without overlays
-
-   The English version and its German translation, without overlays
-
-
 .. warning::
 
-   If you want to use the "bound content" paradigm in conjunction with the
+   If you want to use the "connected content" paradigm in conjunction with the
    :ref:`"Hide default translation of the page" <localization-overview-hide-default-language>`
    setting, you will need to provide placeholder content elements
    in the default language and translate them, since the whole frontend
    rendering process starts from the default language in such a configuration.
 
+.. _localized-content-free-content:
 
-.. _localized-content-fine-tune-overlays:
+Free content
+""""""""""""""""""
 
-Refining overlays
-"""""""""""""""""
+With the free mode content strategy, the site config will have to be
+adjusted accordingly:
 
-Usage of translation overlays can be further tuned. Fields can be defined
-so that overlays happen only if those fields are not empty. This
-allows the values of those fields to "float through" the overlay from
-the default version into the translated one.
+.. code-block:: yaml
 
-For example, by setting the following TypoScript in case of using
-css_styled_content:
+   languages:
+     -
+       # ... other language settings ...
+       fallbackType: free
 
-.. code-block:: typoscript
+This means, TYPO3 will directly fetch the translated records and not care
+about the records in the default language at all.
 
-   config.sys_language_softMergeIfNotBlank = tt_content:image
-
-or
-
-.. code-block:: typoscript
-
-   config.sys_language_softMergeIfNotBlank = tt_content:assets
-
-in case of using fluid_styled_content, we allow the image
-field of the "tt_content" table to be used
-in translations if the translation itself does not contain any
-images. Assuming we still have :code:`config.sys_language_overlay = 1`,
-the result in the frontend will be:
-
-.. figure:: ../Images/LocalizedContentSoftMerge.png
-   :alt: English and German translation with merged images
-
-   The English version and its German translation, with merged images
-
-The image from the "New content" content element now appears in
-German too, without needing to be explictly defined in the
-"Neuer Inhalt" content element.
-
-.. note::
-
-   This merging behaviour can also be defined at field-level using
-   TCA.
+.. tip::
+    For more information on how to add languages and configure their
+    behaviour in the site configuration, please see
+    :ref:`Adding Languages <sitehandling-addinglanguages>`
 
 
 .. _localized-content-all-language:
@@ -154,12 +147,3 @@ module:
 Note that no "Translate" button appears, the new content element
 is valid for all languages.
 
-Unbound contents
-
-In default configuration unbound contents having no related content in default language are not rendered in frontend. To force rendering of these contents you have to define the following TypoScript:
-
-.. code-block:: typoscript
-
-   styles.content.get.select.includeRecordsWithoutDefaultTranslation = 1
-   styles.content.getLeft.select.includeRecordsWithoutDefaultTranslation = 1
-   styles.content.getRight.select.includeRecordsWithoutDefaultTranslation = 1

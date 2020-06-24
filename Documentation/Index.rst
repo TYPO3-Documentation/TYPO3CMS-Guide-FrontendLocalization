@@ -88,11 +88,9 @@ Links for this manual:
    DefaultLanguageFlag/Index
    PageTranslations/Index
    LocalizationOverview/Index
-   AddingLanguages/Index
-   LocalizationModes/Index
+   LocalizedContent/Index
    LocalizedLabels/Index
    LanguageMenu/Index
-   LocalizedContent/Index
    CoreSupport/Index
    Sitemap/Index
    Targets
