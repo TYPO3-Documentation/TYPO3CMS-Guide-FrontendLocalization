@@ -181,30 +181,6 @@ Red background
   filter out links to pages with this translation.
 
 Gray background (not available for default language)
-  Page will fall back to the specified fallback mode for content. Depends on
-  configuration of "config.sys\_language\_mode" in your TypoScript
-  Template. More information below.
-
-**Notice about possibly false menu items when "Localization settings"
-are used:**
-
-When running in default fallback mode (config.sys\_language\_mode =
-0/blank/not set) menu generation may create false items because
-sys\_language\_uid will be different from the value set by the &L
-parameter (which the menu will just pass through not knowing what it
-does) when a page translation is not found. Menu items not available
-in the default language will not be shown even if they should and
-items which are not available in the translation will be shown
-regardless of this.
-
-Solution is to configure in TypoScript "config.sys\_language\_mode =
-content\_fallback" because it will keep the "sys\_language\_uid" value
-according to that defined by &L regardless of whether a translation
-exists or not.
-
-If you wish not to use "config.sys\_language\_mode =
-content\_fallback" you can also choose to set the property
-"protectLvar" for the HMENU objects; this will correct the L variable
-for those menu items which are not available. See TSref for details
-about that option.
-
+  Page will fall back to the specified fallback mode for content.
+  Depends on language fallback configuration set in your site
+  configuration.
