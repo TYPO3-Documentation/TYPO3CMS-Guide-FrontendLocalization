@@ -36,23 +36,22 @@ Here is how such a field is configured (example from the "tt\_content" table):
 
 .. code-block:: php
 
-	'sys_language_uid' => [
-		  'exclude' => 1,
-		  'label' => 'LLL:EXT:lang/locallang_general.xlf:LGL.language',
-		  'config' => [
-			  'type' => 'select',
-			  'renderType' => 'selectSingle',
-			  'special' => 'languages',
-			  'items' => [
-				  [
-					  'LLL:EXT:lang/locallang_general.xlf:LGL.allLanguages',
-					  -1,
-					  'flags-multiple'
-				  ],
-			  ],
-			  'default' => 0,
-		  ]
-	],
+   'sys_language_uid' => [
+      'label' => 'LLL:EXT:core/Resources/Private/Language/locallang_general.xlf:LGL.language',
+      'config' => [
+         'type' => 'select',
+         'renderType' => 'selectSingle',
+         'special' => 'languages',
+         'items' => [
+            [
+               'LLL:EXT:core/Resources/Private/Language/locallang_general.xlf:LGL.allLanguages',
+               -1,
+               'flags-multiple'
+            ],
+         ],
+         'default' => 0,
+      ]
+   ],
 
 
 Notice the predefined entry for the "All" language.
@@ -75,24 +74,21 @@ Here is how such a field is configured (example from the "tt\_content" table):
 
 .. code-block:: php
 
-	'l18n_parent' => [
-		  'exclude' => 1,
-		  'displayCond' => 'FIELD:sys_language_uid:>:0',
-		  'label' => 'LLL:EXT:lang/locallang_general.xlf:LGL.l18n_parent',
-		  'config' => [
-			  'type' => 'select',
-			  'renderType' => 'selectSingle',
-			  'items' => [
-				  [
-					  '',
-					  0
-				  ]
-			  ],
-			  'foreign_table' => 'tt_content',
-			  'foreign_table_where' => 'AND tt_content.pid=###CURRENT_PID### AND tt_content.sys_language_uid IN (-1,0)',
-			  'default' => 0
-		  ]
-	],
+   'l10n_parent' => [
+      'displayCond' => 'FIELD:sys_language_uid:>:0',
+      'label' => 'LLL:EXT:core/Resources/Private/Language/locallang_general.xlf:LGL.l18n_parent',
+      'config' => [
+         'type' => 'select',
+         'renderType' => 'selectSingle',
+         'items' => [
+            ['', 0]
+         ],
+         'foreign_table' => 'sys_category',
+         'foreign_table_where' => 'AND sys_category.uid=###REC_FIELD_l10n_parent### AND sys_category.sys_language_uid IN (-1,0)',
+         'default' => 0
+      ]
+   ],
+
 
 .. note::
 
@@ -114,8 +110,7 @@ language record in the current pid. This means that a
 **default language record and all its translations must be on the same page!**
 This principle is also respected by the API function
 :code:`\TYPO3\CMS\Frontend\Page\PageRepository::getRecordOverlay()`
-which fetches translations of records
-for the frontend display (when :code:`config.sys_language_overlay = 1`).
+which fetches translations of records for the frontend display.
 
 When the "transOrigPointerField" and "languageField" are defined for a
 table you will see references to the content of the default language
