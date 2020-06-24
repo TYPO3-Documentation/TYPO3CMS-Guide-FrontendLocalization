@@ -32,7 +32,7 @@ you have the option of translating pages and content.
 For example, the **WEB > List** module will show links
 for translating, provided you have translated the page
 and checked the "Localization view" at the bottom of
-the scren.
+the screen.
 
 .. figure:: ../Images/LocalizeLinks.png
    :alt: Content elements with localize links

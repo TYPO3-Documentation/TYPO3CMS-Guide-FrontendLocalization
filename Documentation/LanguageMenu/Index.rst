@@ -51,7 +51,7 @@ This is the corresponding typoscript code, that sets up a LanguageMenuProcessor 
    }
 
 The menu is then saved as a hierarchical array and available in fluid in the variable {languagenavigation}.
-The fluid template now iterrates through the navigation and creates the language links:
+The fluid template now iterates through the navigation and creates the language links:
 
 .. code-block:: html
 

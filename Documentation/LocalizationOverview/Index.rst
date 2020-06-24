@@ -42,7 +42,7 @@ language (English).
 .. figure:: ../Images/LocalizationOverviewDefaultLanguageFallback.png
    :alt: The menu with untranslated pages
 
-   The German home page with unstranslated pages appearing in the menu
+   The German home page with untranslated pages appearing in the menu
 
 This behaviour can be changed. Let's edit the "Customizing" page.
 In the "Behaviour" tab, check the "Hide page if no translation for current
@@ -158,7 +158,7 @@ When editing the page properties, the label of the corresponding
 checkbox has changed:
 
 .. figure:: ../Images/LocalizationOverviewShowEvenIfNoTranslation.png
-   :alt: Show page even if no transalation exists
+   :alt: Show page even if no translation exists
 
    Inverted behaviour: choose to show the page even if no translation exists
 
