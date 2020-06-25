@@ -41,7 +41,7 @@ translations are found in the :ref:`Editor's Tutorial <t3editors:languages>`.
 .. _localized-connected-content:
 
 Connected content
-"""""""""""""
+"""""""""""""""""
 
 If you opted for the connected content strategy, this is the default way
 that translated pages will be handled in the frontend and requires
@@ -101,7 +101,7 @@ if that is a miss as well, fall back to languageId 0 (English).
 .. _localized-content-free-content:
 
 Free content
-""""""""""""""""""
+""""""""""""
 
 With the free mode content strategy, the site config will have to be
 adjusted accordingly:

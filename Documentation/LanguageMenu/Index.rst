@@ -25,7 +25,7 @@ with special type :ref:`language <t3tsref:hmenu-special-language>`.
 .. _language-menu-tmenu:
 
 LanguageMenuProcessor example
-=============
+=============================
 
 The Introduction Package comes with a text-based rendering of the
 language menu, located in the footer.
