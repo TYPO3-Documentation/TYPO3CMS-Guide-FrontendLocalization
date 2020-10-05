@@ -9,7 +9,7 @@ Localized content
 There are two strategies for handling the translation of content on pages:
 
 -  **Connected mode:** Translating content will create a direct connection between the original
-   language and the language you translate to. This means that moving and
+   language and the language you translate to. This means that moving an
    element or setting meta information like start- or endtime will be taken
    from the original content and you will not be able to set these values
    on a translated content element. Translated records will hold the
