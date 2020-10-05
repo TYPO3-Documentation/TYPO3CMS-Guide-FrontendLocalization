@@ -25,7 +25,8 @@ This looks for the label :code:`form.submit` in the file
 :file:`Resources/Private/Language/locallang.xlf` from extension
 "indexed\_search".
 
-If the :code:`config.language` value is set to "de" and the German translations
+If the frontend is now accessed in the language "de", the german language
+is configured in the site configuration and the german translations
 are installed in :ref:`t3coreapi:Environment-labels-path`/:file:`de/`, the output should be "Suche"
 (instead "Search" which is what you will get if the label is retrieved
 for the default language).
@@ -43,8 +44,8 @@ Properly made plugins should use XLIFF files for every label that
 they used, so that they can be translated and thus generate a proper
 output when a specific language is requested.
 
-For instance, if :code:`config.language = de` and the German translations
-are installed, you will see this page for "indexed search":
+For instance, if the page is accessed in the language "de" and
+the German translations are installed, you will see this page for "indexed search":
 
 .. figure:: ../Images/IndexedSearchGerman.png
    :alt: Indexed search in German
