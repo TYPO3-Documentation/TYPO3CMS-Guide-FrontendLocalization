@@ -109,7 +109,7 @@ Another interesting point is that it will only look for a default
 language record in the current pid. This means that a
 **default language record and all its translations must be on the same page!**
 This principle is also respected by the API function
-:code:`\TYPO3\CMS\Frontend\Page\PageRepository::getRecordOverlay()`
+:code:`\TYPO3\CMS\Core\Domain\Repository\PageRepository::getRecordOverlay()`
 which fetches translations of records for the frontend display.
 
 When the "transOrigPointerField" and "languageField" are defined for a
