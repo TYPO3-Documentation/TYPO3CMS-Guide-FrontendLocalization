@@ -63,6 +63,7 @@ The German version will be reduced to the actually translated elements:
 
 .. figure:: ../Images/LocalizedContentNoOverlay.png
    :alt: English and German translation without overlays
+   :class: with-border with-shadow
 
 
 
@@ -87,6 +88,7 @@ if that is a miss as well, fall back to languageId 0 (English).
 
 .. figure:: ../Images/LocalizedContentTranslationOverlay.png
    :alt: English and German translation with overlays
+   :class: with-border with-shadow
 
    The English version and its German translation, with overlays
 
