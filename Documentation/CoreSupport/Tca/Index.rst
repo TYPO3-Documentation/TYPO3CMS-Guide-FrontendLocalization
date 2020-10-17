@@ -121,6 +121,12 @@ record when editing the translation:
 
    Original content shows up under the input fields when translating a record
 
+.. warning::
+
+   The configured `$GLOBALS['TCA'][$table]['ctrl']['transOrigPointerField']` cannot be excluded
+   as this leads to inconsistent data stored in the database. This happens when a non-admin user
+   creates a localization while not having the permission to edit the `transOrigPointerField`.
+   Remove :php:`exclude => true` from TCA if set.
 
 .. _core-support-tca-transorigdiffsourcefield:
 
