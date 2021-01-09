@@ -85,7 +85,6 @@ Links for this manual:
    Introduction/Index
    CharacterSets/Index
    SettingUpLanguages/Index
-   DefaultLanguageFlag/Index
    PageTranslations/Index
    LocalizationOverview/Index
    LocalizedContent/Index
