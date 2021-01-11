@@ -15,7 +15,7 @@ also serve as a starting point for all further actions.
 Preparation
 ^^^^^^^^^^^
 
-All languages need to be set up first as "Website Language Record" on root level.
+All languages need to be set up first as :guilabel:`Website Language` record on root level.
 Use the list module and navigate to the root page. Create a new language record.
 You can set up:
 
