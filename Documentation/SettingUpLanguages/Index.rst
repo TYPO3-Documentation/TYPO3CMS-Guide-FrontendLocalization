@@ -12,6 +12,24 @@ a very basic site configuration is generated on the fly.
 It prevents immediate errors due to missing configuration and can
 also serve as a starting point for all further actions.
 
+Preparation
+^^^^^^^^^^^
+
+All languages need to be set up first as :guilabel:`Website Language` record on root level.
+Use the list module and navigate to the root page. Create a new language record.
+You can set up:
+
+- Language (title): Used as label in the TYPO3 Backend
+- Select Language (dropdown): Language Key, which is used, to fetch localized data
+- Select flag icon: Icon which is used in the TYPO3 Backend to represent this language
+
+.. figure:: ../Images/WebsiteLanguageRecord.png
+   :alt: Set up a Website Language Record
+
+
+Site Management
+^^^^^^^^^^^^^^^
+
 The Introduction Package's default languages are English, Danish
 and German languages. Adding a new language is done in the
 "Sites" module in the "Site Management" area of the backend.
