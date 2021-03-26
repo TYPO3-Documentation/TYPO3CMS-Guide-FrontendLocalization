@@ -6,14 +6,14 @@
 TCA, DataHandler and FormEngine
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-The support for localization in the core of TYPO3 CMS is based around a
+The support for localization in the Core of TYPO3 CMS is based around a
 scheme where a record in the default language (0) can have other
 records pointing to it, offering a translation of its content.
 This implies some requirements for the structure of any database
 tables which we want to be available for translation:
 
-#. A field holding the reference to the system language ("sys\_language"
-   table) must be defined.
+#. A field holding the reference to the language defined in the site
+   configuration must be defined.
 
 #. A field holding the reference to the default language record must be
    defined
@@ -39,27 +39,23 @@ Here is how such a field is configured (example from the "tt\_content" table):
    'sys_language_uid' => [
       'label' => 'LLL:EXT:core/Resources/Private/Language/locallang_general.xlf:LGL.language',
       'config' => [
-         'type' => 'select',
-         'renderType' => 'selectSingle',
-         'special' => 'languages',
-         'items' => [
-            [
-               'LLL:EXT:core/Resources/Private/Language/locallang_general.xlf:LGL.allLanguages',
-               -1,
-               'flags-multiple'
-            ],
-         ],
-         'default' => 0,
+         'type' => 'language'
       ]
-   ],
+   ]
 
 
-Notice the predefined entry for the "All" language.
+The entry for the "All" language gets automatically added with the TCA type `language`.
 
 .. note::
 
    This field is traditionally named "sys\_language\_uid", but any name can be used
    since it is registered with the "languageField" property.
+
+.. deprecated:: 11.2
+   This field can only be used with the TCA type
+   :ref:`language <t3tca:columns-language>`. All other field types will be
+   automatically migrated on-the-fly possibly losing configurations.
+   See :ref;`Migration to the languge type <t3tca:columns-languge-migration>`
 
 
 .. _core-support-tca-transorigpointerfield:
