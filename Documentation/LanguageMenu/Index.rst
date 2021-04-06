@@ -44,11 +44,13 @@ This is the corresponding typoscript code, that sets up a LanguageMenuProcessor 
       10.dataProcessing {
          40 = TYPO3\CMS\Frontend\DataProcessing\LanguageMenuProcessor
          40 {
-             languages = <insert languagemenu-id>
+             languages = <insert language-id> or "auto"
              as = languagenavigation
          }
       }
    }
+
+The value for "languages" is a list of comma separated language IDs (e.g. 0,1,2) or "auto" to load from site configuration.
 
 The menu is then saved as a hierarchical array and available in fluid in the variable {languagenavigation}.
 The fluid template now iterates through the navigation and creates the language links:
