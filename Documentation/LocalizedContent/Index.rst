@@ -149,3 +149,21 @@ module:
 Note that no "Translate" button appears, the new content element
 is valid for all languages.
 
+
+.. _localized-content-inline-elements:
+
+Localizing inline elements (IRRE)
+"""""""""""""""""""""""""""""""""
+
+When localizing a record with inline elements (aka. IRRE), the inline
+elements will be grayed out and not automatically localized. TYPO3
+will display two buttons to help you localize and keep the elements in
+sync.
+
+* **Localize all records** creates localized versions of all inline 
+  elements from the default language in your current language so that
+  you can translate them. Each element that has not yet been localized
+  will also have a "Localize" button that will allow you to localize
+  individual elements.
+* **Synchronize with original language** can be clicked when you have
+  translated the elements and the content in the default language changed.
