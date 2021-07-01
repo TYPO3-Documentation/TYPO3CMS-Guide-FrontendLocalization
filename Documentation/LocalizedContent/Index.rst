@@ -160,10 +160,13 @@ elements will be grayed out and not automatically localized. TYPO3
 will display two buttons to help you localize and keep the elements in
 sync.
 
-* **Localize all records** creates localized versions of all inline 
+.. figure:: ../Images/LocalizedContentLocalizingIrreElements.png
+   :alt: Buttons for localizing and synchronizing inline elements.
+
+* **Localize all records (1)** creates localized versions of all inline 
   elements from the default language in your current language so that
   you can translate them. Each element that has not yet been localized
-  will also have a "Localize" button that will allow you to localize
+  will also have a "Localize" button (3) that will allow you to localize
   individual elements.
-* **Synchronize with original language** can be clicked when you have
+* **Synchronize with original language (2)** can be clicked when you have
   translated the elements and the content in the default language changed.
