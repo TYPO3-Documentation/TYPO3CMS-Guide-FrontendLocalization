@@ -3,14 +3,15 @@
 
 .. _introduction:
 
+============
 Introduction
-------------
+============
 
 
 .. _about:
 
 About this document
-^^^^^^^^^^^^^^^^^^^
+===================
 
 Creating a website in multiple languages with TYPO3 can be done in a
 variety of ways - as usual. Unfortunately all the options are hard to
@@ -35,7 +36,7 @@ other end.
 .. _about-terms:
 
 Localization and Translation
-""""""""""""""""""""""""""""
+----------------------------
 
 The two terms are often used to express the same. Also in this
 document. But more precisely this is how I understand the difference:
@@ -60,7 +61,7 @@ to choose for your project!
 .. _credits:
 
 Credits
-^^^^^^^
+=======
 
 This document was originally written by Kasper Skårhøj.
 
@@ -68,7 +69,7 @@ This document was originally written by Kasper Skårhøj.
 .. _credits-dedication:
 
 Dedication
-""""""""""
+----------
 
 I want to dedicate this document to every native English speaker who
 has over the years learned to live with my gazillions of documents
@@ -82,7 +83,7 @@ a foreign language to the best of my abilities.
 .. _feedback:
 
 Feedback
-^^^^^^^^
+========
 
 For general questions about the documentation get in touch by writing
 to `documentation@typo3.org <mailto:documentation@typo3.org>`_ .
