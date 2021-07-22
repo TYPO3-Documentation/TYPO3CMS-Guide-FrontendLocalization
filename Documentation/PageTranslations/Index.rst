@@ -11,7 +11,7 @@ When you want a translation of a page in the page tree you create an
 similar to that of the page record which you fill in with translated
 content:
 
-.. figure:: ../Images/AlternativePageLanguage.png
+.. figure:: /Images/ManualScreenshots/Record/AlternativePageLanguage.png
    :alt: Defining an alternative page language
 
    Editing form for an alternative page language

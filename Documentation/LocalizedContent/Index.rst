@@ -27,7 +27,7 @@ There are two strategies for handling the translation of content on pages:
 When you start translating a page, the **WEB > Page** module will
 ask you about this choice.
 
-.. figure:: ../Images/LocalizedContentTranslationWizard.png
+.. figure:: /Images/ManualScreenshots/PageModule/LocalizedContentTranslationWizard.png
    :alt: The translation wizard showing localization strategies
 
    The translation wizard asks for a choice of localization strategy
@@ -61,7 +61,7 @@ not translated into the target language, then it is discarded and not shown at a
 
 The German version will be reduced to the actually translated elements:
 
-.. figure:: ../Images/LocalizedContentNoOverlay.png
+.. figure:: /Images/ManualScreenshots/Frontend/LocalizedContentNoOverlay.png
    :alt: English and German translation without overlays
    :class: with-border with-shadow
 
@@ -86,7 +86,7 @@ exists for the target language, it will now go from left to right through the
 fallback chain and first try to find a translation for the languageId 1 (Danish) and
 if that is a miss as well, fall back to languageId 0 (English).
 
-.. figure:: ../Images/LocalizedContentTranslationOverlay.png
+.. figure:: /Images/ManualScreenshots/Frontend/LocalizedContentTranslationOverlay.png
    :alt: English and German translation with overlays
    :class: with-border with-shadow
 
@@ -133,7 +133,7 @@ When using overlays, it becomes possible to use a particular
 language called "All", which will be automatically visible across all
 translations. The uid of that particular language is "-1".
 
-.. figure:: ../Images/LocalizedContentAllLanguageDefined.png
+.. figure:: /Images/ManualScreenshots/Record/LocalizedContentAllLanguageDefined.png
    :alt: Content element in "All" language
 
    A content element valid for all languages
@@ -141,7 +141,7 @@ translations. The uid of that particular language is "-1".
 It is also marked with the special language icon in the **WEB > Page**
 module:
 
-.. figure:: ../Images/LocalizedContentAllLanguagePageModule.png
+.. figure:: /Images/ManualScreenshots/PageModule/LocalizedContentAllLanguagePageModule.png
    :alt: "All" language in the Page Module
 
    An "All" language content element displayed in the Web > Page

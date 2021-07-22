@@ -47,7 +47,7 @@ output when a specific language is requested.
 For instance, if the page is accessed in the language "de" and
 the German translations are installed, you will see this page for "indexed search":
 
-.. figure:: ../Images/IndexedSearchGerman.png
+.. figure:: /Images/ManualScreenshots/Frontend/IndexedSearchGerman.png
    :alt: Indexed search in German
 
    Output from the indexed search plugin in German

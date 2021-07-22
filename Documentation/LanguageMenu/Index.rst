@@ -30,7 +30,7 @@ LanguageMenuProcessor example
 The Introduction Package comes with a text-based rendering of the
 language menu, located in the footer.
 
-.. figure:: ../Images/LanguageMenuText.png
+.. figure:: /Images/ManualScreenshots/Frontend/LanguageMenuText.png
    :alt: Text-based language menu
 
    A text-based language menu, with active and disabled states

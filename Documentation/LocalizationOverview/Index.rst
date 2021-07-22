@@ -10,7 +10,7 @@ You can get a complete overview of the page tree and page
 translations by using the **Web > Info** module and choosing
 the "Localization Overview" function.
 
-.. figure:: ../Images/LocalizationOverviewIntroductionPackage.png
+.. figure:: /Images/ManualScreenshots/InfoModule/LocalizationOverviewIntroductionPackage.png
    :alt: Localization Overview in Web > Info module
 
    Overview of existing translations in a blank Introduction Package
@@ -21,7 +21,7 @@ page specifying this language will be tolerated. It is also very quick
 to create new translations from this module: use the checkboxes and hit
 the "Create new translation headers" button.
 
-.. figure:: ../Images/LocalizationOverviewMassTranslation.png
+.. figure:: /Images/ManualScreenshots/InfoModule/LocalizationOverviewMassTranslation.png
    :alt: Translating several pages at once
 
    Creating translations for a whole selection of pages at once
@@ -39,7 +39,7 @@ from the translate page title in :code:`<title>` tag), and all other
 (untranslated) pages still appear in the menu, albeit in the default
 language (English).
 
-.. figure:: ../Images/LocalizationOverviewDefaultLanguageFallback.png
+.. figure:: /Images/ManualScreenshots/Frontend/LocalizationOverviewDefaultLanguageFallback.png
    :alt: The menu with untranslated pages
 
    The German home page with untranslated pages appearing in the menu
@@ -48,14 +48,14 @@ This behaviour can be changed. Let's edit the "Customizing" page.
 In the "Behaviour" tab, check the "Hide page if no translation for current
 language exists":
 
-.. figure:: ../Images/LocalizationOverviewHideIfNoTranslation.png
+.. figure:: /Images/ManualScreenshots/Record/LocalizationOverviewHideIfNoTranslation.png
    :alt: Hiding the page if not translated
 
    Hide the page if it is not translated
 
 This is reflected in the *Localization Overview*:
 
-.. figure:: ../Images/LocalizationOverviewTranslationHidden.png
+.. figure:: /Images/ManualScreenshots/InfoModule/LocalizationOverviewTranslationHidden.png
    :alt: Hidden translation in the overview
 
    The Localization Overview reflects the change in visibility of the "Customizing" page
@@ -64,7 +64,7 @@ From this it is clear that when viewing the website in
 German the "Customizing" page is not accessible. The menu
 reflects this in the frontend.
 
-.. figure:: ../Images/LocalizationOverviewMenuWithHiddenUntranslatedPage.png
+.. figure:: /Images/ManualScreenshots/Frontend/LocalizationOverviewMenuWithHiddenUntranslatedPage.png
    :alt: Hidden translation in the menu
 
    The "Customizing" page does not appear in the menu anymore
@@ -72,7 +72,7 @@ reflects this in the frontend.
 Trying to access the "Customizing" page with directly with its id will
 produce an error.
 
-.. figure:: ../Images/LocalizationOverviewTranslationError.png
+.. figure:: /Images/ManualScreenshots/Frontend/LocalizationOverviewTranslationError.png
    :alt: Missing translation generates error
 
    An error message indicates a missing translation
@@ -88,14 +88,14 @@ create a default language page in the page tree which simply acts as a
 placeholder. Setting this status is done by selecting the checkbox
 "Hide default translation of page":
 
-.. figure:: ../Images/LocalizationOverviewHideDefaultLanguage.png
+.. figure:: /Images/ManualScreenshots/Record/LocalizationOverviewHideDefaultLanguage.png
    :alt: Hiding the page in default language
 
    Hide the page in the default language
 
 This is reflected in the *Localization Overview*:
 
-.. figure:: ../Images/LocalizationOverviewWithHiddenDefaultLanguage.png
+.. figure:: /Images/ManualScreenshots/Record/LocalizedContentAllLanguageDefined.png
    :alt: Hidden default language in the overview
 
    The Localization Overview shows the page as being unavailable in the default language
@@ -107,14 +107,14 @@ This is reflected in the *Localization Overview*:
 
 On the web site, the menu now looks like this in German:
 
-.. figure:: ../Images/LocalizationOverviewHideDefaultLanguageMenuGerman.png
+.. figure:: /Images/ManualScreenshots/Frontend/LocalizationOverviewHideDefaultLanguageMenuGerman.png
    :alt: German menu with language-specific page
 
    The German-specific page shows up in the German version of the web site
 
 and in English:
 
-.. figure:: ../Images/LocalizationOverviewHideDefaultLanguageMenuEnglish.png
+.. figure:: /Images/ManualScreenshots/Frontend/LocalizationOverviewHideDefaultLanguageMenuEnglish.png
    :alt: English menu not showing language-specific page
 
    The German-specific page does not show up in the default version of the web site
@@ -143,7 +143,7 @@ with a global setting:
 
 The *Localization Overview* reflects this immediately:
 
-.. figure:: ../Images/LocalizationOverviewInvertTranslationHandling.png
+.. figure:: /Images/ManualScreenshots/InfoModule/LocalizationOverviewInvertTranslationHandling.png
    :alt: All untranslated pages hidden by default
 
    The Localization Overview shows that all untranslated pages are hidden by default
@@ -157,7 +157,7 @@ being gray instead of red).
 When editing the page properties, the label of the corresponding
 checkbox has changed:
 
-.. figure:: ../Images/LocalizationOverviewShowEvenIfNoTranslation.png
+.. figure:: /Images/ManualScreenshots/Frontend/LocalizationOverviewShowEvenIfNoTranslation.png
    :alt: Show page even if no translation exists
 
    Inverted behaviour: choose to show the page even if no translation exists

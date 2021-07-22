@@ -12,7 +12,7 @@ over all tables by checking the language defined in the
 :ref:`"languageField" of the table <core-support-tca-languagefield>`.
 The "Limit to languages" setting is found in the "Access Lists" tab:
 
-.. figure:: ../../Images/CoreSupportLimitToLanguages.png
+.. figure:: /Images/ManualScreenshots/BackendUsers/CoreSupportLimitToLanguages.png
    :alt: Setting language limitations
 
    Restricting backend users or groups to one or more languages
