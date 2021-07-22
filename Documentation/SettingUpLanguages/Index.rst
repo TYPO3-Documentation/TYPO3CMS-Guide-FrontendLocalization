@@ -23,7 +23,7 @@ You can set up:
 - Select Language (dropdown): Language Key, which is used, to fetch localized data
 - Select flag icon: Icon which is used in the TYPO3 Backend to represent this language
 
-.. figure:: ../Images/WebsiteLanguageRecord.png
+.. figure:: /Images/ManualScreenshots/SiteConfiguration/WebsiteLanguageRecord.png
    :alt: Set up a Website Language Record
 
 
@@ -34,7 +34,7 @@ The Introduction Package's default languages are English, Danish
 and German languages. Adding a new language is done in the
 "Sites" module in the "Site Management" area of the backend.
 
-.. figure:: ../Images/SiteConfiguration.png
+.. figure:: /Images/ManualScreenshots/SiteConfiguration/SiteConfiguration.png
    :alt: Editing a site configuration
 
    Editing form for a site configuration
@@ -52,7 +52,7 @@ for translating, provided you have translated the page
 and checked the "Localization view" at the bottom of
 the screen.
 
-.. figure:: ../Images/LocalizeLinks.png
+.. figure:: /Images/ManualScreenshots/ListModule/LocalizeLinks.png
    :alt: Content elements with localize links
 
    The Web > List view, with page translations and localize links for content elements
@@ -60,7 +60,7 @@ the screen.
 Translated elements appears nested "under" their default language
 parent element in the **WEB > List** view.
 
-.. figure:: ../Images/NestedTranslations.png
+.. figure:: /Images/ManualScreenshots/ListModule/NestedTranslations.png
    :alt: Nested translations
 
    The Web > List view shows translations nested under their parent

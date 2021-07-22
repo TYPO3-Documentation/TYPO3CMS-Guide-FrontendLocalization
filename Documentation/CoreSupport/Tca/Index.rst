@@ -112,7 +112,7 @@ When the "transOrigPointerField" and "languageField" are defined for a
 table you will see references to the content of the default language
 record when editing the translation:
 
-.. figure:: ../../Images/CoreSupportFormEngine.png
+.. figure:: /Images/ManualScreenshots/Record/CoreSupportFormEngine.png
    :alt: Original content in the Form Engine
 
    Original content shows up under the input fields when translating a record
@@ -138,7 +138,7 @@ that have occurred in the default record since translation happened.
 For example, in the "tt\_content" table, it may look like this for
 the header field:
 
-.. figure:: ../../Images/CoreSupportFormEngineViewDifference.png
+.. figure:: /Images/ManualScreenshots/Record/CoreSupportFormEngineViewDifference.png
    :alt: Changes in original content
 
    Changes in the original content are highlighted below the input field
