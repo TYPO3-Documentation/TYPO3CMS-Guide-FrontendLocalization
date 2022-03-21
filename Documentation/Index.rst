@@ -35,7 +35,6 @@ This guide introduces you to localization and translation in TYPO3.
    Introduction/Index
    CharacterSets/Index
    SettingUpLanguages/Index
-   DefaultLanguageFlag/Index
    PageTranslations/Index
    LocalizationOverview/Index
    LocalizedContent/Index
