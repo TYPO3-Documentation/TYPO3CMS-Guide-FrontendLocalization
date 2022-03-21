@@ -1,4 +1,4 @@
-.. include:: ../Includes.txt
+.. include:: /Includes.rst.txt
 
 
 .. _localized-content:
@@ -163,7 +163,7 @@ sync.
 .. figure:: ../Images/LocalizedContentLocalizingIrreElements.png
    :alt: Buttons for localizing and synchronizing inline elements.
 
-* **Localize all records (1)** creates localized versions of all inline 
+* **Localize all records (1)** creates localized versions of all inline
   elements from the default language in your current language so that
   you can translate them. Each element that has not yet been localized
   will also have a "Localize" button (3) that will allow you to localize
