@@ -98,7 +98,7 @@ This setting configures the system "language key" to
 be used for the language. This is used to select labels from XLIFF
 files. Setting this should make frontend plugins
 respond by showing labels from the correct language (requires
-:ref:`installation of the corresponding language packs <t3coreapi:xliff-translating>`).
+:ref:`installation of the corresponding language packs <t3coreapi:managing-translating>`).
 
 :ref:`TypoScript Reference <t3tsref:setup-config-language>`
 

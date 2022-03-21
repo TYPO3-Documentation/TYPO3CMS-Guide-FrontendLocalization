@@ -95,7 +95,7 @@ This is the corresponding code:
    The reason may be a 'cHash' problem.
    See if you can find help in `this discussion
    <https://github.com/dmitryd/typo3-realurl/issues/315>`__. Check whether
-   you have 'cHash' in line :ts:`addQueryString.exclude = L,id,no_cache`
+   you have 'cHash' in line :typoscript:`addQueryString.exclude = L,id,no_cache`
    above.
 
 
