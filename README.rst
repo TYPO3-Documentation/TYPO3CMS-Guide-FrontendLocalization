@@ -1,14 +1,8 @@
-\|
-`Contributing <CONTRIBUTING.md>`__  \|
-`Help & Support <https://typo3.org/help>`__ \|
-`Settings <Documentation/Settings.cfg>`__ \|
-
 ===========================
 Frontend Localization Guide
 ===========================
 
-Introduction to localization / translation in TYPO3 - how are multiple languages handled.
+This guide introduces you to localization and translation in TYPO3.
 
 :Repository:  https://github.com/TYPO3-Documentation/TYPO3CMS-Guide-FrontendLocalization
-:Read online: https://docs.typo3.org/typo3cms/FrontendLocalizationGuide/Index.html
-
+:Read online: https://docs.typo3.org/m/typo3/guide-frontendlocalization/8.7/en-us/
