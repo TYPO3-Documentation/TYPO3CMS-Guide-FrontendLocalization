@@ -1,4 +1,4 @@
-.. include:: ../Includes.txt
+.. include:: /Includes.rst.txt
 
 
 .. _localized-content:
@@ -160,7 +160,7 @@ elements will be grayed out and not automatically localized. TYPO3
 will display two buttons to help you localize and keep the elements in
 sync.
 
-* **Localize all records** creates localized versions of all inline 
+* **Localize all records** creates localized versions of all inline
   elements from the default language in your current language so that
   you can translate them. Each element that has not yet been localized
   will also have a "Localize" button that will allow you to localize
