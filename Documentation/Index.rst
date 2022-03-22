@@ -1,86 +1,36 @@
-.. include:: Includes.txt
-
-
-.. _start:
+.. include:: /Includes.rst.txt
 
 ===========================
 Frontend Localization Guide
 ===========================
 
 :Version:
-      7.6 LTS
+   |release|
 
 :Language:
-      en
+   en
 
-:Description:
-      This guide contains all the information you need, if you localize websites with TYPO3!
-
-:Copyright:
-      Since 2000
-
-:Authors:
-      Documentation Team & community
+:Author:
+   TYPO3 contributors
 
 :License:
-      Open Publication License available from `www.opencontent.org/openpub/
-      <http://www.opencontent.org/openpub/>`_
+   This document is published under the
+   `Open Publication License <https://www.opencontent.org/openpub/>`__.
 
-:Target Audience:
-      Admins, developers, intermediates
+:Rendered:
+   |today|
 
-:Status:
-      The information for this version may be partly outdated.
+----
 
+This guide introduces you to localization and translation in TYPO3.
 
-**TYPO3**
+----
 
-The content of this document is related to TYPO3 CMS,
-a GNU/GPL CMS/Framework available from `typo3.org
-<https://typo3.org/>`_ .
-
-
-**Official documentation:**
-
-This document is included as part of the official TYPO3 documentation.
-
-If you find an error or something is missing, please:
-`Report a Problem <https://github.com/TYPO3-Documentation/TYPO3CMS-Guide-FrontendLocalization/issues/new>`__
-
-
-**Guide**
-
-This document is a Guide. Guides are designed to familiarize a reader
-with a specific topic in order to provide a working knowledge of that
-particular process. Readers should peruse the guide from cover to
-cover in order to gain a practical overview of the process. Once
-completed, the Guide becomes a practical reference tool that a reader
-will refer to as needed. Guides offer advice on how best to achieve a
-given task.
-
-
-**For Contributors**
-
-You are welcome to help in improving this guide. Just click on "Edit me on GitHub"
-on the top right to submit your change request.
-
-General information:
-
-* :ref:`Contribute (in "Writing Documentation")  ➜  <h2document:docs-contribute>`
-* `Contact the Documentation Team ➜ <https://typo3.org/community/teams/documentation/#c9886>`__
-
-Links for this manual:
-
-:ref:`Linktargets` | `GitHub repository ➜ <https://github.com/TYPO3-Documentation/TYPO3CMS-Guide-FrontendLocalization/>`__
-| `Issues ➜ <https://github.com/TYPO3-Documentation/TYPO3CMS-Guide-FrontendLocalization/issues>`__
-
-
-**Table of Contents**
-
-* :ref:`Sitemap`
+**Table of Contents:**
 
 .. toctree::
-   :hidden:
+   :maxdepth: 1
+   :titlesonly:
 
    Introduction/Index
    CharacterSets/Index
@@ -94,6 +44,11 @@ Links for this manual:
    LanguageMenu/Index
    LocalizedContent/Index
    CoreSupport/Index
-   Sitemap/Index
-   Targets
 
+.. Meta Menu
+
+.. toctree::
+   :hidden:
+
+   Sitemap
+   genindex
