@@ -1,4 +1,4 @@
-.. include:: ../Includes.txt
+.. include:: /Includes.rst.txt
 
 
 .. _typoscript-configuration:
@@ -9,7 +9,7 @@ TypoScript configuration
 .. tip::
     This section is outdated. For TYPO3 9 LTS and newer with Site Configurations, please see
     :ref:`Adding Languages <sitehandling-addinglanguages>`
-    
+
 
 A working multilingual site implies some TypoScript configuration
 in order to function properly. This is what is defined in the
@@ -98,7 +98,7 @@ This setting configures the system "language key" to
 be used for the language. This is used to select labels from XLIFF
 files. Setting this should make frontend plugins
 respond by showing labels from the correct language (requires
-:ref:`installation of the corresponding language packs <t3coreapi:xliff-translating>`).
+:ref:`installation of the corresponding language packs <t3coreapi:managing-translating>`).
 
 :ref:`TypoScript Reference <t3tsref:setup-config-language>`
 
