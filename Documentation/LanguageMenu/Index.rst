@@ -38,6 +38,7 @@ language menu, located in the footer.
 This is the corresponding typoscript code, that sets up a LanguageMenuProcessor on the page level:
 
 .. code-block:: typoscript
+   :caption: EXT:site_package/Configuration/TypoScript/setup.typoscript
 
    page = PAGE
    page {
@@ -56,6 +57,7 @@ The menu is then saved as a hierarchical array and available in fluid in the var
 The fluid template now iterates through the navigation and creates the language links:
 
 .. code-block:: html
+   :caption: EXT:site_package/Resources/Private/Templates/SomeTemplate.html
 
    <f:if condition="{languagenavigation}">
        <ul id="language_menu" class="language-menu">
@@ -75,4 +77,3 @@ The fluid template now iterates through the navigation and creates the language 
            </f:for>
        </ul>
    </f:if>
-

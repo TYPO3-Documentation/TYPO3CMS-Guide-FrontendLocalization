@@ -17,6 +17,7 @@ in a localized version if the relevant translations are installed.
 It is possible to retrieve values from XLF files using TypoScript:
 
 .. code-block:: typoscript
+   :caption: EXT:site_package/Configuration/TypoScript/setup.typoscript
 
    page.20 = TEXT
    page.20.data = LLL:EXT:indexed_search/Resources/Private/Language/locallang.xlf:form.submit
