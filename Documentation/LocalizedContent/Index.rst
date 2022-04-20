@@ -49,6 +49,7 @@ no further configuration in the site config.
 In the site config, the fallbackType "strict" would look like this:
 
 .. code-block:: yaml
+   :caption: config/sites/my_site/config.yaml
 
    languages:
      -
@@ -72,6 +73,7 @@ chain. For this we have to adjust the site configuration and provide a comma sep
 list of fallback languages:
 
 .. code-block:: yaml
+   :caption: config/sites/my_site/config.yaml
 
    languages:
      -
@@ -109,6 +111,7 @@ With the free mode content strategy, the site config will have to be
 adjusted accordingly:
 
 .. code-block:: yaml
+   :caption: config/sites/my_site/config.yaml
 
    languages:
      -
