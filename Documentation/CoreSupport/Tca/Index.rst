@@ -35,6 +35,7 @@ and contains a reference to the language the record is in.
 Here is how such a field is configured (example from the "tt\_content" table):
 
 .. code-block:: php
+   :caption: EXT:frontend/Configuration/TCA/tt_content.php
 
    'sys_language_uid' => [
       'label' => 'LLL:EXT:core/Resources/Private/Language/locallang_general.xlf:LGL.language',
@@ -69,6 +70,7 @@ and contains a reference to the record in the default language.
 Here is how such a field is configured (example from the "tt\_content" table):
 
 .. code-block:: php
+   :caption: EXT:frontend/Configuration/TCA/tt_content.php
 
    'l10n_parent' => [
       'displayCond' => 'FIELD:sys_language_uid:>:0',
