@@ -177,7 +177,7 @@ DataHandler commands for localization
 Localizing a record can be done by the :ref:`"localize" command <t3coreapi:tce-command-keywords>`
 of the DataHandler. This is the command that is sent
 when you press the translate buttons in :guilabel:`Web > List` or
-:guilabel:`WEB > Page` for an element.
+:guilabel:`Web > Page` for an element.
 
 When this command is issued an ordinary copy is
 made but the fields "languageField" and "transOrigPointerField" are
