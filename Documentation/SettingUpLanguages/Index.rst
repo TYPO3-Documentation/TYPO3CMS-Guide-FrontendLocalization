@@ -6,6 +6,11 @@
 Setting up languages
 ^^^^^^^^^^^^^^^^^^^^
 
+.. note::
+
+    Steps shown on this page apply only to TYPO3 v9 and older versions.
+    In TYPO3 v10 and more recent versions languages are setup differently.
+
 Each language into which you want your web site to be translated
 must be defined explicitely. These come in addition to the so-called
 "default" language. That default language is whatever you decide it
