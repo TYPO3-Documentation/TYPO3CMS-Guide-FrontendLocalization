@@ -56,9 +56,7 @@ the German translations are installed, you will see this page for "indexed searc
 Overriding an existing translation is possible using custom XLIFF files.
 This process is described in :ref:`Core APIs <t3coreapi:xliff-translating-custom>`.
 
-It is also possible to override a label using TypoScript, but this
-works only for plugins based on the :code:`\TYPO3\CMS\Frontend\Plugin\AbstractPlugin`
-class and not for those based on Extbase. See the
+It is also possible to override a label using TypoScript. See the
 :ref:`TypoScript Reference for more information <t3tsref:setup-plugin-local-lang-lang-key-label-key>`.
 
 It is also possible to create XLIFF files for a language into which
