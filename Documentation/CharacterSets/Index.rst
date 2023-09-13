@@ -1,33 +1,34 @@
-.. include:: /Includes.rst.txt
+..  include:: /Includes.rst.txt
 
+..  _character-sets:
 
-.. _character-sets:
-
+==============
 Character sets
-^^^^^^^^^^^^^^
+==============
 
-All TYPO3 CMS websites use UTF-8 as their character set.
-Using UTF-8 means you have a consistent data storage and can
-store any glyph from any language without thinking more about
-charsets.
+All TYPO3 websites use UTF-8 as their character set. Using UTF-8 means that you
+have a consistent data storage and can store any glyph from any language without
+worrying further about character sets.
 
-.. _character-sets-database:
+..  _character-sets-database:
 
 Database field lengths
-""""""""""""""""""""""
+======================
 
-The TYPO3 CMS Core is compatible with UTF-8.
+The TYPO3 Core is compatible with UTF-8.
 
-You might however face the problem that the database field lengths of some
-extensions must be extended. For example, each Chinese glyph takes three
-bytes. So if a field is a varchar(10) and an author enters 10 Chinese
-glyphs only the first 3 glyphs will be stored (since they take up 9 bytes).
-UTF-8 is tricky in this respect because all ASCII chars take only 1 byte
-while European special chars typically take up 2 and asian charsets take
-up 3 - but some special glyphs could take even 5-6 bytes!
+However, you might face the problem that the database field lengths of some
+extensions need to be extended. For example, each Chinese glyph takes three
+bytes. So if a field is a :sql:`varchar(10)` and an author enters 10 Chinese
+glyphs, only the first 3 glyphs will be stored (as they require 9 bytes). UTF-8
+is tricky in this respect, as all ASCII characters only need 1 byte, while
+European special characters usually need 2 and Asian character sets 3 bytes -
+but some special characters can even need 5-6 bytes!
 
-For more information on how to set up the database to
-use UTF-8, please read here:
+..  seealso::
+    For more information on how to set up your database to use UTF-8, please
+    read here:
 
-http://dev.mysql.com/doc/refman/5.7/en/charset-unicode.html
-
+    *   `MariaDB: Supported Character Sets and Collations <https://mariadb.com/kb/en/supported-character-sets-and-collations/>`__
+    *   `MySQL: Unicode Support <https://dev.mysql.com/doc/refman/8.0/en/charset-unicode.html>`__
+    *   `PostgreSQL: Character Set Support <https://www.postgresql.org/docs/current/multibyte.html>`__
