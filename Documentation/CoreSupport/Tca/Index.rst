@@ -53,7 +53,7 @@ The entry for the :guilabel:`[All]` language gets automatically added with the
 TCA type :ref:`language <t3tca:columns-language>`.
 
 ..  note::
-    This field is traditionally named :sql:`"sys_language_uid`, but any name can
+    This field is traditionally named :sql:`sys_language_uid`, but any name can
     be used since it is registered with the :php:`languageField` property in the
     ctrl section.
 
