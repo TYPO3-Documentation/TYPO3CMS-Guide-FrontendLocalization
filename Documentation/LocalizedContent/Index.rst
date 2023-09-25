@@ -133,7 +133,7 @@ about the records in the default language at all.
 
 ..  tip::
     For more information on how to add languages and configure their
-    behaviour in the site configuration, please see
+    behaviour in the site configuration, see
     :ref:`Adding Languages <sitehandling-addinglanguages>`.
 
 
