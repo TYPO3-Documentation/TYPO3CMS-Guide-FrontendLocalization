@@ -1,52 +1,52 @@
 .. include:: /Includes.rst.txt
 
-
 .. _languages:
 
 ====================
 Setting up languages
 ====================
 
-Languages are defined in the site configuration on a per-rootpage
-basis. When creating a new page on root level via TYPO3 Backend,
-a very basic site configuration is generated on the fly.
-It prevents immediate errors due to missing configuration and can
-also serve as a starting point for all further actions.
+Languages are defined in the :ref:`site configuration <t3coreapi:sitehandling>`
+for each root page. When creating a new page on root level via TYPO3 backend,
+a very basic site configuration is generated on the fly. It prevents immediate
+errors due to missing configuration and can also serve as a starting point for
+all further actions.
 
 Site Management
-^^^^^^^^^^^^^^^
+===============
 
-The Introduction Package's default languages are English, Danish
+The `Introduction Package`_'s default languages are English, Danish
 and German languages. Adding a new language is done in the
-"Sites" module in the "Site Management" area of the backend.
+:guilabel:`Site Management > Sites` module of the backend.
 
-.. figure:: /Images/ManualScreenshots/SiteConfiguration/SiteConfiguration.png
-   :alt: Editing a site configuration
+..  _Introduction Package: https://extensions.typo3.org/extension/introduction
 
-   Editing form for a site configuration
+..  figure:: /Images/ManualScreenshots/SiteConfiguration/SiteConfiguration.png
+    :alt: Editing a site configuration
+    :class: with-shadow
 
-.. tip::
+    Editing form for a site configuration
 
-   Detailed information on how to extend the site configuration
-   with additional languages can be found in the
-   :ref:`Site Handling Documentation <t3coreapi:sitehandling-basics>`.
+..  tip::
+    Detailed information on how to extend the site configuration
+    with additional languages can be found in the
+    :ref:`site handling documentation <t3coreapi:sitehandling-addingLanguages>`.
 
-Once you have defined at least one additional language,
-you have the option of translating pages and content.
-For example, the :guilabel:`Web > List` module will show links
-for translating, provided you have translated the page
-and checked the "Localization view" at the bottom of
-the screen.
+Once you have defined at least one additional language, you will be able to
+translate pages and content. For example, the :guilabel:`Web > List` module will
+show links for translation if you have translated the page.
 
-.. figure:: /Images/ManualScreenshots/ListModule/LocalizeLinks.png
-   :alt: Content elements with localize links
+..  figure:: /Images/ManualScreenshots/ListModule/LocalizeLinks.png
+    :alt: Content elements with localize links
+    :class: with-shadow
 
-   The Web > List view, with page translations and localize links for content elements
+    The :guilabel:`Web > List` view, with page translations and localize links for content elements
 
 Translated elements appears nested "under" their default language
 parent element in the :guilabel:`Web > List` view.
 
-.. figure:: /Images/ManualScreenshots/ListModule/NestedTranslations.png
-   :alt: Nested translations
+..  figure:: /Images/ManualScreenshots/ListModule/NestedTranslations.png
+    :alt: Nested translations
+    :class: with-shadow
 
-   The Web > List view shows translations nested under their parent
+    The :guilabel:`Web > List` view shows translations nested under their parent
