@@ -134,7 +134,7 @@ about the records in the default language at all.
 ..  tip::
     For more information on how to add languages and configure their
     behaviour in the site configuration, see
-    :ref:`Adding Languages <sitehandling-addinglanguages>`.
+    :ref:`Adding Languages <t3coreapi:sitehandling-addingLanguages>`.
 
 
 ..  _localized-content-all-language:
@@ -170,7 +170,7 @@ is valid for all languages.
 Localizing inline elements (IRRE)
 =================================
 
-When localizing a record with :ref:`inline elements (IRRE) <columns-inline>`,
+When localizing a record with :ref:`inline elements (IRRE) <t3tca:columns-inline-introduction>`,
 the inline elements will be grayed out and not automatically localized. TYPO3
 will display two buttons to help you localize and keep the elements in
 sync.
