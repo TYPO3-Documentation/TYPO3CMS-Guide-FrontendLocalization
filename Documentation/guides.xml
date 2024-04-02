@@ -8,26 +8,14 @@
                project-contact="https://typo3.slack.com/archives/C028JEPJL"
                project-repository="https://github.com/TYPO3-Documentation/TYPO3CMS-Guide-FrontendLocalization"
                project-issues="https://github.com/TYPO3-Documentation/TYPO3CMS-Guide-FrontendLocalization/issues"
-               edit-on-github-branch="main"
+               edit-on-github-branch="11.5"
                edit-on-github="TYPO3-Documentation/TYPO3CMS-Guide-FrontendLocalization"
-               typo3-core-preferred="stable"
+               typo3-core-preferred="11.5"
                interlink-shortcode="typo3/guide-frontendlocalization"
     />
     <project title="Frontend Localization Guide"
-             release="main (development)"
-             version="main (development)"
+             release="11.5"
+             version="11.5"
              copyright="since 2012 by the TYPO3 contributors"
-    />
-    <inventory id="t3coreapi"
-               url="https://docs.typo3.org/m/typo3/reference-coreapi/main/en-us/"
-    />
-    <inventory id="t3editors"
-               url="https://docs.typo3.org/m/typo3/tutorial-editors/main/en-us/"
-    />
-    <inventory id="t3tca"
-               url="https://docs.typo3.org/m/typo3/reference-tca/main/en-us/"
-    />
-    <inventory id="t3tsref"
-               url="https://docs.typo3.org/m/typo3/reference-typoscript/main/en-us/"
     />
 </guides>
