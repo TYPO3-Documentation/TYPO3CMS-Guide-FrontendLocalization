@@ -170,7 +170,7 @@ is valid for all languages.
 Localizing inline elements (IRRE)
 =================================
 
-When localizing a record with :ref:`IRRE / inline <t3tca:columns-inline-introduction>`,
+When localizing a record with :ref:`inline elements (IRRE) <t3tca:columns-inline-introduction>`,
 the inline elements will be grayed out and not automatically localized. TYPO3
 will display two buttons to help you localize and keep the elements in
 sync.
