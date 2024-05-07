@@ -29,9 +29,9 @@ The form with the fields for the translated page will then be displayed:
 
     Editing the page fields for an alternative page language
 
-Most of the fields are the same as for the page of the default language. Below
+All of the fields are the same as for the page of the default language. Below
 the fields the content of the default language is shown.
 
-If a page has no translation (that means, no "alternative page language" record),
+If a page has no translation,
 its content cannot be translated, no matter how many system languages
 have been defined.
