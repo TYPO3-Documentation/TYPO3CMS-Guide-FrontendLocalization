@@ -9,7 +9,7 @@ Translating pages
 In order to translate a page in the page tree you create a
 copy of that record starting by its parent page. 
 It will be generated in the default language with fields prefixed by a text similar to "[Translate to Language X:]". 
-The translated content needs to be put here instead of this prefix and the original text.
+The translated content needs to be put here, replacing the placeholder text with prefix and the default language contents.
 
 Select the :guilabel:`Language Comparison` function in the upper menu bar of the
 :guilabel:`Web > Page` module. Then use the select box to create a new
