@@ -33,7 +33,7 @@ The form with the fields for the translated page will then be displayed:
 
     Editing the page fields for an alternative page language
 
-All of the fields are the same as for the page of the default language. Below
+Most of the fields are the same as for the page of the default language. Below
 the fields the content of the default language is shown.
 
 If a page has no translation,
