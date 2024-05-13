@@ -36,6 +36,6 @@ The form with the fields for the translated page will then be displayed:
 Most of the fields are the same as for the page of the default language. Below
 the fields the content of the default language is shown.
 
-If a page has no translation,
-its content cannot be translated, no matter how many system languages
+As long as a page has no translated copy page,
+its contents cannot be translated, no matter how many system languages
 have been defined.
