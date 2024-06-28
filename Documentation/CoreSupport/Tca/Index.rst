@@ -68,7 +68,7 @@ TCA type :ref:`language <t3tca:columns-language>`.
 [transOrigPointerField]
 =======================
 
-The first field is defined by the
+The second field is defined by the
 ":ref:`transOrigPointerField <t3tca:ctrl-reference-transorigpointerfield>`"
 property and contains a reference to the record in the default language.
 
