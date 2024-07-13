@@ -6,14 +6,14 @@
 Translating pages
 =================
 
-In order to translate a page in the page tree just create a
+In order to translate a page in the page tree, create a
 copy of it with a new language relation. Use the module :guilabel:`Page` and on the top of the right side 
 :guilabel:`Language Comparison` and the lower dropdown :guilabel:`Create a new translation of this page`. 
 As soon as you choose a language of this dropdown the translation process will start with the copy of this page.
 
-The page copy will be generated in the default language with page property fields like title or description prefixed by a text similar to "[Translate to Language X:]". 
-The translated content needs to be put here, replacing the placeholder text with prefix and 
-the copied default language contents.
+The page copy will be generated in the default language with page property fields like `title` or `description` prefixed by a text similar to "[Translate to Language X:]". 
+The translated content needs to be put here, replacing the placeholder text (including the prefix and 
+the copied default language contents).
              
 Select the :guilabel:`Language Comparison` function in the upper menu bar of the
 :guilabel:`Web > Page` module. Then use the select box to create a new
@@ -36,6 +36,6 @@ The form with the fields for the translated page will then be displayed:
 Most of the fields are the same as for the page of the default language. Below
 the fields the content of the default language is shown.
 
-As long as a page has no translated copy page,
+As long as a page has no translated page record,
 its contents cannot be translated, no matter how many system languages
 have been defined.
