@@ -11,7 +11,7 @@
                edit-on-github-branch="main"
                edit-on-github="TYPO3-Documentation/TYPO3CMS-Guide-FrontendLocalization"
                typo3-core-preferred="main"
-               interlink-shortcode="typo3/guide-frontendlocalization"
+               interlink-shortcode="t3translate"
     />
     <project title="Frontend Localization Guide"
              release="main (development)"
