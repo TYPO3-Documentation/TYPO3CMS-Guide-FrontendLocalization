@@ -54,7 +54,7 @@ menu, albeit in the default language (English).
     The German home page with untranslated pages appearing in the menu
 
 This behaviour can be changed. Let us edit the "Customizing" page.
-In the :guilabel:`Behaviour` tab, check the
+In the :guilabel:`Language` tab, check the
 :guilabel:`Hide page if no translation for current language exists`:
 
 ..  figure:: /Images/ManualScreenshots/Record/LocalizationOverviewHideIfNoTranslation.png
