@@ -13,12 +13,17 @@ Localization overview
 Introduction
 ============
 
+..  versionchanged:: 14.0
+    The main module `Web` has been renamed to `Content`.
+    See `Feature: #107628 - Improved backend module naming and structure <https://docs.typo3.org/permalink/changelog:feature-107628-1729026000>`_
+
+
 You can get a complete overview of the page tree and page
-translations by using the :guilabel:`Web > Info` module and choosing
+translations by using the :guilabel:`Content > Info` module and choosing
 the :guilabel:`Localization Overview` function.
 
 ..  figure:: /Images/ManualScreenshots/InfoModule/LocalizationOverviewIntroductionPackage.png
-    :alt: Localization Overview in Web > Info module
+    :alt: Localization Overview in "Content > Info" module
     :class: with-shadow
 
     Overview of existing translations in a blank Introduction Package
