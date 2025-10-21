@@ -33,20 +33,20 @@ and German languages. Adding a new language is done in the
     :ref:`site handling documentation <t3coreapi:sitehandling-addingLanguages>`.
 
 Once you have defined at least one additional language, you will be able to
-translate pages and content. For example, the :guilabel:`Web > List` module will
+translate pages and content. For example, the :guilabel:`Content > List` module will
 show links for translation if you have translated the page.
 
 ..  figure:: /Images/ManualScreenshots/ListModule/LocalizeLinks.png
     :alt: Content elements with localize links
     :class: with-shadow
 
-    The :guilabel:`Web > List` view, with page translations and localize links for content elements
+    The :guilabel:`Content > List` view, with page translations and localize links for content elements
 
 Translated elements appears nested "under" their default language
-parent element in the :guilabel:`Web > List` view.
+parent element in the :guilabel:`Content > List` view.
 
 ..  figure:: /Images/ManualScreenshots/ListModule/NestedTranslations.png
     :alt: Nested translations
     :class: with-shadow
 
-    The :guilabel:`Web > List` view shows translations nested under their parent
+    The :guilabel:`Content > List` view shows translations nested under their parent

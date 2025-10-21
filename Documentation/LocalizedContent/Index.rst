@@ -33,7 +33,7 @@ Free mode
     the original language and you want to have that freedom in designing your
     translated website.
 
-When you start translating a page, the :guilabel:`Web > Page` module will ask
+When you start translating a page, the :guilabel:`Content > Page` module will ask
 you about this choice when clicking on the :guilabel:`Translate` button:
 
 ..  figure:: /Images/ManualScreenshots/PageModule/LocalizedContentTranslationWizard.png
@@ -152,14 +152,14 @@ translations. The uid of that particular language is "-1".
 
     A content element valid for all languages
 
-It is also marked with the special language icon in the :guilabel:`Web > Page`
+It is also marked with the special language icon in the :guilabel:`Content > Page`
 module:
 
 ..  figure:: /Images/ManualScreenshots/PageModule/LocalizedContentAllLanguagePageModule.png
     :alt: "All" language in the Page Module
     :class: with-shadow
 
-    An "All" language content element displayed in the :guilabel:`Web > Page` module
+    An "All" language content element displayed in the :guilabel:`Content > Page` module
 
 Note that no :guilabel:`Translate` button appears, the new content element
 is valid for all languages.
