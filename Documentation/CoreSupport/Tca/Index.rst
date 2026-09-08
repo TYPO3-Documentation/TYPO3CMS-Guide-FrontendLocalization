@@ -212,4 +212,3 @@ Each field may contain special instructions which will affect the "localize"
 command. Most important is the
 :ref:`"l10n\_mode" field <t3tca:columns-properties-l10n-mode>` with which,
 for example, a field can be entirely excluded from the translation process.
-
