@@ -13,4 +13,3 @@ Core support for localization
 
     Tca/Index
     Permissions/Index
-
