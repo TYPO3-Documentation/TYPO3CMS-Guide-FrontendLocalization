@@ -28,7 +28,8 @@ This looks for the label :code:`form.submit` in the file
 
 If the frontend is now accessed in the language "de", the German language
 is configured in the :ref:`site configuration <languages>` and the German
-translations are installed in :ref:`t3coreapi:Environment-labels-path`/:file:`de/`,
+translations are installed in the
+:ref:`labels path <t3coreapi:Environment-labels-path>`/:file:`de/`,
 the output should be "Suche" (instead "Search" which is what you will get if the
 label is retrieved for the default language).
 
@@ -39,8 +40,9 @@ Using XLF labels in frontend plugins
 ====================================
 
 Making your code ready for internationalization is covered in
-:ref:`t3coreapi:internationalization` and
-basics about XLIFF files are found in :ref:`t3coreapi:xliff` ("TYPO3 Explained").
+:ref:`Localization: translating labels in TYPO3 <t3coreapi:internationalization>`
+and the basics about XLIFF files are found in
+:ref:`Translation files (XLIFF format) <t3coreapi:xliff>` ("TYPO3 Explained").
 Properly made plugins should use XLIFF files for every label that
 they used, so that they can be translated and thus generate a proper
 output when a specific language is requested.
@@ -55,11 +57,12 @@ the German translations are installed, you will see this page for "indexed searc
     Output from the Indexed Search plugin in German
 
 Overriding an existing translation is possible using custom XLIFF files.
-This process is described in :ref:`t3coreapi:xliff-translating-custom`.
+This process is described in
+:ref:`Overriding or extending translations <t3coreapi:xliff-translating-custom>`.
 
 It is also possible to override a label using TypoScript. See the
 :ref:`TypoScript Reference for more information <t3tsref:setup-plugin-local-lang-lang-key-label-key>`.
 
 You can also create XLIFF files for a language into which
 TYPO3 is not translated yet. This process is described in
-:ref:`t3coreapi:xliff-translating-languages`.
+:ref:`Adding custom languages <t3coreapi:xliff-translating-languages>`.
