@@ -101,7 +101,7 @@ table):
     The :sql:`l18n_parent` name used in table :sql:`tt_content` is a historical
     mistake.
 
-Obviously, the table name has to be adapted in properties :sql:`foreign_table`
+The table name has to be adapted in properties :sql:`foreign_table`
 and :sql:`foreign_table_where` for each table.
 
 Notice the display condition set on the field, which will check the value of
