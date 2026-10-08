@@ -12,6 +12,8 @@ a very basic site configuration is generated on the fly. It prevents immediate
 errors due to missing configuration and can also serve as a starting point for
 all further actions.
 
+..  _languages-site-management:
+
 Site Management
 ===============
 
