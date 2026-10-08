@@ -10,6 +10,8 @@ Localized content
     :local:
 
 
+..  _localized-content-introduction:
+
 Introduction
 ============
 
