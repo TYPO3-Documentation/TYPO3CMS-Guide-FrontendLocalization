@@ -40,7 +40,7 @@ This is the corresponding TypoScript code, that sets up a
 `LanguageMenuProcessor` on the page level:
 
 ..  code-block:: typoscript
-    :caption: EXT:site_package/Configuration/Sets/Main/setup.typoscript
+    :caption: EXT:my_sitepackage/Configuration/Sets/Main/setup.typoscript
 
     page = PAGE
     page {
@@ -62,7 +62,7 @@ The menu is then passed as a hierarchical array to
 The Fluid template iterates through the array and creates the language links:
 
 ..  code-block:: html
-    :caption: EXT:site_package/Resources/Private/Templates/SomeTemplate.html
+    :caption: EXT:my_sitepackage/Resources/Private/Templates/SomeTemplate.html
 
     <f:if condition="{languagenavigation}">
         <ul id="language_menu" class="language-menu">
