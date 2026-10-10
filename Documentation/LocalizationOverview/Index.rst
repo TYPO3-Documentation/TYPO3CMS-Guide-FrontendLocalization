@@ -161,7 +161,7 @@ It is also possible to hide all untranslated pages by default
 with a global setting:
 
 ..  code-block:: php
-    :caption: EXT:site_package/ext_localconf.php
+    :caption: EXT:my_sitepackage/ext_localconf.php
 
     $GLOBALS['TYPO3_CONF_VARS']['FE']['hidePagesIfNotTranslatedByDefault'] = 1;
 
