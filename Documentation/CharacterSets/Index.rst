@@ -7,8 +7,8 @@ Character sets
 ==============
 
 All TYPO3 websites use UTF-8 as their character set. Using UTF-8 means that you
-have a consistent data storage and can store any glyph from any language without
-worrying further about character sets.
+have a consistent data storage and can store any glyph from any language
+without worrying further about character sets.
 
 ..  _character-sets-database:
 

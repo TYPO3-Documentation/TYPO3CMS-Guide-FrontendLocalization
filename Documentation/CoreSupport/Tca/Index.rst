@@ -6,10 +6,11 @@
 TCA, DataHandler and FormEngine
 ===============================
 
-The support for localization in the Core of TYPO3 is based around a scheme where
-a record in the default language (id "0") can have other records pointing to it,
-offering a translation of its content. This implies some requirements for the
-structure of any database tables which we want to be available for translation:
+The support for localization in the Core of TYPO3 is based around a scheme
+where a record in the default language (id "0") can have other records pointing
+to it, offering a translation of its content. This implies some requirements
+for the structure of any database tables which we want to be available for
+translation:
 
 #.  A field holding the reference to the language defined in the
     :ref:`site configuration <t3coreapi:sitehandling>` must be defined.
@@ -43,10 +44,10 @@ table):
     :caption: EXT:frontend/Configuration/TCA/tt_content.php
 
     'sys_language_uid' => [
-        'label' => 'LLL:EXT:core/Resources/Private/Language/locallang_general.xlf:LGL.language',
-        'config' => [
-            'type' => 'language'
-        ]
+      'label' => 'LLL:EXT:core/Resources/Private/Language/locallang_general.xlf:LGL.language',
+      'config' => [
+        'type' => 'language'
+      ]
     ]
 
 The entry for the :guilabel:`[All]` language gets automatically added with the
@@ -54,13 +55,14 @@ TCA type :ref:`language <t3tca:columns-language>`.
 
 ..  note::
     This field is traditionally named :sql:`sys_language_uid`, but any name can
-    be used since it is registered with the :php:`languageField` property in the
-    ctrl section.
+    be used since it is registered with the :php:`languageField` property in
+    the ctrl section.
 
 ..  deprecated:: 11.2
     This field can only be used with the TCA type "language". All other field
-    types will be automatically migrated on-the-fly possibly losing configurations.
-    See :ref:`Migration to the language type <t3tca:columns-languge-migration>`.
+    types will be automatically migrated on-the-fly possibly losing
+    configurations. See
+    :ref:`Migration to the language type <t3tca:columns-languge-migration>`.
 
 
 ..  _core-support-tca-transorigpointerfield:
@@ -79,18 +81,18 @@ table):
     :caption: EXT:frontend/Configuration/TCA/tt_content.php
 
     'l10n_parent' => [
-        'displayCond' => 'FIELD:sys_language_uid:>:0',
-        'label' => 'LLL:EXT:core/Resources/Private/Language/locallang_general.xlf:LGL.l18n_parent',
-        'config' => [
-            'type' => 'select',
-            'renderType' => 'selectSingle',
-            'items' => [
-                ['', 0]
-            ],
-            'foreign_table' => 'tt_content',
-            'foreign_table_where' => 'AND {#tt_content}.{#pid}=###CURRENT_PID### AND {#tt_content}.{#sys_language_uid} IN (-1,0)',
-            'default' => 0,
+      'displayCond' => 'FIELD:sys_language_uid:>:0',
+      'label' => 'LLL:EXT:core/Resources/Private/Language/locallang_general.xlf:LGL.l18n_parent',
+      'config' => [
+        'type' => 'select',
+        'renderType' => 'selectSingle',
+        'items' => [
+          ['', 0]
         ],
+        'foreign_table' => 'tt_content',
+        'foreign_table_where' => 'AND {#tt_content}.{#pid}=###CURRENT_PID### AND {#tt_content}.{#sys_language_uid} IN (-1,0)',
+        'default' => 0,
+      ],
     ],
 
 
@@ -115,8 +117,8 @@ This principle is also respected by the API function
 :php:`\TYPO3\CMS\Core\Domain\Repository\PageRepository::getLanguageOverlay()`
 which fetches translations of records for the frontend display.
 
-When the :php:`transOrigPointerField` and :php:`languageField` are defined for a
-table you will see references to the content of the default language
+When the :php:`transOrigPointerField` and :php:`languageField` are defined for
+a table you will see references to the content of the default language
 record when editing the translation:
 
 ..  figure:: /Images/ManualScreenshots/Record/CoreSupportFormEngine.png
@@ -126,10 +128,11 @@ record when editing the translation:
     Original content shows up under the input fields when translating a record
 
 ..  warning::
-    The configured :php:`$GLOBALS['TCA'][$table]['ctrl']['transOrigPointerField']`
-    cannot be excluded as this leads to inconsistent data stored in the database.
-    This happens when a non-admin user creates a localization while not having
-    the permission to edit the :php:`transOrigPointerField`. Remove
+    The configured
+    :php:`$GLOBALS['TCA'][$table]['ctrl']['transOrigPointerField']` cannot be
+    excluded as this leads to inconsistent data stored in the database. This
+    happens when a non-admin user creates a localization while not having the
+    permission to edit the :php:`transOrigPointerField`. Remove
     :php:`exclude => true` from TCA, if set.
 
 
@@ -139,12 +142,13 @@ record when editing the translation:
 ==========================
 
 There is one more field which can be used on a translatable table, defined by
-the property ":ref:`languageField <t3tca:ctrl-reference-transorigdiffsourcefield>`".
-It is optional. It points to a blob database field which will store the content
-of the default language record as it was when the translation was made. Then
-this is used to display any changes that have occurred in the default record
-since translation happened. For example, in the :sql:`tt_content` table, it may
-look like this for the header field:
+the property
+":ref:`languageField <t3tca:ctrl-reference-transorigdiffsourcefield>`". It is
+optional. It points to a blob database field which will store the content of
+the default language record as it was when the translation was made. Then this
+is used to display any changes that have occurred in the default record since
+translation happened. For example, in the :sql:`tt_content` table, it may look
+like this for the header field:
 
 ..  figure:: /Images/ManualScreenshots/Record/CoreSupportFormEngineViewDifference.png
     :alt: Changes in original content
@@ -161,16 +165,17 @@ translation accordingly.
 [translationSource]
 ===================
 
-The ":ref:`translationSource <t3tca:ctrl-reference-translationsource>`" property
-defines a name of the field used by translations to point back to the original
-record (that means, the record in any language of which they are a translation).
-This property is often set to :sql:`l10n_source` in Core tables.
+The ":ref:`translationSource <t3tca:ctrl-reference-translationsource>`"
+property defines a name of the field used by translations to point back to the
+original record (that means, the record in any language of which they are a
+translation). This property is often set to :sql:`l10n_source` in Core tables.
 
 This property is similar to
 :ref:`transOrigPointerField <core-support-tca-transorigpointerfield>`.
-In :ref:`connected mode <localized-content>`, while :php:`transOrigPointerField`
-always contains the uid of the default language record, this field contains the
-uid of the record the translation was created from.
+In :ref:`connected mode <localized-content>`, while
+:php:`transOrigPointerField` always contains the uid of the default language
+record, this field contains the uid of the record the translation was created
+from.
 
 For example, if a :sql:`tt_content` record in default language (English) with
 uid 13 exists, this record is translated to French with uid 17, and the Danish
@@ -185,8 +190,8 @@ DataHandler commands for localization
 
 Localizing a record can be done by the
 :ref:`"localize" command <t3coreapi:tce-command-keywords>` of the
-:ref:`DataHandler <t3coreapi:datahandler-basics>`. This is the command that is sent
-when you press the translate buttons in :guilabel:`Content > List` or
+:ref:`DataHandler <t3coreapi:datahandler-basics>`. This is the command that is
+sent when you press the translate buttons in :guilabel:`Content > List` or
 :guilabel:`Content > Page` for an element.
 
 When this command is issued an ordinary copy is made but the fields
