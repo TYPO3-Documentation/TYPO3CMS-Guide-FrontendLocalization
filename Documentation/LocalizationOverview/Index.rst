@@ -45,8 +45,8 @@ the :guilabel:`Create new translation headers` button.
 
 ..  _localization-overview-hide-missing-translations:
 
-Hiding pages if no translation exist
-====================================
+Hiding pages if no translation exists
+=====================================
 
 If there is no translation of a page, it will still appear by default in the
 website menu when this language is used. Here the home page of the Introduction
