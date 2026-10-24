@@ -34,7 +34,7 @@ other end.
 
 ..  _about-terms:
 
-Localization and Translation
+Localization and translation
 ----------------------------
 
 The two terms are often used to express the same. Also in this
