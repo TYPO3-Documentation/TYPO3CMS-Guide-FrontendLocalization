@@ -37,7 +37,7 @@ The first field is defined by the
 ":ref:`languageField <t3tca:ctrl-reference-languagefield>`" property
 and contains a reference to the language the record is in.
 
-Here is how such a field is configured (example from the :sql:`tt_content`
+Here is how such a field is configured (example from the `tt_content`
 table):
 
 ..  code-block:: php
@@ -54,8 +54,8 @@ The entry for the :guilabel:`[All]` language gets automatically added with the
 TCA type :ref:`language <t3tca:columns-language>`.
 
 ..  note::
-    This field is traditionally named :sql:`sys_language_uid`, but any name can
-    be used since it is registered with the :php:`languageField` property in
+    This field is traditionally named `sys_language_uid`, but any name can
+    be used since it is registered with the `languageField` property in
     the ctrl section.
 
 ..  deprecated:: 11.2
@@ -74,7 +74,7 @@ The first field is defined by the
 ":ref:`transOrigPointerField <t3tca:ctrl-reference-transorigpointerfield>`"
 property and contains a reference to the record in the default language.
 
-Here is how such a field is configured (example from the :sql:`tt_content`
+Here is how such a field is configured (example from the `tt_content`
 table):
 
 ..  code-block:: php
@@ -97,27 +97,27 @@ table):
 
 
 ..  note::
-    This field is traditionally named :sql:`l10n_parent`, but any name can be
-    used since it is registered with the :php:`transOrigPointerField` property.
+    This field is traditionally named `l10n_parent`, but any name can be
+    used since it is registered with the `transOrigPointerField` property.
 
-    The :sql:`l18n_parent` name used in table :sql:`tt_content` is a historical
+    The `l18n_parent` name used in table `tt_content` is a historical
     mistake.
 
-The table name has to be adapted in properties :sql:`foreign_table`
-and :sql:`foreign_table_where` for each table.
+The table name has to be adapted in properties `foreign_table`
+and `foreign_table_where` for each table.
 
 Notice the display condition set on the field, which will check the value of
-the :sql:`sys_language_uid` and display the :sql:`l18n_parent` field only when
+the `sys_language_uid` and display the `l18n_parent` field only when
 it is greater than zero (that means, it is a translation).
 
 Another interesting point is that it will only look for a default language
 record in the current pid. This means that a
 **default language record and all its translations must be on the same page!**
 This principle is also respected by the API function
-:php:`\TYPO3\CMS\Core\Domain\Repository\PageRepository::getLanguageOverlay()`
+:php-short:`\TYPO3\CMS\Core\Domain\Repository\PageRepository::getLanguageOverlay()`
 which fetches translations of records for the frontend display.
 
-When the :php:`transOrigPointerField` and :php:`languageField` are defined for
+When the `transOrigPointerField` and `languageField` are defined for
 a table you will see references to the content of the default language
 record when editing the translation:
 
@@ -132,7 +132,7 @@ record when editing the translation:
     :php:`$GLOBALS['TCA'][$table]['ctrl']['transOrigPointerField']` cannot be
     excluded as this leads to inconsistent data stored in the database. This
     happens when a non-admin user creates a localization while not having the
-    permission to edit the :php:`transOrigPointerField`. Remove
+    permission to edit the `transOrigPointerField`. Remove
     :php:`exclude => true` from TCA, if set.
 
 
@@ -147,7 +147,7 @@ the property
 optional. It points to a blob database field which will store the content of
 the default language record as it was when the translation was made. Then this
 is used to display any changes that have occurred in the default record since
-translation happened. For example, in the :sql:`tt_content` table, it may look
+translation happened. For example, in the `tt_content` table, it may look
 like this for the header field:
 
 ..  figure:: /Images/ManualScreenshots/Record/CoreSupportFormEngineViewDifference.png
@@ -168,19 +168,19 @@ translation accordingly.
 The ":ref:`translationSource <t3tca:ctrl-reference-translationsource>`"
 property defines a name of the field used by translations to point back to the
 original record (that means, the record in any language of which they are a
-translation). This property is often set to :sql:`l10n_source` in Core tables.
+translation). This property is often set to `l10n_source` in Core tables.
 
 This property is similar to
 :ref:`transOrigPointerField <core-support-tca-transorigpointerfield>`.
 In :ref:`connected mode <localized-content>`, while
-:php:`transOrigPointerField` always contains the uid of the default language
+`transOrigPointerField` always contains the uid of the default language
 record, this field contains the uid of the record the translation was created
 from.
 
-For example, if a :sql:`tt_content` record in default language (English) with
+For example, if a `tt_content` record in default language (English) with
 uid 13 exists, this record is translated to French with uid 17, and the Danish
 translation is later created based on the French translation, then the Danish
-translation has uid 13 set as :sql:`l10n_parent` and 17 as :sql:`l10n_source`.
+translation has uid 13 set as `l10n_parent` and 17 as `l10n_source`.
 
 
 ..  _core-support-tca-localization-command:

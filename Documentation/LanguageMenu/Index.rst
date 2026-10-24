@@ -37,7 +37,8 @@ language menu, located in the footer:
     A text-based language menu, with active and disabled states
 
 This is the corresponding TypoScript code, that sets up a
-`LanguageMenuProcessor` on the page level:
+:php-short:`\TYPO3\CMS\Frontend\DataProcessing\LanguageMenuProcessor`
+on the page level:
 
 ..  code-block:: typoscript
     :caption: EXT:my_sitepackage/Configuration/Sets/Main/setup.typoscript
@@ -53,12 +54,12 @@ This is the corresponding TypoScript code, that sets up a
       }
     }
 
-The value for :typoscript:`languages` is a list of comma-separated language
-IDs (for example: :typoscript:`0,1,2`) or :typoscript:`auto` to load from
-:ref:`site configuration <t3coreapi:sitehandling>`.
+The value for :typoscript:`languages <t3tsref:LanguageMenuProcessor-languages>`
+is a list of comma-separated language IDs (for example: `0,1,2`) or `auto` to
+load from :ref:`site configuration <t3coreapi:sitehandling>`.
 
 The menu is then passed as a hierarchical array to
-:ref:`Fluid <t3coreapi:fluid>` in the variable :html:`{languagenavigation}`.
+:ref:`Fluid <t3coreapi:fluid>` in the variable :fluid:`{languagenavigation}`.
 The Fluid template iterates through the array and creates the language links:
 
 ..  code-block:: html
