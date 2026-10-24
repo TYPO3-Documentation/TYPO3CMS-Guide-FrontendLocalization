@@ -1,6 +1,6 @@
-.. include:: /Includes.rst.txt
+..  include:: /Includes.rst.txt
 
-.. _language-menu:
+..  _language-menu:
 
 =======================
 Language selection menu
@@ -65,22 +65,22 @@ The Fluid template iterates through the array and creates the language links:
     :caption: EXT:my_sitepackage/Resources/Private/Templates/SomeTemplate.html
 
     <f:if condition="{languagenavigation}">
-        <ul id="language_menu" class="language-menu">
-            <f:for each="{languagenavigation}" as="item">
-                <li class="{f:if(condition: item.active, then: 'active')} {f:if(condition: item.available, else: 'text-muted')}">
-                    <f:if condition="{item.available}">
-                        <f:then>
-                            <a href="{item.link}" hreflang="{item.hreflang}" title="{item.title}">
-                                <span>{item.navigationTitle}</span>
-                            </a>
-                        </f:then>
-                        <f:else>
-                            <span>{item.navigationTitle}</span>
-                        </f:else>
-                    </f:if>
-                </li>
-            </f:for>
-        </ul>
+      <ul id="language_menu" class="language-menu">
+        <f:for each="{languagenavigation}" as="item">
+          <li class="{f:if(condition: item.active, then: 'active')} {f:if(condition: item.available, else: 'text-muted')}">
+            <f:if condition="{item.available}">
+              <f:then>
+                <a href="{item.link}" hreflang="{item.hreflang}" title="{item.title}">
+                  <span>{item.navigationTitle}</span>
+                </a>
+              </f:then>
+              <f:else>
+                <span>{item.navigationTitle}</span>
+              </f:else>
+            </f:if>
+          </li>
+        </f:for>
+      </ul>
     </f:if>
 
 
