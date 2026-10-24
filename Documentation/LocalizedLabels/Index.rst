@@ -23,7 +23,7 @@ TypoScript:
     page.20 = TEXT
     page.20.data = LLL:EXT:indexed_search/Resources/Private/Language/locallang.xlf:form.submit
 
-This looks for the label :code:`form.submit` in the file
+This looks for the label `form.submit` in the file
 :file:`Resources/Private/Language/locallang.xlf` from the extension
 "indexed\_search".
 

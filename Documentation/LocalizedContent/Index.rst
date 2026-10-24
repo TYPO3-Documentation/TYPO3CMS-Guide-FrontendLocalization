@@ -23,7 +23,7 @@ Connected mode
     element or setting meta information like start time or end time will be
     taken from the original content and you will not be able to set these
     values on a translated content element. Translated records will hold the
-    connection to their original language record in the :sql:`l10n_parent`
+    connection to their original language record in the `l10n_parent`
     field. This mode is best for a strict translation workflow.
 
 Free mode
