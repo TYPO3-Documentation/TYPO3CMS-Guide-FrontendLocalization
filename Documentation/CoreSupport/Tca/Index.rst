@@ -2,9 +2,9 @@
 
 ..  _core-support-tca:
 
-===============================
-TCA, DataHandler and FormEngine
-===============================
+================================
+TCA, DataHandler, and FormEngine
+================================
 
 The support for localization in the Core of TYPO3 is based around a scheme where
 a record in the default language (id "0") can have other records pointing to it,
@@ -156,7 +156,7 @@ This allows a translator to spot easily what has changed in order to adjust the
 translation accordingly.
 
 
-..  _core-support-tca-translationSource:
+..  _core-support-tca-translationsource:
 
 [translationSource]
 ===================
