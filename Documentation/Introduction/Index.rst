@@ -48,9 +48,9 @@ Translation
 Localization
     means more broadly that a page is represented in another language. This
     means information in that language ("translation") but could also include
-    alternative templates, additional composition of content directed to another
-    audience, etc. In other words: There might be another number of headers and
-    images than in the default language.
+    alternative templates, additional composition of content directed to
+    another audience, etc. In other words: There might be another number of
+    headers and images than in the default language.
 
 TYPO3 handles both types of approaches, but this flexibility has the
 price that you need to read this document to find out which approach

@@ -71,7 +71,8 @@ This is reflected in the *Localization Overview*:
     :alt: Hidden translation in the overview
     :class: with-shadow
 
-    The Localization Overview reflects the change in visibility of the "Customizing" page
+    The Localization Overview reflects the change in visibility of the
+    "Customizing" page
 
 From this it is clear that when viewing the website in
 German the "Customizing" page is not accessible. The menu
@@ -115,7 +116,8 @@ This is reflected in the *Localization Overview*:
     :alt: Hidden default language in the overview
     :class: with-shadow
 
-    The Localization Overview shows the page as being unavailable in the default language
+    The Localization Overview shows the page as being unavailable in the
+    default language
 
 ..  note::
     The page also appears as being unavailable in Danish, because Danish falls
@@ -135,7 +137,8 @@ and in English:
     :alt: English menu not showing language-specific page
     :class: with-shadow
 
-    The German-specific page does not show up in the default version of the web site
+    The German-specific page does not show up in the default version of the web
+    site
 
 Trying to access the "Nur für Deutschland" page in the default language will
 yield an error.
@@ -166,7 +169,8 @@ The *Localization Overview* reflects this immediately:
     :alt: All untranslated pages hidden by default
     :class: with-shadow
 
-    The Localization Overview shows that all untranslated pages are hidden by default
+    The Localization Overview shows that all untranslated pages are hidden by
+    default
 
 Note how the behaviour of specific localization setting for the
 "Customizing" pages has been inverted. We had earlier defined the page
@@ -184,7 +188,7 @@ checkbox has changed:
     Inverted behaviour: choose to show the page even if no translation exists
 
 
-.. _localization-overview-final-notes:
+..  _localization-overview-final-notes:
 
 Final notes
 ===========
