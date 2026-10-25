@@ -14,12 +14,12 @@ all further actions.
 
 ..  _languages-site-management:
 
-Site Management
-===============
+Sites module
+============
 
 The `Introduction Package`_'s default languages are English, Danish
 and German languages. Adding a new language is done in the
-:guilabel:`Site Management > Sites` module of the backend.
+:guilabel:`Sites > Setup` module of the backend.
 
 ..  _Introduction Package: https://extensions.typo3.org/extension/introduction
 
@@ -36,22 +36,22 @@ and German languages. Adding a new language is done in the
     <t3coreapi:sitehandling-addingLanguages>`.
 
 Once you have defined at least one additional language, you will be able to
-translate pages and content. For example, the :guilabel:`Content > List` module
-will show links for translation if you have translated the page.
+translate pages and content. For example, the :guilabel:`Content > Records`
+module will show links for translation if you have translated the page.
 
 ..  figure:: /Images/ManualScreenshots/ListModule/LocalizeLinks.png
     :alt: Content elements with localize links
     :class: with-shadow
 
-    The :guilabel:`Content > List` view, with page translations and localize
+    The :guilabel:`Content > Records` view, with page translations and localize
     links for content elements
 
 Translated elements appears nested "under" their default language
-parent element in the :guilabel:`Content > List` view.
+parent element in the :guilabel:`Content > Records` view.
 
 ..  figure:: /Images/ManualScreenshots/ListModule/NestedTranslations.png
     :alt: Nested translations
     :class: with-shadow
 
-    The :guilabel:`Content > List` view shows translations nested under their
-    parent
+    The :guilabel:`Content > Records` view shows translations nested under
+    their parent
