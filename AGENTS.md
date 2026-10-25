@@ -4,6 +4,8 @@
 
 ```
 Documentation/                   # the actual manual (reST source, published to docs.typo3.org)
+Build/Screenshots/               # takes the generated screenshots, see below
+Build/Scripts/runTests.sh        # runs the containers that make install and make screenshots need
 CONTRIBUTING.md                  # how to contribute
 ```
 
@@ -11,6 +13,12 @@ CONTRIBUTING.md                  # how to contribute
 
 - `make docs` — render the manual locally with Docker
 - `make test-docs` — render in minimal-test mode (the same validation CI runs); use this to validate any change before committing
+- `make install` — install the TYPO3 Core packages into `.Build/` that
+  `make screenshots` needs; run it once in a new worktree
+- `make screenshots` — take the screenshots listed in
+  `Build/Screenshots/screenshots.mjs` from a throwaway TYPO3 instance;
+  `Build/Scripts/runTests.sh -s screenshots Permissions/LimitToLanguages`
+  takes only the named ones
 - `pre-commit run --all-files` — apply the whitespace hooks
   (`trailing-whitespace`, `end-of-file-fixer`) configured in
   `.pre-commit-config.yaml`; `pre-commit install` wires them into `git commit`
@@ -29,6 +37,43 @@ Language handling changed substantially across TYPO3 versions, so verify
 site configuration keys, TypoScript properties and fallback behaviour
 against the Core source of the version being documented rather than from
 memory.
+
+## Generated screenshots
+
+The screenshots in `Documentation/Images/GeneratedScreenshots/` come from a
+TYPO3 instance with the demo site of the Camino theme, which the Core ships
+from TYPO3 v14 on. The branch `13.4` keeps its screenshots in
+`Documentation/Images/ManualScreenshots/`. `create-records.php` adds the
+languages of the examples in this manual to the site: English as the
+default language, Danish (1), which falls back to English, and German (2).
+The backend runs without debug mode, so it looks as an editor sees it.
+Screenshots are taken as the administrator `j.doe`.
+
+The setup and the engine at the end of `screenshots.mjs` come from the
+[Editors Tutorial](https://github.com/TYPO3-Documentation/TYPO3CMS-Tutorial-Editors).
+Its `AGENTS.md` explains the options of a screenshot entry, such as
+`from`/`to`, `window`, `modal`, `prepare`, and `tab`. Keep the engine the
+same in both repositories, so that a fix in one can be copied to the other.
+
+To add a screenshot:
+
+1.  If a screenshot needs a record of its own, such as a translation, add it
+    to `Build/Screenshots/create-records.php`. Find the records of the theme
+    by their title, because their uids can differ between TYPO3 versions,
+    and export the ones a screenshot needs in the list at the end.
+2.  Add an entry to `Build/Screenshots/screenshots.mjs`. Mark what the text
+    names with an orange frame, and number the parts that the text lists
+    with an orange circle with a number. Draw no arrows. Copy the helpers
+    for this, `outline()` and `badge()`, from the Editors Tutorial when a
+    screenshot first needs them.
+3.  Take only that screenshot, then all of them once. A run keeps an image
+    that differs from the old one in fewer than 10 pixels, because a new
+    image is never exactly the same, even when nothing changed. Review the
+    changed images with the skill `typo3-docs-screenshot-review`, and
+    commit only the ones that really changed. List an image that changes
+    on every run in `Build/Screenshots/flaky-screenshots.txt`.
+4.  Screenshots that a script cannot take stay in
+    `Documentation/Images/ManualScreenshots/`.
 
 ## Documentation writing rules
 
