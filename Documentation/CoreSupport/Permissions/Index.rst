@@ -14,7 +14,7 @@ Navigate to the backend module :guilabel:`Administration > Users`. Select a
 backend user group. The :guilabel:`Limit to languages` setting is found in the
 :guilabel:`Record Permissions` tab:
 
-..  figure:: /Images/ManualScreenshots/BackendUsers/CoreSupportLimitToLanguages.png
+..  figure:: /Images/GeneratedScreenshots/Permissions/LimitToLanguages.png
     :alt: Setting language limitations
     :class: with-shadow
 
