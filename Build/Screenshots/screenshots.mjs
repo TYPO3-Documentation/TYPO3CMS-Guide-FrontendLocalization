@@ -19,12 +19,13 @@ const target = process.env.SCREENSHOT_TARGET ?? '../../Documentation/Images/Gene
 const defaultUser = 'j.doe';
 const password = 'Screenshots-2026!';
 
+const moduleUrl = (path, id) => `${baseUrl}/typo3/module/${path}?id=${id}`;
 const editUrl = (table, uid) => `${baseUrl}/typo3/record/edit?edit[${table}][${uid}]=edit`;
 // Space around an element, so its border does not touch the edge
 const margin = 12;
 
 // The uids of the records that create-records.php looked up
-const { spanishTranslators, arabicItems, arabicToiletries } =
+const { spanishTranslators, packingList, essentialItems, arabicItems, arabicToiletries } =
   JSON.parse(readFileSync('../../var/screenshot-records.json', 'utf8'));
 
 // A field of a form, found by its label: the backend runs without debug
@@ -33,7 +34,66 @@ const field = (name) => `.form-group:has([name$="[${name}]"]):not(:has(.form-gro
 // A palette of a form, found by its headline
 const palette = (headline) => `.form-section:has(> .form-section-headline:text-is("${headline}"))`;
 
+// A number in an orange circle at the lower right of an element, for a
+// screenshot whose text explains the numbered parts
+// Below the right corner, or below the left one where a neighbour follows
+// closely on the right. 'before' puts it left of the element, centered on
+// its height, so that the numbers of a screenshot line up.
+const badge = (locator, number, side = 'right') => locator.evaluate((element, [text, side]) => {
+  const box = element.getBoundingClientRect();
+  const position = side === 'before'
+    ? { left: box.left - 32, top: box.top + box.height / 2 - 13 }
+    : { left: side === 'left' ? box.left - 14 : box.right - 12, top: box.bottom - 6 };
+  const circle = element.ownerDocument.createElement('span');
+  // The crop takes in every circle, see below
+  circle.className = 'screenshot-badge';
+  circle.textContent = text;
+  Object.assign(circle.style, {
+    position: 'fixed', left: `${position.left}px`, top: `${position.top}px`, width: '26px', height: '26px',
+    borderRadius: '50%', background: '#ff8700', color: '#fff', font: 'bold 15px sans-serif', zIndex: '10000',
+    display: 'flex', alignItems: 'center', justifyContent: 'center', boxShadow: '0 1px 3px rgba(0, 0, 0, 0.4)',
+  });
+  element.ownerDocument.body.appendChild(circle);
+}, [String(number), side]);
+
+// The language menu at the top of a module, and its open list
+const languageMenu = (frame) => frame.locator('.module-docheader-navigation button.dropdown-toggle').last();
+const languageList = '.module-docheader .dropdown-menu >> visible=true';
+
 const screenshots = {
+  // The languages of the site, in the module where they are configured
+  'SettingUpLanguages/SiteLanguages': {
+    url: `${baseUrl}/typo3/module/site/configuration/edit?site=camino`,
+    tab: 'Languages',
+    menu: 'Sites',
+    window: true,
+    // The counter below the languages, so the last one is in the image
+    until: 'typo3-backend-formengine-item-count',
+  },
+  // The Records module with the Arabic records: the translation of the
+  // page, the buttons that translate a content element, and a translated
+  // content element below its original. The backend keeps the languages of
+  // a page, so Arabic is checked only if it is not checked yet.
+  'SettingUpLanguages/RecordsTranslations': {
+    url: moduleUrl('content/records', packingList),
+    prepare: async (frame) => {
+      if (!(await languageMenu(frame).innerText()).includes('(2)')) {
+        await languageMenu(frame).click();
+        await frame.page().waitForTimeout(500);
+        await frame.locator(languageList).getByText('العربية').first().click();
+        await frame.waitForLoadState('networkidle');
+        await frame.page().waitForTimeout(1500);
+      }
+      // On the flags and the button, as the cells are much wider than their
+      // content, and a circle on an Arabic title would cover its first word.
+      // Left of the flags, as the language name follows on their right.
+      await badge(frame.locator('#t3-table-pages_translated tbody tr td.col-localizationa .t3js-icon').first(), 1, 'left');
+      await badge(frame.locator('#t3-table-tt_content tbody tr typo3-backend-localization-button').first(), 2);
+      await badge(frame.locator(`#t3-table-tt_content tr[data-l10nparent="${essentialItems}"] td.col-localizationa .t3js-icon`).first(), 3, 'left');
+    },
+    from: '#t3-table-pages_translated',
+    to: `#t3-table-tt_content tr[data-uid="${essentialItems}"] ~ tr >> nth=1`,
+  },
   // The form of a translation, with the values of the default language
   // below the fields. The headlines only, as the text field of an instance
   // without the rich text editor shows the HTML.
