@@ -27,7 +27,7 @@ const margin = 12;
 const frontendWidth = 600;
 
 // The uids of the records that create-records.php looked up
-const { spanishTranslators, packingList, essentialItems, arabicItems, arabicToiletries, privacy, allLanguages, arabicRoutes } =
+const { root, spanishTranslators, packingList, essentialItems, arabicItems, arabicToiletries, privacy, allLanguages, arabicRoutes, faqs, arabicOnly } =
   JSON.parse(readFileSync('../../var/screenshot-records.json', 'utf8'));
 
 // A field of a form, found by its label: the backend runs without debug
@@ -79,6 +79,19 @@ const openTranslation = (language) => async (frame) => {
   await frame.page().locator('typo3-backend-modal dialog[open]').waitFor();
   await frame.page().waitForTimeout(1500);
 };
+
+// The Localization Overview of the whole site, with all levels of the page
+// tree. The module keeps the depth per user.
+const overviewUrl = `${baseUrl}/typo3/module/web/info/translations?id=${root}`;
+const showAllLevels = async (frame) => {
+  if (await frame.locator('#depth').inputValue() !== '999') {
+    await frame.locator('#depth').selectOption('999');
+    await frame.waitForLoadState('networkidle');
+    await frame.page().waitForTimeout(1500);
+  }
+};
+// A row of the Localization Overview, found by the title of its page
+const overviewRow = (title) => `#langTable tr:has(.treeline-label a:text-is("${title}"))`;
 
 const screenshots = {
   // The languages of the site, in the module where they are configured
@@ -196,6 +209,102 @@ const screenshots = {
       await window.mouse.move(0, 0);
     },
     until: '#header-language-menu',
+  },
+  // The Localization Overview of the whole site, before the FAQs hide
+  // without a translation
+  'LocalizationOverview/Overview': {
+    url: overviewUrl,
+    prepare: showAllLevels,
+    window: true,
+    until: '#langTable',
+  },
+  // Pages checked for new Spanish translations, and the button that creates
+  // them. Nothing is created.
+  'LocalizationOverview/CreateTranslations': {
+    url: overviewUrl,
+    prepare: async (frame) => {
+      await showAllLevels(frame);
+      for (const title of ['Camino Route Comparison', 'FAQs']) {
+        await frame.locator(`${overviewRow(title)} input[data-lang="1"]`).check({ force: true });
+      }
+      await frame.page().waitForTimeout(500);
+      await outline(frame.locator('#langTable th a.t3js-language-new[data-lang="1"]'));
+    },
+    from: '#langTable',
+  },
+  // The Spanish website, which shows the untranslated FAQs in the menu, as
+  // Spanish falls back to English
+  'LocalizationOverview/MenuWithUntranslatedPage': {
+    loggedOut: true,
+    url: `${baseUrl}/camino/es/imprint`,
+    prepare: async () => {},
+    from: 'header',
+  },
+  // The option of the FAQs, which this screenshot checks and saves. The
+  // following screenshots of this chapter show its effect, so they come
+  // after it.
+  'LocalizationOverview/HideIfNotTranslated': {
+    url: editUrl('pages', faqs),
+    tab: 'Language',
+    prepare: async (frame) => {
+      const label = 'Hide page if no translation for current language exists';
+      const checkbox = frame.getByLabel(label);
+      if (!await checkbox.isChecked()) {
+        // A styled toggle, whose input the browser does not show
+        await checkbox.check({ force: true });
+        await frame.locator('button[name="_savedok"]').click();
+        await frame.waitForLoadState('networkidle');
+        await frame.getByRole('tab', { name: 'Language', exact: true }).click();
+        await frame.page().waitForTimeout(1000);
+      }
+      await outline(frame.locator('.form-check', { hasText: label }));
+    },
+    from: field('l18n_cfg'),
+  },
+  'LocalizationOverview/OverviewHidden': {
+    url: overviewUrl,
+    prepare: async (frame) => {
+      await showAllLevels(frame);
+      await outline(frame.locator(overviewRow('FAQs')), true);
+    },
+    from: '#langTable',
+  },
+  // The Spanish website without the FAQs in its menu, after the screenshot
+  // that hides them
+  'LocalizationOverview/MenuWithHiddenPage': {
+    loggedOut: true,
+    url: `${baseUrl}/camino/es/imprint`,
+    prepare: async () => {},
+    from: 'header',
+  },
+  'LocalizationOverview/TranslationError': {
+    loggedOut: true,
+    url: `${baseUrl}/camino/es/faqs`,
+    // The request ID changes with every request, and the footer names the
+    // year, so neither is in the image
+    prepare: async (window) => {
+      await window.locator('.typo3-error-page-requestid, .typo3-error-page-footer').evaluateAll((elements) => elements.forEach((element) => element.remove()));
+    },
+    // The message of the error page, without the empty space around it
+    from: '.typo3-error-page-container',
+  },
+  // A page that hides its default language, with its option, and in the
+  // Localization Overview
+  'LocalizationOverview/HideDefaultLanguage': {
+    url: editUrl('pages', arabicOnly),
+    tab: 'Language',
+    prepare: async (frame) => {
+      await outline(frame.locator('.form-check', { hasText: 'Hide default language of page' }));
+    },
+    from: field('l18n_cfg'),
+  },
+  'LocalizationOverview/OverviewHiddenDefault': {
+    url: overviewUrl,
+    prepare: async (frame) => {
+      await showAllLevels(frame);
+      await outline(frame.locator(overviewRow('Arabic pilgrims')), true);
+    },
+    from: '#langTable',
   },
   // The languages that a group of translators may edit. The tables above
   // fill more than the window, so the palette is scrolled into view.
