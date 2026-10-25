@@ -4,6 +4,36 @@
     "description": "This guide contains all the information you need, if you localize websites with TYPO3!",
     "license": "OPL-1.0",
     "require": {
-      "typo3/cms-core": "^14.3"
+        "typo3/cms-core": "dev-main as 14.3"
+    },
+    "require-dev": {
+        "typo3/cms-backend": "dev-main as 14.3",
+        "typo3/cms-beuser": "dev-main as 14.3",
+        "typo3/cms-extbase": "dev-main as 14.3",
+        "typo3/cms-fluid": "dev-main as 14.3",
+        "typo3/cms-fluid-styled-content": "dev-main as 14.3",
+        "typo3/cms-frontend": "dev-main as 14.3",
+        "typo3/cms-impexp": "dev-main as 14.3",
+        "typo3/cms-info": "dev-main as 14.3",
+        "typo3/cms-install": "dev-main as 14.3",
+        "typo3/cms-lowlevel": "dev-main as 14.3",
+        "typo3/theme-camino": "dev-main as 14.3"
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true,
+    "config": {
+        "allow-plugins": {
+            "typo3/class-alias-loader": true,
+            "typo3/cms-composer-installers": true
+        },
+        "bin-dir": ".Build/bin",
+        "sort-packages": true,
+        "vendor-dir": ".Build/vendor"
+    },
+    "extra": {
+        "typo3/cms": {
+            "extension-key": "t3docs-guide-translate",
+            "web-dir": ".Build/public"
+        }
     }
 }

@@ -1,2 +1,9 @@
 *GENERATED*
 /.idea
+# Composer packages of the TYPO3 instance of make screenshots
+/.Build/
+/composer.lock
+# TYPO3 instance of make screenshots
+/config/
+/var/
+/Build/Screenshots/node_modules/
