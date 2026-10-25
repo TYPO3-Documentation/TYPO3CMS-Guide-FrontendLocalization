@@ -95,6 +95,29 @@ $configuration['languages'][] = [
 GeneralUtility::makeInstance(SiteWriter::class)->write($site->getIdentifier(), $configuration);
 GeneralUtility::makeInstance(CacheManager::class)->flushCaches();
 
+$localize = static function (string $table, int $uid, int $language): int {
+    $dataHandler = GeneralUtility::makeInstance(DataHandler::class);
+    $dataHandler->start([], [$table => [$uid => ['localize' => $language]]]);
+    $dataHandler->process_cmdmap();
+    if ($dataHandler->errorLog !== []) {
+        throw new RuntimeException(implode("\n", $dataHandler->errorLog));
+    }
+    return (int)$dataHandler->copyMappingArray_merged[$table][$uid];
+};
+
+// A content element of the packing list in Arabic, whose form shows the
+// English values below the fields
+$uids['packingList'] = $find('pages', 'title', 'Packing List', $uids['root']);
+$essentialItems = $find('tt_content', 'header', 'Essential Items', $uids['packingList']);
+$uids['arabicItems'] = $localize('tt_content', $essentialItems, 2);
+$process(['tt_content' => [$uids['arabicItems'] => ['header' => 'الأغراض الأساسية', 'hidden' => 0]]]);
+// The toiletries in Arabic, whose English header changes afterwards, so
+// that the form of the translation shows the change
+$toiletries = $find('tt_content', 'header', 'Toiletries', $uids['packingList']);
+$uids['arabicToiletries'] = $localize('tt_content', $toiletries, 2);
+$process(['tt_content' => [$uids['arabicToiletries'] => ['header' => 'أدوات النظافة', 'hidden' => 0]]]);
+$process(['tt_content' => [$toiletries => ['header' => 'Toiletries and medicine']]]);
+
 // A group of translators, who may edit Spanish records only, for the
 // screenshot of the language permissions
 $dataHandler = $process(['be_groups' => ['NEWtranslators' => [
