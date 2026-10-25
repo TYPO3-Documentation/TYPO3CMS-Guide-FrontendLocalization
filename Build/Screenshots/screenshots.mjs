@@ -24,7 +24,7 @@ const editUrl = (table, uid) => `${baseUrl}/typo3/record/edit?edit[${table}][${u
 const margin = 12;
 
 // The uids of the records that create-records.php looked up
-const { germanTranslators } =
+const { spanishTranslators } =
   JSON.parse(readFileSync('../../var/screenshot-records.json', 'utf8'));
 
 // A palette of a form, found by its headline
@@ -34,7 +34,7 @@ const screenshots = {
   // The languages that a group of translators may edit. The tables above
   // fill more than the window, so the palette is scrolled into view.
   'Permissions/LimitToLanguages': {
-    url: editUrl('be_groups', germanTranslators),
+    url: editUrl('be_groups', spanishTranslators),
     tab: 'Record Permissions',
     prepare: async (frame) => {
       await frame.locator(palette('Language Permissions')).scrollIntoViewIfNeeded();
