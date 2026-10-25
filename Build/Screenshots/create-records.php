@@ -60,49 +60,49 @@ $uids = [
     'root' => $find('pages', 'title', 'Camino', 0),
 ];
 
-// The languages of the examples in the manual, besides the default
-// language English: Danish, which falls back to English, and German. The
-// titles are English, as the text names them, such as in the prefix
-// "[Translate to German:]".
+// The languages of the Editors Tutorial, besides the default language
+// English: Spanish, and Arabic, which was spoken in Spain for centuries,
+// and which is written from right to left. Their titles are the names of the
+// languages in themselves, as the language menus of the backend show them.
 $site = GeneralUtility::makeInstance(SiteFinder::class)->getSiteByRootPageId($uids['root']);
 $configuration = $site->getConfiguration();
 $configuration['languages'][] = [
-    'title' => 'Danish',
+    'title' => 'Español',
     'enabled' => true,
     'languageId' => 1,
-    'base' => '/da/',
-    'locale' => 'da_DK',
-    'hreflang' => 'da-DK',
-    'navigationTitle' => 'Dansk',
+    'base' => '/es/',
+    'locale' => 'es-ES',
+    'hreflang' => 'es-ES',
+    'navigationTitle' => 'Español',
     'websiteTitle' => '',
-    'flag' => 'dk',
-    'fallbackType' => 'fallback',
-    'fallbacks' => '0',
+    'flag' => 'es',
+    'fallbackType' => 'strict',
+    'fallbacks' => '',
 ];
 $configuration['languages'][] = [
-    'title' => 'German',
+    'title' => 'العربية',
     'enabled' => true,
     'languageId' => 2,
-    'base' => '/de/',
-    'locale' => 'de_DE',
-    'hreflang' => 'de-DE',
-    'navigationTitle' => 'Deutsch',
+    'base' => '/ar/',
+    'locale' => 'ar',
+    'hreflang' => 'ar',
+    'navigationTitle' => 'العربية',
     'websiteTitle' => '',
-    'flag' => 'de',
+    'flag' => 'ma',
     'fallbackType' => 'strict',
     'fallbacks' => '',
 ];
 GeneralUtility::makeInstance(SiteWriter::class)->write($site->getIdentifier(), $configuration);
 GeneralUtility::makeInstance(CacheManager::class)->flushCaches();
 
-// A group of translators, who may edit German records only, for the
+// A group of translators, who may edit Spanish records only, for the
 // screenshot of the language permissions
 $dataHandler = $process(['be_groups' => ['NEWtranslators' => [
     'pid' => 0,
-    'title' => 'German translators',
-    'allowed_languages' => '2',
+    'title' => 'Spanish translators',
+    'allowed_languages' => '1',
 ]]]);
-$uids['germanTranslators'] = $dataHandler->substNEWwithIDs['NEWtranslators'];
+$uids['spanishTranslators'] = $dataHandler->substNEWwithIDs['NEWtranslators'];
 
 // The uids differ between TYPO3 versions, so screenshots.mjs reads them here
 GeneralUtility::mkdir_deep(Environment::getVarPath());

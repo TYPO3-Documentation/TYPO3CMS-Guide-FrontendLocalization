@@ -44,8 +44,9 @@ The screenshots in `Documentation/Images/GeneratedScreenshots/` come from a
 TYPO3 instance with the demo site of the Camino theme, which the Core ships
 from TYPO3 v14 on. The branch `13.4` keeps its screenshots in
 `Documentation/Images/ManualScreenshots/`. `create-records.php` adds the
-languages of the examples in this manual to the site: English as the
-default language, Danish (1), which falls back to English, and German (2).
+languages of the Editors Tutorial to the site, so that the screenshots of
+both manuals show the same website: English as the default language,
+Español (1), and العربية (2), which is written from right to left.
 The backend runs without debug mode, so it looks as an editor sees it.
 Screenshots are taken as the administrator `j.doe`.
 
