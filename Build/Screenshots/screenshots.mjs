@@ -24,13 +24,28 @@ const editUrl = (table, uid) => `${baseUrl}/typo3/record/edit?edit[${table}][${u
 const margin = 12;
 
 // The uids of the records that create-records.php looked up
-const { spanishTranslators } =
+const { spanishTranslators, arabicItems, arabicToiletries } =
   JSON.parse(readFileSync('../../var/screenshot-records.json', 'utf8'));
 
+// A field of a form, found by its label: the backend runs without debug
+// mode, which would show the field names
+const field = (name) => `.form-group:has([name$="[${name}]"]):not(:has(.form-group))`;
 // A palette of a form, found by its headline
 const palette = (headline) => `.form-section:has(> .form-section-headline:text-is("${headline}"))`;
 
 const screenshots = {
+  // The form of a translation, with the values of the default language
+  // below the fields. The headlines only, as the text field of an instance
+  // without the rich text editor shows the HTML.
+  'CoreSupport/TranslationForm': {
+    url: editUrl('tt_content', arabicItems),
+    from: palette('Headlines'),
+  },
+  // A translation whose original changed since it was translated
+  'CoreSupport/TranslationChanged': {
+    url: editUrl('tt_content', arabicToiletries),
+    from: field('header'),
+  },
   // The languages that a group of translators may edit. The tables above
   // fill more than the window, so the palette is scrolled into view.
   'Permissions/LimitToLanguages': {

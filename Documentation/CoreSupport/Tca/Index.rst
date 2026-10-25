@@ -121,8 +121,8 @@ When the `transOrigPointerField` and `languageField` are defined for
 a table you will see references to the content of the default language
 record when editing the translation:
 
-..  figure:: /Images/ManualScreenshots/Record/CoreSupportFormEngine.png
-    :alt: Original content in the Form Engine
+..  figure:: /Images/GeneratedScreenshots/CoreSupport/TranslationForm.png
+    :alt: The headlines of an Arabic translation, with the English values below
     :class: with-shadow
 
     Original content shows up under the input fields when translating a record
@@ -150,8 +150,8 @@ is used to display any changes that have occurred in the default record since
 translation happened. For example, in the `tt_content` table, it may look
 like this for the header field:
 
-..  figure:: /Images/ManualScreenshots/Record/CoreSupportFormEngineViewDifference.png
-    :alt: Changes in original content
+..  figure:: /Images/GeneratedScreenshots/CoreSupport/TranslationChanged.png
+    :alt: The header of a translation, with the change of the English header
     :class: with-shadow
 
     Changes in the original content are highlighted below the input field
