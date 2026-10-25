@@ -10,9 +10,9 @@ You can restrict backend users and groups to edit records in specific languages
 only. The permissions are enforced across all tables by checking the language
 specified in the :ref:`TCA <t3tca:start>` configuration of the
 :ref:`"languageField" of the table <core-support-tca-languagefield>`.
-Navigate to the backend module :guilabel:`System > Backend Users`. Select a
+Navigate to the backend module :guilabel:`Administration > Users`. Select a
 backend user group. The :guilabel:`Limit to languages` setting is found in the
-:guilabel:`Access Lists` tab:
+:guilabel:`Record Permissions` tab:
 
 ..  figure:: /Images/ManualScreenshots/BackendUsers/CoreSupportLimitToLanguages.png
     :alt: Setting language limitations
