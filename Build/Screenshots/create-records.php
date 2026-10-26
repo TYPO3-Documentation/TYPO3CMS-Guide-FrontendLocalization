@@ -105,11 +105,17 @@ $localize = static function (string $table, int $uid, int $language): int {
     return (int)$dataHandler->copyMappingArray_merged[$table][$uid];
 };
 
-// A content element of the packing list in Arabic, whose form shows the
-// English values below the fields
+// The packing list in Arabic, as in the Editors Tutorial, so that the
+// Records module shows the translation of the page
 $uids['packingList'] = $find('pages', 'title', 'Packing List', $uids['root']);
-$essentialItems = $find('tt_content', 'header', 'Essential Items', $uids['packingList']);
-$uids['arabicItems'] = $localize('tt_content', $essentialItems, 2);
+$arabicPage = $localize('pages', $uids['packingList'], 2);
+$process(['pages' => [$arabicPage => ['title' => 'قائمة الأمتعة', 'hidden' => 0]]]);
+
+// A content element of the packing list in Arabic, whose form shows the
+// English values below the fields, and which the Records module shows
+// below the English one
+$uids['essentialItems'] = $find('tt_content', 'header', 'Essential Items', $uids['packingList']);
+$uids['arabicItems'] = $localize('tt_content', $uids['essentialItems'], 2);
 $process(['tt_content' => [$uids['arabicItems'] => ['header' => 'الأغراض الأساسية', 'hidden' => 0]]]);
 // The toiletries in Arabic, whose English header changes afterwards, so
 // that the form of the translation shows the change
