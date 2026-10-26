@@ -23,16 +23,28 @@ const moduleUrl = (path, id) => `${baseUrl}/typo3/module/${path}?id=${id}`;
 const editUrl = (table, uid) => `${baseUrl}/typo3/record/edit?edit[${table}][${uid}]=edit`;
 // Space around an element, so its border does not touch the edge
 const margin = 12;
+// The width of the frontend screenshots, which the text shows side by side
+const frontendWidth = 600;
 
 // The uids of the records that create-records.php looked up
-const { spanishTranslators, packingList, essentialItems, arabicItems, arabicToiletries } =
+const { spanishTranslators, packingList, essentialItems, arabicItems, arabicToiletries, privacy, allLanguages, arabicRoutes } =
   JSON.parse(readFileSync('../../var/screenshot-records.json', 'utf8'));
 
 // A field of a form, found by its label: the backend runs without debug
 // mode, which would show the field names
 const field = (name) => `.form-group:has([name$="[${name}]"]):not(:has(.form-group))`;
+// An inline field of a form, which holds the forms of its items: the outer
+// form group around the inline container
+const inlineField = '.form-group:has(typo3-formengine-container-inline)';
 // A palette of a form, found by its headline
 const palette = (headline) => `.form-section:has(> .form-section-headline:text-is("${headline}"))`;
+
+// Marks a button that the text names. A button in a group or a table cell
+// is marked inside, as its neighbours would cut a frame around it.
+const outline = (locator, inside = false) => locator.evaluate((element, inner) => {
+  element.style.outline = '3px solid #ff8700';
+  element.style.outlineOffset = inner ? '-3px' : '3px';
+}, inside);
 
 // A number in an orange circle at the lower right of an element, for a
 // screenshot whose text explains the numbered parts
@@ -56,9 +68,17 @@ const badge = (locator, number, side = 'right') => locator.evaluate((element, [t
   element.ownerDocument.body.appendChild(circle);
 }, [String(number), side]);
 
-// The language menu at the top of a module, and its open list
+// The language menu at the top of a module, its open list, and the
+// translation wizard that it opens for a language in the Layout module
 const languageMenu = (frame) => frame.locator('.module-docheader-navigation button.dropdown-toggle').last();
 const languageList = '.module-docheader .dropdown-menu >> visible=true';
+const openTranslation = (language) => async (frame) => {
+  await languageMenu(frame).click();
+  await frame.page().waitForTimeout(500);
+  await frame.locator(languageList).getByText(language).first().click();
+  await frame.page().locator('typo3-backend-modal dialog[open]').waitFor();
+  await frame.page().waitForTimeout(1500);
+};
 
 const screenshots = {
   // The languages of the site, in the module where they are configured
@@ -106,6 +126,64 @@ const screenshots = {
     url: editUrl('tt_content', arabicToiletries),
     from: field('header'),
   },
+  // The step of the translation wizard that asks for the mode. The wizard
+  // only opens, so the page stays without a Spanish translation.
+  'LocalizedContent/TranslationMode': {
+    url: moduleUrl('web/layout', packingList),
+    prepare: async (frame) => {
+      await openTranslation('Español')(frame);
+      // The source language, then the content selection, then the mode
+      const dialog = frame.page().locator('typo3-backend-modal dialog[open]');
+      for (let step = 0; step < 2; step++) {
+        await dialog.getByRole('button', { name: /^Next/ }).click();
+        await frame.page().waitForTimeout(1500);
+      }
+      await frame.page().evaluate(() => document.activeElement?.blur());
+    },
+    modal: true,
+  },
+  // The imprint in English, in Arabic, which shows only what is
+  // translated, and in Spanish, which falls back to the English text. The
+  // text shows two of them side by side, so the window is as narrow as a
+  // phone, and Camino shows its layout for small screens. From the header
+  // of the website down to the end of the content.
+  'LocalizedContent/FrontendEnglish': {
+    loggedOut: true,
+    url: `${baseUrl}/camino/imprint`,
+    prepare: async (window) => window.setViewportSize({ width: frontendWidth, height: viewportHeight }),
+    until: 'main p >> nth=1',
+  },
+  'LocalizedContent/FrontendStrict': {
+    loggedOut: true,
+    url: `${baseUrl}/camino/ar/imprint`,
+    prepare: async (window) => window.setViewportSize({ width: frontendWidth, height: viewportHeight }),
+    // The page title, as nothing follows it
+    until: 'main >> xpath=preceding-sibling::*[1]',
+  },
+  'LocalizedContent/FrontendFallback': {
+    loggedOut: true,
+    url: `${baseUrl}/camino/es/imprint`,
+    prepare: async (window) => window.setViewportSize({ width: frontendWidth, height: viewportHeight }),
+    // The first lines of the English text are enough to show it
+    until: 'main p >> nth=1',
+  },
+  // A content element for all languages, in its form
+  'LocalizedContent/AllLanguagesField': {
+    url: editUrl('tt_content', allLanguages),
+    tab: 'Language',
+    from: field('sys_language_uid'),
+  },
+  // The list items of a translated list: the button that translates the
+  // items that are not translated yet, and such an item with its own button
+  'LocalizedContent/InlineElements': {
+    url: editUrl('tt_content', arabicRoutes),
+    prepare: async (frame) => {
+      const items = frame.locator(inlineField).first();
+      await badge(items.getByRole('button', { name: 'Localize all records' }), 1);
+      await badge(items.locator('.panel', { hasText: 'Camino Inglés' }).locator('button, a').last(), 2, 'left');
+    },
+    from: `${inlineField} >> nth=0`,
+  },
   // The languages that a group of translators may edit. The tables above
   // fill more than the window, so the palette is scrolled into view.
   'Permissions/LimitToLanguages': {
@@ -115,6 +193,18 @@ const screenshots = {
       await frame.locator(palette('Language Permissions')).scrollIntoViewIfNeeded();
     },
     from: palette('Language Permissions'),
+  },
+  // A content element for all languages in the Layout module, which
+  // compares the languages of the page side by side. The backend keeps the
+  // view for the next pages, so this screenshot comes last.
+  'LocalizedContent/AllLanguagesLayout': {
+    url: `${moduleUrl('web/layout', privacy)}&viewMode=2&languages[]=0&languages[]=1&languages[]=2`,
+    prepare: async (frame) => {
+      await outline(frame.locator(`#element-tt_content-${allLanguages} .t3-page-ce-element`));
+    },
+    window: true,
+    // The content element, as the columns of the page go on below it
+    until: `#element-tt_content-${allLanguages}`,
   },
 };
 
