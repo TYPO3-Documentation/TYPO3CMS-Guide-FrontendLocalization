@@ -76,8 +76,10 @@ $configuration['languages'][] = [
     'navigationTitle' => 'Español',
     'websiteTitle' => '',
     'flag' => 'es',
-    'fallbackType' => 'strict',
-    'fallbacks' => '',
+    // Unlike in the Editors Tutorial, Spanish falls back to English, for
+    // the example of a fallback in the frontend
+    'fallbackType' => 'fallback',
+    'fallbacks' => '0',
 ];
 $configuration['languages'][] = [
     'title' => 'العربية',
@@ -123,6 +125,54 @@ $toiletries = $find('tt_content', 'header', 'Toiletries', $uids['packingList']);
 $uids['arabicToiletries'] = $localize('tt_content', $toiletries, 2);
 $process(['tt_content' => [$uids['arabicToiletries'] => ['header' => 'أدوات النظافة', 'hidden' => 0]]]);
 $process(['tt_content' => [$toiletries => ['header' => 'Toiletries and medicine']]]);
+
+// The imprint in both languages, with its hero translated, but not its
+// text: Arabic shows only what is translated, Spanish falls back to the
+// English text
+$uids['imprint'] = $find('pages', 'title', 'Imprint');
+$imprintHero = $find('tt_content', 'CType', 'camino_hero_text_only', $uids['imprint']);
+foreach ([1 => 'Aviso legal', 2 => 'بيانات النشر'] as $language => $title) {
+    $page = $localize('pages', $uids['imprint'], $language);
+    $process(['pages' => [$page => ['title' => $title, 'hidden' => 0]]]);
+    $hero = $localize('tt_content', $imprintHero, $language);
+    $process(['tt_content' => [$hero => ['header' => $title, 'hidden' => 0]]]);
+}
+
+// A content element for all languages on the privacy page. The page is
+// translated, so that the Layout module compares its languages.
+$uids['privacy'] = $find('pages', 'title', 'Privacy');
+foreach ([1 => 'Privacidad', 2 => 'الخصوصية'] as $language => $title) {
+    $page = $localize('pages', $uids['privacy'], $language);
+    $process(['pages' => [$page => ['title' => $title, 'hidden' => 0]]]);
+}
+$dataHandler = $process(['tt_content' => ['NEWall' => [
+    'pid' => $uids['privacy'],
+    'colPos' => 0,
+    'CType' => 'text',
+    'sys_language_uid' => -1,
+    'header' => 'Buen Camino!',
+    'bodytext' => '<p>The greeting of the pilgrims, in every language of the website.</p>',
+]]]);
+$uids['allLanguages'] = $dataHandler->substNEWwithIDs['NEWall'];
+
+// The list of the Camino routes in Arabic. Its items are inline elements,
+// which the translation translates together with the list. An item that
+// the English list gets afterwards is not translated yet, so the form of
+// the translation offers to translate it.
+$routes = $find('tt_content', 'header', 'Camino Routes', $uids['root']);
+$uids['arabicRoutes'] = $localize('tt_content', $routes, 2);
+$process(['tt_content' => [$uids['arabicRoutes'] => ['header' => 'طرق كامينو', 'hidden' => 0]]]);
+$queryBuilder = GeneralUtility::makeInstance(ConnectionPool::class)->getQueryBuilderForTable('tx_themecamino_list_item');
+$items = $queryBuilder->select('uid')->from('tx_themecamino_list_item')
+    ->where(
+        $queryBuilder->expr()->eq('uid_foreign', $queryBuilder->createNamedParameter($routes)),
+        $queryBuilder->expr()->eq('sys_language_uid', $queryBuilder->createNamedParameter(0)),
+    )
+    ->orderBy('sorting_foreign')->executeQuery()->fetchFirstColumn();
+$process([
+    'tt_content' => [$routes => ['tx_themecamino_list_elements' => implode(',', [...$items, 'NEWroute'])]],
+    'tx_themecamino_list_item' => ['NEWroute' => ['pid' => $uids['root'], 'header' => 'Camino Inglés']],
+]);
 
 // A group of translators, who may edit Spanish records only, for the
 // screenshot of the language permissions

@@ -46,7 +46,9 @@ from TYPO3 v14 on. The branch `13.4` keeps its screenshots in
 `Documentation/Images/ManualScreenshots/`. `create-records.php` adds the
 languages of the Editors Tutorial to the site, so that the screenshots of
 both manuals show the same website: English as the default language,
-Español (1), and العربية (2), which is written from right to left.
+Español (1), and العربية (2), which is written from right to left. Unlike
+in the Editors Tutorial, Español falls back to English, for the example of
+a fallback in the frontend.
 The backend runs without debug mode, so it looks as an editor sees it.
 Screenshots are taken as the administrator `j.doe`.
 
