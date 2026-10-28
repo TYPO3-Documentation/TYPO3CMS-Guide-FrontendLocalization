@@ -21,27 +21,31 @@ Introduction
     See `Feature: #107628 - Improved backend module naming and structure <https://docs.typo3.org/permalink/changelog:feature-107628-1729026000>`_
 
 
-You can get a complete overview of the page tree and page
-translations by using the
-:guilabel:`Content > Status > Localization Overview` module.
+The :guilabel:`Content > Status > Localization Overview` module shows the
+page tree with the translations of each page. Choose :guilabel:`Infinite` in
+:guilabel:`Depth` to see all levels of the page tree:
 
-..  figure:: /Images/ManualScreenshots/InfoModule/LocalizationOverviewIntroductionPackage.png
-    :alt: Localization Overview in "Content > Status" module
+..  figure:: /Images/GeneratedScreenshots/LocalizationOverview/Overview.png
+    :alt: The Localization Overview of a site in three languages
     :class: with-shadow
 
-    Overview of existing translations in a blank Introduction Package
+    The Localization Overview of the Camino site
 
-All the green entries indicate which languages the respective page is available
-in. The gray areas mean that no translation is available, but access to the
-page specifying this language is tolerated. It is also fast
-to create new translations from this module: use the checkboxes and hit
-the :guilabel:`Create new translation headers` button.
+A green cell shows that the page has a visible translation in the language
+of its column. A cell without a color shows that the page has no translation
+in this language. See
+`Colors of the Localization Overview <https://docs.typo3.org/permalink/t3translate:localization-overview-final-notes>`_
+for all colors.
 
-..  figure:: /Images/ManualScreenshots/InfoModule/LocalizationOverviewMassTranslation.png
-    :alt: Translating several pages at once
+To translate several pages at once, check the pages in the column of a
+language. Then click :guilabel:`Create new translation headers` at the top of
+the column:
+
+..  figure:: /Images/GeneratedScreenshots/LocalizationOverview/CreateTranslations.png
+    :alt: Two pages checked for new Spanish translations
     :class: with-shadow
 
-    Creating translations for a whole selection of pages at once
+    Creating the Spanish translations of two pages at once
 
 
 ..  _localization-overview-hide-missing-translations:
@@ -49,55 +53,55 @@ the :guilabel:`Create new translation headers` button.
 Hiding pages if no translation exists
 =====================================
 
-If there is no translation of a page, it will still appear by default in the
-website menu when this language is used. Here the home page of the Introduction
-Package is in German (as can be seen from the translate page title in
-:html:`<title>` tag), and all other (untranslated) pages still appear in the
-menu, albeit in the default language (English).
+What a page without a translation does depends on the fallback type of the
+language, see
+`Localized content <https://docs.typo3.org/permalink/t3translate:localized-content>`_:
 
-..  figure:: /Images/ManualScreenshots/Frontend/LocalizationOverviewDefaultLanguageFallback.png
-    :alt: The menu with untranslated pages
+*   In a language with the fallback type `strict`, such as Arabic here, the
+    page does not exist. The menus do not show it.
+*   In a language with the fallback type `fallback`, such as Spanish here, the
+    page shows in the default language. The menus show it as well.
+
+..  figure:: /Images/GeneratedScreenshots/LocalizationOverview/MenuWithUntranslatedPage.png
+    :alt: The Spanish menu with the FAQs, which have no Spanish translation
     :class: with-shadow
 
-    The German home page with untranslated pages appearing in the menu
+    The Spanish menu shows the untranslated FAQs
 
-This behaviour can be changed. Let us edit the "Customizing" page.
-In the :guilabel:`Language` tab, check the
+To hide a page in the languages that it has no translation in, edit its page
+properties. On the :guilabel:`Language` tab, check
 :guilabel:`Hide page if no translation for current language exists`:
 
-..  figure:: /Images/ManualScreenshots/Record/LocalizationOverviewHideIfNoTranslation.png
-    :alt: Hiding the page if not translated
+..  figure:: /Images/GeneratedScreenshots/LocalizationOverview/HideIfNotTranslated.png
+    :alt: The option Hide page if no translation for current language exists
     :class: with-shadow
 
-    Hide the page if it is not translated
+    Hiding the FAQs in the languages that they have no translation in
 
-This is reflected in the *Localization Overview*:
+The Localization Overview marks the page with **N**, and shows its languages
+without a translation in red:
 
-..  figure:: /Images/ManualScreenshots/InfoModule/LocalizationOverviewTranslationHidden.png
-    :alt: Hidden translation in the overview
+..  figure:: /Images/GeneratedScreenshots/LocalizationOverview/OverviewHidden.png
+    :alt: The Localization Overview with the FAQs marked with N and in red
     :class: with-shadow
 
-    The Localization Overview reflects the change in visibility of the
-    "Customizing" page
+    The FAQs in the Localization Overview after the change
 
-From this it is clear that when viewing the website in
-German the "Customizing" page is not accessible. The menu
-reflects this in the frontend.
+The Spanish menu does not show the page anymore:
 
-..  figure:: /Images/ManualScreenshots/Frontend/LocalizationOverviewMenuWithHiddenUntranslatedPage.png
-    :alt: Hidden translation in the menu
+..  figure:: /Images/GeneratedScreenshots/LocalizationOverview/MenuWithHiddenPage.png
+    :alt: The Spanish menu without the FAQs
     :class: with-shadow
 
-    The "Customizing" page does not appear in the menu anymore
+    The Spanish menu without the FAQs
 
-Trying to access the "Customizing" page directly with its ID will
-produce an error.
+A visitor who opens the address of the page in Spanish gets an error:
 
-..  figure:: /Images/ManualScreenshots/Frontend/LocalizationOverviewTranslationError.png
-    :alt: Missing translation generates error
+..  figure:: /Images/GeneratedScreenshots/LocalizationOverview/TranslationError.png
+    :alt: Page Not Found, because the page is not available in Spanish
     :class: with-shadow
 
-    An error message indicates a missing translation
+    The FAQs in Spanish cause an error now
 
 
 ..  _localization-overview-hide-default-language:
@@ -105,49 +109,31 @@ produce an error.
 Hiding default translation of pages
 ===================================
 
-If you want pages *only* in the alternative languages you must still
-create a default language page in the page tree which simply acts as a
-placeholder. Setting this status is done by selecting the checkbox
-:guilabel:`Hide default translation of page`:
+A page that exists in other languages only still needs a page in the default
+language, which serves as a placeholder. On the :guilabel:`Language` tab of
+its page properties, check :guilabel:`Hide default language of page`:
 
-..  figure:: /Images/ManualScreenshots/Record/LocalizationOverviewHideDefaultLanguage.png
-    :alt: Hiding the page in default language
+..  figure:: /Images/GeneratedScreenshots/LocalizationOverview/HideDefaultLanguage.png
+    :alt: The option Hide default language of page, checked
     :class: with-shadow
 
-    Hide the page in the default language
+    Hiding the page in the default language
 
-This is reflected in the *Localization Overview*:
+The Localization Overview marks the page with **D**, and shows its default
+language in red:
 
-..  figure:: /Images/ManualScreenshots/Record/LocalizedContentAllLanguageDefined.png
-    :alt: Hidden default language in the overview
+..  figure:: /Images/GeneratedScreenshots/LocalizationOverview/OverviewHiddenDefault.png
+    :alt: The Localization Overview with a page marked with D
     :class: with-shadow
 
-    The Localization Overview shows the page as being unavailable in the
-    default language
+    A page that exists in Arabic only
 
 ..  note::
-    The page also appears as being unavailable in Danish, because Danish falls
-    back to English and English is not available.
+    The page is not available in Spanish either, because Spanish falls back to
+    English, and English is hidden.
 
-On the web site, the menu now looks like this in German:
-
-..  figure:: /Images/ManualScreenshots/Frontend/LocalizationOverviewHideDefaultLanguageMenuGerman.png
-    :alt: German menu with language-specific page
-    :class: with-shadow
-
-    The German-specific page shows up in the German version of the web site
-
-and in English:
-
-..  figure:: /Images/ManualScreenshots/Frontend/LocalizationOverviewHideDefaultLanguageMenuEnglish.png
-    :alt: English menu not showing language-specific page
-    :class: with-shadow
-
-    The German-specific page does not show up in the default version of the web
-    site
-
-Trying to access the "Nur für Deutschland" page in the default language will
-yield an error.
+A visitor who opens the address of the page in the default language gets an
+error, like the one in the previous section.
 
 Hiding pages in the default language is probably a rare thing to do,
 but it is possible to imagine cases where the topic of a page or
@@ -169,29 +155,12 @@ with a global setting:
 
     $GLOBALS['TYPO3_CONF_VARS']['FE']['hidePagesIfNotTranslatedByDefault'] = 1;
 
-The *Localization Overview* reflects this immediately:
-
-..  figure:: /Images/ManualScreenshots/InfoModule/LocalizationOverviewInvertTranslationHandling.png
-    :alt: All untranslated pages hidden by default
-    :class: with-shadow
-
-    The Localization Overview shows that all untranslated pages are hidden by
-    default
-
-Note how the behaviour of specific localization setting for the
-"Customizing" pages has been inverted. We had earlier defined the page
-to be hidden if no translation existed. Now it is forced to display
-even if no translation exists (this is reflected by its background
-being gray instead of red).
-
-When editing the page properties, the label of the corresponding
-checkbox has changed:
-
-..  figure:: /Images/ManualScreenshots/Frontend/LocalizationOverviewShowEvenIfNoTranslation.png
-    :alt: Show page even if no translation exists
-    :class: with-shadow
-
-    Inverted behaviour: choose to show the page even if no translation exists
+The setting inverts the option of the page properties. A page without the
+option is now hidden in the languages that it has no translation in. The
+Localization Overview marks it with **N**, and shows these languages in red.
+A page with the option is shown even if it has no translation, and the
+label of the option reads
+:guilabel:`Show page even if no translation exists`.
 
 
 ..  _localization-overview-final-notes:
@@ -199,19 +168,23 @@ checkbox has changed:
 Final notes
 ===========
 
-Summary of colors in the Localization Overview:
+The colors of the Localization Overview mean the following:
 
-Green background
-    Page is translated and viewable in this
-    language. For translations it means that an active Alternative Page
-    Language overlay record is present.
+Green
+    The page is available in this language. In the column of a language
+    other than the default language, the page has a translation that is
+    not hidden.
 
-Red background
-    Page *cannot* be viewed in this language and you
-    will see an error message if you try. Menus should automatically
-    filter out links to pages with this translation.
+Red
+    The page is not available in this language. In the column of the
+    default language, the page hides its default language. In the column of
+    another language, the page has no visible translation, and is hidden
+    without one.
 
-Gray background (not available for default language)
-    Page will fall back to the specified fallback mode for content.
-    It depends on the language fallback configuration set in your site
-    configuration.
+No color
+    The page has no visible translation in this language. Whether it shows,
+    depends on the fallback type of the language in the site configuration.
+
+Yellow
+    The page has more than one translation in this language, which is an
+    error.
