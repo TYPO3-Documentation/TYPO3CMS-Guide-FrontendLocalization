@@ -35,19 +35,21 @@ Free mode
     the original language and you want to have that freedom in designing your
     translated website.
 
-When you start translating a page, the :guilabel:`Content > Layout` module will
-ask you about this choice when clicking on the :guilabel:`Translate` button:
+When you translate a page or a content element, the translation wizard asks
+for this choice in its step **Mode**, see
+`Translating pages <https://docs.typo3.org/permalink/t3translate:page-translations>`_:
 
-..  figure:: /Images/ManualScreenshots/PageModule/LocalizedContentTranslationWizard.png
-    :alt: The translation wizard showing localization strategies
+..  figure:: /Images/GeneratedScreenshots/LocalizedContent/TranslationMode.png
+    :alt: The step Mode of the translation wizard with Translate and Copy
     :class: with-shadow
 
-    The translation wizard asks for a choice of localization strategy
+    The translation wizard asks whether to translate or to copy the content
 
-The :guilabel:`Translate` button corresponds to the connected mode, the
-:guilabel:`Copy` button to the free mode. Furthers details on how to proceed
-with translations are found in the
-:ref:`Editor's Tutorial <t3editors:languages>`.
+:guilabel:`Translate` creates a translation in connected mode, and
+:guilabel:`Copy` creates a copy in free mode. If a record has translations
+already, the wizard offers only their mode, so that the modes do not mix.
+For more details on how to translate, see the
+:ref:`TYPO3 Editors Guide <t3editors:languages>`.
 
 
 ..  _localized-connected-content:
@@ -74,13 +76,29 @@ default language, then overlay them with the target language. If a record is
 not translated into the target language, then it is discarded and not shown at
 all.
 
-The German version will be reduced to the actually translated elements:
+A page in such a language shows only its translated content elements. Here,
+the title of the Arabic imprint is translated, but its text is not:
 
-..  figure:: /Images/ManualScreenshots/Frontend/LocalizedContentNoOverlay.png
-    :alt: English and German translation without overlays
-    :class: with-shadow
+..  card-grid::
+    :columns: 1
+    :columns-md: 2
+    :gap: 4
+    :card-height: 100
+    :class: pb-4
 
-    English and German translation without overlays
+    ..  card:: English
+
+        ..  figure:: /Images/GeneratedScreenshots/LocalizedContent/FrontendEnglish.png
+            :alt: The English imprint with its title and its text
+
+            The English imprint
+
+    ..  card:: العربية
+
+        ..  figure:: /Images/GeneratedScreenshots/LocalizedContent/FrontendStrict.png
+            :alt: The Arabic imprint with its title, but without its text
+
+            The Arabic imprint shows only its translated title
 
 Another way to view connected content in the frontend is by creating a fallback
 chain. For this we have to adjust the site configuration and provide a
@@ -93,21 +111,38 @@ comma-separated list of fallback languages:
       -
         # ... other language settings ...
         fallbackType: fallback
-        # 1 = Danish, 0 = English
-        fallbacks: '1,0'
+        # 0 = English
+        fallbacks: '0'
 
-In this mode, TYPO3 will also first internally fetch the records of the
-default language and then overlay them with the target language. If no
-translation exists for the target language, it will now go from left to right
-through the fallback chain and first try to find a translation for the language
-ID 1 (Danish) and, if that is a miss as well, fall back to language ID 0
-(English).
+In this mode, TYPO3 also fetches the records of the default language first,
+and then overlays them with the target language. If a record has no
+translation in the target language, TYPO3 goes through the fallback chain
+from left to right. A chain such as `1,0` tries the language with the ID 1
+first, and then the default language with the ID 0.
 
-..  figure:: /Images/ManualScreenshots/Frontend/LocalizedContentTranslationOverlay.png
-    :alt: English and German translation with overlays
-    :class: with-shadow
+Here, Spanish falls back to English. The Spanish imprint shows its translated
+title and the English text:
 
-    The English version and its German translation, with overlays
+..  card-grid::
+    :columns: 1
+    :columns-md: 2
+    :gap: 4
+    :card-height: 100
+    :class: pb-4
+
+    ..  card:: English
+
+        ..  figure:: /Images/GeneratedScreenshots/LocalizedContent/FrontendEnglish.png
+            :alt: The English imprint with its title and its text
+
+            The English imprint
+
+    ..  card:: Español
+
+        ..  figure:: /Images/GeneratedScreenshots/LocalizedContent/FrontendFallback.png
+            :alt: The Spanish imprint, with its text in English
+
+            The Spanish imprint falls back to the English text
 
 ..  warning::
     If you want to use the "connected content" paradigm in conjunction with the
@@ -152,24 +187,23 @@ When using overlays, it becomes possible to use a particular
 language called "All", which will be automatically visible across all
 translations. The uid of that particular language is "-1".
 
-..  figure:: /Images/ManualScreenshots/Record/LocalizedContentAllLanguageDefined.png
-    :alt: Content element in "All" language
+..  figure:: /Images/GeneratedScreenshots/LocalizedContent/AllLanguagesField.png
+    :alt: The Language field of a content element, set to All
     :class: with-shadow
 
-    A content element valid for all languages
+    A content element for all languages
 
-It is also marked with the special language icon in the
-:guilabel:`Content > Layout` module:
+The view :guilabel:`Language Comparison` of the :guilabel:`Content > Layout`
+module shows the languages of a page side by side. An element for all
+languages appears only in the column of the default language. The columns of
+the translations stay empty, and the translation wizard does not offer the
+element for translation:
 
-..  figure:: /Images/ManualScreenshots/PageModule/LocalizedContentAllLanguagePageModule.png
-    :alt: "All" language in the Page Module
+..  figure:: /Images/GeneratedScreenshots/LocalizedContent/AllLanguagesLayout.png
+    :alt: The Layout module with an element for all languages in one column
     :class: with-shadow
 
-    An "All" language content element displayed in the
-    :guilabel:`Content > Layout` module
-
-Note that no :guilabel:`Translate` button appears, the new content element
-is valid for all languages.
+    A content element for all languages in the language comparison
 
 
 ..  _localized-content-inline-elements:
@@ -177,22 +211,28 @@ is valid for all languages.
 Localizing inline elements (IRRE)
 =================================
 
-When localizing a record with
-:ref:`inline elements (IRRE) <t3tca:columns-inline-introduction>`, the inline
-elements will be grayed out and not automatically localized. TYPO3 will display
-two buttons to help you localize and keep the elements in sync.
+When you translate a record with
+:ref:`inline elements (IRRE) <t3tca:columns-inline-introduction>`, TYPO3
+translates its inline elements together with it. An inline element that the
+original record gets later has no translation yet. The form of the
+translation shows it with a dashed border, and offers two buttons to
+translate it:
 
-..  figure:: ../Images/LocalizedContentLocalizingIrreElements.png
-    :alt: Buttons for localizing and synchronizing inline elements
+#.  :guilabel:`Localize all records` translates all inline elements that have
+    no translation yet.
+#.  The button of an inline element translates this element only.
+
+..  figure:: /Images/GeneratedScreenshots/LocalizedContent/InlineElements.png
+    :alt: The list items of an Arabic link list, one of them not translated yet
     :class: with-shadow
 
-    Buttons for localizing and synchronizing inline elements
+    A translated list with an item that has no translation yet
 
-**Localize all records (1)** creates localized versions of all inline
-elements from the default language in your current language so that
-you can translate them. Each element that has not yet been localized
-will also have a :guilabel:`Localize` button (3) that will allow you to
-localize individual elements.
-
-**Synchronize with original language (2)** can be clicked when you have
-translated the elements and the content in the default language changed.
+A field can also offer :guilabel:`Synchronize with original language`. It
+adds the missing translations, and deletes the translations whose original is
+gone. The TCA options
+`showAllLocalizationLink <https://docs.typo3.org/permalink/t3tca:confval-inline-appearance-showalllocalizationlink>`_
+and
+`showSynchronizationLink <https://docs.typo3.org/permalink/t3tca:confval-inline-appearance-showsynchronizationlink>`_
+of the field switch these buttons on. The lists of the Camino theme offer
+the first one, but not the second.
