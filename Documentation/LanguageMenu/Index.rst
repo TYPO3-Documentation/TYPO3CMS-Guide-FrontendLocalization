@@ -27,16 +27,17 @@ This kind of menu can be made by either using a
 LanguageMenuProcessor example
 =============================
 
-The `Introduction Package`_ comes with a text-based rendering of the
-language menu, located in the footer:
+The Camino theme shows a language menu in the header of the website. It lists
+the languages of the site, and grays out the languages that the page has no
+translation in:
 
-..  figure:: /Images/ManualScreenshots/Frontend/LanguageMenuText.png
-    :alt: Text-based language menu
+..  figure:: /Images/GeneratedScreenshots/LanguageMenu/CaminoLanguageMenu.png
+    :alt: The open language menu of the website, with Español grayed out
     :class: with-shadow
 
-    A text-based language menu, with active and disabled states
+    The language menu of a page that has no Spanish translation
 
-This is the corresponding TypoScript code, that sets up a
+The following TypoScript code sets up such a menu with a
 :php-short:`\TYPO3\CMS\Frontend\DataProcessing\LanguageMenuProcessor`
 on the page level:
 
@@ -83,6 +84,3 @@ The Fluid template iterates through the array and creates the language links:
         </f:for>
       </ul>
     </f:if>
-
-
-..  _Introduction Package: https://extensions.typo3.org/extension/introduction
