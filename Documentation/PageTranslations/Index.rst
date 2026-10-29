@@ -6,41 +6,54 @@
 Translating pages
 =================
 
-In order to translate a page in the page tree, create a
-copy of it with a new language relation. Use the module
-:guilabel:`Content > Layout` and on the top of the right side
-:guilabel:`Language Comparison` and the lower dropdown
-:guilabel:`Create a new translation of this page`. As soon as you choose a
-language of this dropdown the translation process will start with the copy of
-this page.
+To translate a page, create a translation of it in the backend:
 
-The page copy will be generated in the default language with page property
-fields like `title` or `description` prefixed by a text similar to "[Translate
-to Language X:]". The translated content needs to be put here, replacing the
-placeholder text (including the prefix and the copied default language
-contents).
+#.  Open the :guilabel:`Content > Layout` module.
+#.  Select the page in the page tree.
+#.  Open the language menu in the header of the module. It lists the
+    languages of the site configuration.
+#.  Choose the language below **Create new translation**. There, the menu
+    lists the languages that the page has no translation for yet. The
+    translation wizard opens.
+#.  Follow the steps of the wizard. You can choose the language to
+    translate from, and select content elements of the page, to translate
+    them together with the page.
 
-Select the :guilabel:`Language Comparison` function in the upper menu bar of
-the :guilabel:`Content > Layout` module. Then use the select box to create a
-new translation of the page:
-
-..  figure:: /Images/ManualScreenshots/Record/CreateNewTranslationOfPage.png
-    :alt: Create a new translation of the page
+..  figure:: /Images/GeneratedScreenshots/PageTranslations/LanguageMenu.png
+    :alt: The language menu offers Español below Create new translation
     :class: with-shadow
 
-    Create a new translation of the page
+    The language menu offers the languages that the page has no translation
+    for yet
 
-The form with the fields for the translated page will then be displayed:
-
-..  figure:: /Images/ManualScreenshots/Record/AlternativePageLanguage.png
-    :alt: Editing the page fields for an alternative page language
+..  figure:: /Images/GeneratedScreenshots/PageTranslations/TranslationWizard.png
+    :alt: The translation wizard asks for the source language
     :class: with-shadow
 
-    Editing the page fields for an alternative page language
+    The translation wizard asks for the language to translate from
 
-Most of the fields are the same as for the page of the default language. Below
-the fields the content of the default language is shown.
+The wizard creates the translation of the page, and the module then shows
+the page in the new language.
 
-As long as a page has no translated page record,
-its contents cannot be translated, no matter how many system languages
-have been defined.
+TYPO3 copies the page properties from the default language. It writes a
+prefix such as "[Translate to Español:]" in front of the title, the subtitle,
+the keywords, the description, and the abstract. Edit the page properties of
+the translation, and replace the copied text and the prefix with the
+translation:
+
+..  figure:: /Images/GeneratedScreenshots/PageTranslations/PageProperties.png
+    :alt: The title of the Spanish translation with the prefix
+    :class: with-shadow
+
+    The title of the translation, with the prefix, and the title of the
+    default language below
+
+Most of the fields are the same as for the page in the default language.
+Below each field, the form shows the value of the default language.
+
+The page TSconfig option
+`translateToMessage <https://docs.typo3.org/permalink/t3tsref:pagetcemain-translatetomessage>`_
+sets the text of the prefix. The option
+`disablePrependAtCopy <https://docs.typo3.org/permalink/t3tsref:pagetcemaintables-disableprependatcopy>`_
+switches the prefix off. The Camino theme sets this option for all tables,
+so a site with Camino gets no prefix.
