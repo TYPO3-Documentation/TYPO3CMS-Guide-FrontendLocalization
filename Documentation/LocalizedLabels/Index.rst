@@ -21,18 +21,18 @@ TypoScript:
     :caption: EXT:my_sitepackage/Configuration/Sets/Main/setup.typoscript
 
     page.20 = TEXT
-    page.20.data = LLL:EXT:indexed_search/Resources/Private/Language/locallang.xlf:form.submit
+    page.20.data = LLL:EXT:theme_camino/Resources/Private/Language/messages.xlf:menu.label
 
-This looks for the label `form.submit` in the file
-:file:`Resources/Private/Language/locallang.xlf` from the extension
-"indexed\_search".
+This looks for the label `menu.label` in the file
+:file:`Resources/Private/Language/messages.xlf` of the Camino theme,
+:composer:`typo3/theme-camino`.
 
-If the frontend is now accessed in the language "de", the German language
-is configured in the :ref:`site configuration <languages>` and the German
-translations are installed in the
-:ref:`labels path <t3coreapi:Environment-labels-path>`/:file:`de/`,
-the output should be "Suche" (instead "Search" which is what you will get if
-the label is retrieved for the default language).
+A page in Spanish needs Spanish in the
+:ref:`site configuration <languages>`. TYPO3 then looks for the translation
+in the :ref:`labels path <t3coreapi:Environment-labels-path>`, in
+:file:`es/theme_camino/Resources/Private/Language/es.messages.xlf`. A
+language pack installs the file there. If the file translates the label, the
+output is "Menú". Otherwise, the output is the English label "Menu".
 
 
 ..  _localized-labels-plugins:
@@ -49,15 +49,37 @@ Properly made plugins should use XLIFF files for every label that
 they used, so that they can be translated and thus generate a proper
 output when a specific language is requested.
 
-For instance, if the page is accessed in the language "de" and
-the German translations are installed, you will see this page for "indexed
-search":
+For instance, the Camino theme labels the button of its menu with an XLIFF
+label. With the translations installed, the Spanish and the Arabic pages
+show the label in their language:
 
-..  figure:: /Images/ManualScreenshots/Frontend/IndexedSearchGerman.png
-    :alt: Output from the Indexed Search plugin in German
-    :class: with-shadow
+..  card-grid::
+    :columns: 1
+    :columns-md: 3
+    :gap: 4
+    :card-height: 100
+    :class: pb-4
 
-    Output from the Indexed Search plugin in German
+    ..  card:: English
+
+        ..  figure:: /Images/GeneratedScreenshots/LocalizedLabels/MenuEnglish.png
+            :alt: The header of the website with the button Menu
+
+            The English label
+
+    ..  card:: Español
+
+        ..  figure:: /Images/GeneratedScreenshots/LocalizedLabels/MenuSpanish.png
+            :alt: The header of the website with the button Menú
+
+            The Spanish label
+
+    ..  card:: العربية
+
+        ..  figure:: /Images/GeneratedScreenshots/LocalizedLabels/MenuArabic.png
+            :alt: The header of the website with the button in Arabic
+
+            The Arabic label
 
 Overriding an existing translation is possible using custom XLIFF files.
 This process is described in
