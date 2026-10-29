@@ -100,8 +100,9 @@ const screenshots = {
     tab: 'Languages',
     menu: 'Sites',
     window: true,
-    // The counter below the languages, so the last one is in the image
-    until: 'typo3-backend-formengine-item-count',
+    // The counter below the languages, so the last one is in the image.
+    // TYPO3 v14.3 has no counter, so there the list of languages.
+    until: 'typo3-backend-formengine-item-count, #data-0-site-1-languages_records',
   },
   // The Records module with the Arabic records: the translation of the
   // page, the buttons that translate a content element, and a translated
