@@ -306,6 +306,36 @@ const screenshots = {
     },
     from: '#langTable',
   },
+  // The header of the imprint in each language, as wide as a phone, with
+  // the button that Camino labels with a translated label. The text shows
+  // the three of them side by side.
+  'LocalizedLabels/MenuEnglish': {
+    loggedOut: true,
+    url: `${baseUrl}/camino/imprint`,
+    prepare: async (window) => {
+      await window.setViewportSize({ width: 360, height: viewportHeight });
+      await outline(window.locator('.JS_header-menu-button'));
+    },
+    from: 'header',
+  },
+  'LocalizedLabels/MenuSpanish': {
+    loggedOut: true,
+    url: `${baseUrl}/camino/es/imprint`,
+    prepare: async (window) => {
+      await window.setViewportSize({ width: 360, height: viewportHeight });
+      await outline(window.locator('.JS_header-menu-button'));
+    },
+    from: 'header',
+  },
+  'LocalizedLabels/MenuArabic': {
+    loggedOut: true,
+    url: `${baseUrl}/camino/ar/imprint`,
+    prepare: async (window) => {
+      await window.setViewportSize({ width: 360, height: viewportHeight });
+      await outline(window.locator('.JS_header-menu-button'));
+    },
+    from: 'header',
+  },
   // The languages that a group of translators may edit. The tables above
   // fill more than the window, so the palette is scrolled into view.
   'Permissions/LimitToLanguages': {
