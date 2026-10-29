@@ -199,6 +199,29 @@ $dataHandler = $process(['be_groups' => ['NEWtranslators' => [
 ]]]);
 $uids['spanishTranslators'] = $dataHandler->substNEWwithIDs['NEWtranslators'];
 
+// The labels of the Camino theme in Spanish and Arabic, where an installed
+// language pack would put them. The language packs on the translation
+// server have no translations of these labels yet.
+$labels = [
+    'es' => ['menu.label' => 'Menú', 'menu.main.label' => 'Menú principal', 'menu.language.label' => 'Menú de idiomas'],
+    'ar' => ['menu.label' => 'القائمة', 'menu.main.label' => 'القائمة الرئيسية', 'menu.language.label' => 'قائمة اللغات'],
+];
+foreach ($labels as $language => $translations) {
+    $units = '';
+    foreach ($translations as $id => $target) {
+        $units .= sprintf("      <trans-unit id=\"%s\">\n        <target>%s</target>\n      </trans-unit>\n", $id, $target);
+    }
+    $directory = Environment::getLabelsPath() . '/' . $language . '/theme_camino/Resources/Private/Language';
+    GeneralUtility::mkdir_deep($directory);
+    file_put_contents($directory . '/' . $language . '.messages.xlf', sprintf(
+        "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<xliff xmlns=\"urn:oasis:names:tc:xliff:document:1.2\" version=\"1.2\">\n"
+        . "  <file source-language=\"en\" target-language=\"%s\" datatype=\"plaintext\" original=\"EXT:theme_camino/Resources/Private/Language/messages.xlf\">\n"
+        . "    <body>\n%s    </body>\n  </file>\n</xliff>\n",
+        $language,
+        $units,
+    ));
+}
+
 // The uids differ between TYPO3 versions, so screenshots.mjs reads them here
 GeneralUtility::mkdir_deep(Environment::getVarPath());
 file_put_contents(Environment::getVarPath() . '/screenshot-records.json', json_encode($uids, JSON_PRETTY_PRINT) . "\n");
