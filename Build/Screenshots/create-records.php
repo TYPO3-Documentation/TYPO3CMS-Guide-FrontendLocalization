@@ -155,6 +155,22 @@ $dataHandler = $process(['tt_content' => ['NEWall' => [
 ]]]);
 $uids['allLanguages'] = $dataHandler->substNEWwithIDs['NEWall'];
 
+// A page that hides its default language and exists in Arabic only, for
+// the example of a page that is relevant in one language only. It is in
+// the folder of the footer navigation, so that the header menus of the
+// other screenshots do not change.
+$dataHandler = $process(['pages' => ['NEWarabicOnly' => [
+    'pid' => $find('pages', 'title', 'Footer navigation', $uids['root']),
+    'title' => 'Arabic pilgrims',
+    'slug' => '/arabic-pilgrims',
+    'hidden' => 0,
+    'l18n_cfg' => 1,
+]]]);
+$uids['arabicOnly'] = $dataHandler->substNEWwithIDs['NEWarabicOnly'];
+$arabicOnlyPage = $localize('pages', $uids['arabicOnly'], 2);
+$process(['pages' => [$arabicOnlyPage => ['title' => 'الحجاج العرب', 'hidden' => 0]]]);
+$uids['faqs'] = $find('pages', 'title', 'FAQs', $uids['root']);
+
 // The list of the Camino routes in Arabic. Its items are inline elements,
 // which the translation translates together with the list. An item that
 // the English list gets afterwards is not translated yet, so the form of
