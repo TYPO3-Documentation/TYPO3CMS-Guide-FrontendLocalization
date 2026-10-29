@@ -13,6 +13,10 @@ test-docs: ## Test the documentation rendering
 	mkdir -p Documentation-GENERATED-temp
 	docker run --user $(shell id -u):$(shell id -g) --rm --pull always -v "$(shell pwd)":/project -t ghcr.io/typo3-documentation/render-guides:latest --config=Documentation --no-progress --minimal-test
 
+.PHONY: test-extension
+test-extension: ## Test that the example extension installs and needs no TCA migration
+	Build/Scripts/runTests.sh -s functional
+
 .PHONY: install
 install: ## Install/update the TYPO3 Core packages for make screenshots
 	Build/Scripts/runTests.sh -s composerUpdate

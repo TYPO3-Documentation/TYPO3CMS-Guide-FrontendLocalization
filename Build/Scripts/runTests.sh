@@ -2,8 +2,8 @@
 
 #
 # Runner of the Frontend Localization Guide, based on docker/podman:
-# installs the TYPO3 Core that the screenshots are taken from, and takes
-# them.
+# installs the TYPO3 Core that the screenshots are taken from, takes them,
+# and tests the example extension.
 #
 
 cleanUp() {
@@ -25,6 +25,7 @@ Options:
   -s <...>
     Specifies which suite to run
       - composerUpdate: "composer update", handy if host has no PHP
+      - functional: functional tests of the example extension, on SQLite
       - screenshots: screenshots from a TYPO3 instance, optionally only
        the ones named as arguments
 
@@ -44,6 +45,9 @@ Examples:
 
   # Take only one screenshot
   ./Build/Scripts/runTests.sh -s screenshots Permissions/LimitToLanguages
+
+  # Test the example extension
+  ./Build/Scripts/runTests.sh -s functional
 EOF
 }
 
@@ -155,6 +159,11 @@ case ${TEST_SUITE} in
     rm -rf .Build/bin/ .Build/vendor .Build/public ./composer.lock
     COMMAND=(composer update --no-ansi --no-interaction --no-progress)
     ${CONTAINER_BIN} run ${CONTAINER_COMMON_PARAMS} --name composer-install-${SUFFIX} -e COMPOSER_CACHE_DIR=.Build/.cache/composer ${IMAGE_PHP} "${COMMAND[@]}"
+    SUITE_EXIT_CODE=$?
+    ;;
+  functional)
+    COMMAND=(.Build/bin/phpunit -c Build/phpunit/FunctionalTests.xml "$@")
+    ${CONTAINER_BIN} run ${CONTAINER_COMMON_PARAMS} --name functional-${SUFFIX} -e typo3DatabaseDriver=pdo_sqlite ${IMAGE_PHP} "${COMMAND[@]}"
     SUITE_EXIT_CODE=$?
     ;;
   screenshots)
