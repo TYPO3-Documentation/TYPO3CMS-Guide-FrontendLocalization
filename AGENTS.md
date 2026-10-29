@@ -48,7 +48,10 @@ languages of the Editors Tutorial to the site, so that the screenshots of
 both manuals show the same website: English as the default language,
 Español (1), and العربية (2), which is written from right to left. Unlike
 in the Editors Tutorial, Español falls back to English, for the example of
-a fallback in the frontend.
+a fallback in the frontend. `create-records.php` also writes Spanish and
+Arabic labels of the Camino theme into the labels path, where a language
+pack would put them, as the language packs on the translation server have
+no translations of these labels yet.
 The backend runs without debug mode, so it looks as an editor sees it.
 Screenshots are taken as the administrator `j.doe`.
 
