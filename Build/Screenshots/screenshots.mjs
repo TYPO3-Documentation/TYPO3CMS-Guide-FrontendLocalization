@@ -27,7 +27,7 @@ const margin = 12;
 const frontendWidth = 600;
 
 // The uids of the records that create-records.php looked up
-const { root, spanishTranslators, packingList, essentialItems, arabicItems, arabicToiletries, privacy, allLanguages, arabicRoutes, faqs, arabicOnly } =
+const { root, spanishTranslators, packingList, essentialItems, arabicItems, arabicToiletries, privacy, allLanguages, arabicRoutes, faqs, arabicOnly, routeComparison } =
   JSON.parse(readFileSync('../../var/screenshot-records.json', 'utf8'));
 
 // A field of a form, found by its label: the backend runs without debug
@@ -335,6 +335,65 @@ const screenshots = {
       await outline(window.locator('.JS_header-menu-button'));
     },
     from: 'header',
+  },
+  // The language menu of a page that is translated into Arabic, but not
+  // into Spanish, which the menu offers to translate the page into. The
+  // backend keeps the language of a page from the Records module above, so
+  // English is chosen first.
+  'PageTranslations/LanguageMenu': {
+    url: moduleUrl('web/layout', packingList),
+    prepare: async (frame) => {
+      if (!(await languageMenu(frame).innerText()).includes('English')) {
+        await languageMenu(frame).click();
+        await frame.page().waitForTimeout(500);
+        await frame.locator(languageList).getByText('English').first().click();
+        await frame.waitForLoadState('networkidle');
+        await frame.page().waitForTimeout(1500);
+      }
+      await languageMenu(frame).click();
+      await frame.page().waitForTimeout(500);
+      // Inside, as the edge of the menu would cut a frame around the entry
+      await outline(frame.locator(languageList).getByText('Español').first(), true);
+    },
+    from: '.module-docheader',
+    to: languageList,
+  },
+  // The first step of the translation wizard. The wizard only opens, so the
+  // page stays without a Spanish translation.
+  'PageTranslations/TranslationWizard': {
+    url: moduleUrl('web/layout', packingList),
+    prepare: openTranslation('Español'),
+    modal: true,
+    width: 1024,
+    height: 650,
+  },
+  // The title of a Spanish translation, with the prefix that TYPO3 writes,
+  // and the title of the default language below. The translation wizard
+  // creates the translation, after the screenshots of the Localization
+  // Overview, which show the page without it.
+  'PageTranslations/PageProperties': {
+    url: moduleUrl('web/layout', routeComparison),
+    prepare: async (frame) => {
+      const page = frame.page();
+      await openTranslation('Español')(frame);
+      // The page only, without its content
+      const dialog = page.locator('typo3-backend-modal dialog[open]');
+      await dialog.getByRole('button', { name: 'Deselect all' }).click();
+      for (const name of ['Next', 'Next', 'Localize']) {
+        await dialog.getByRole('button', { name, exact: true }).click();
+        await page.waitForTimeout(1500);
+      }
+      await dialog.getByRole('button', { name: 'Finish', exact: true }).click();
+      await dialog.waitFor({ state: 'detached' });
+      await frame.waitForLoadState('networkidle');
+      // The wizard leaves the module on the Spanish page. Its button opens
+      // the form in a panel, so the form opens in the module instead.
+      const button = frame.locator('.module-docheader [title="Edit page properties"]');
+      await frame.goto(baseUrl + await button.getAttribute('edit-url'));
+      await frame.waitForLoadState('networkidle');
+      await page.waitForTimeout(1500);
+    },
+    from: field('title'),
   },
   // The languages that a group of translators may edit. The tables above
   // fill more than the window, so the palette is scrolled into view.
