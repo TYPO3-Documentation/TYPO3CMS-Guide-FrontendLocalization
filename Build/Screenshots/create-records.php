@@ -108,7 +108,9 @@ $localize = static function (string $table, int $uid, int $language): int {
 };
 
 // The packing list in Arabic, as in the Editors Tutorial, so that the
-// Records module shows the translation of the page
+// Records module shows the translation of the page, and the language menu
+// of the page shows a language with a translation next to Spanish, which
+// has none
 $uids['packingList'] = $find('pages', 'title', 'Packing List', $uids['root']);
 $arabicPage = $localize('pages', $uids['packingList'], 2);
 $process(['pages' => [$arabicPage => ['title' => 'قائمة الأمتعة', 'hidden' => 0]]]);
@@ -189,6 +191,20 @@ $process([
     'tt_content' => [$routes => ['tx_themecamino_list_elements' => implode(',', [...$items, 'NEWroute'])]],
     'tx_themecamino_list_item' => ['NEWroute' => ['pid' => $uids['root'], 'header' => 'Camino Inglés']],
 ]);
+
+// The prefix "[Translate to Español:]" in the title of a translation of the
+// route comparison. Camino switches the prefix off with
+// TCEMAIN.default.disablePrependAtCopy, so this page switches it on again.
+// Camino hides the TSconfig field from the form, which the DataHandler
+// respects, so the field is written directly. The screenshot of the page
+// properties translates the page, so that the Localization Overview shows
+// it without a Spanish translation.
+$uids['routeComparison'] = $find('pages', 'title', 'Camino Route Comparison', $uids['root']);
+GeneralUtility::makeInstance(ConnectionPool::class)->getConnectionForTable('pages')->update(
+    'pages',
+    ['TSconfig' => 'TCEMAIN.default.disablePrependAtCopy = 0'],
+    ['uid' => $uids['routeComparison']],
+);
 
 // A group of translators, who may edit Spanish records only, for the
 // screenshot of the language permissions
