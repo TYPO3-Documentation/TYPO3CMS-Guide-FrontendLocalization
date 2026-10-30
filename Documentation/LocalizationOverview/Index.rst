@@ -135,11 +135,9 @@ language in red:
 A visitor who opens the address of the page in the default language gets an
 error, like the one in the previous section.
 
-Hiding pages in the default language is probably a rare thing to do,
-but it is possible to imagine cases where the topic of a page or
-section is only relevant in one of the alternative languages.
-Especially, if a language of the site is not only a translation but may
-serve subsidiaries of a company in a local context.
+Few pages need this. It suits a page whose topic matters in one language
+only, for example when a language of the site serves the subsidiary of a
+company in one country.
 
 
 ..  _localization-overview-inverse-hiding:
@@ -165,8 +163,8 @@ label of the option reads
 
 ..  _localization-overview-final-notes:
 
-Final notes
-===========
+Colors of the Localization Overview
+===================================
 
 The colors of the Localization Overview mean the following:
 
@@ -182,7 +180,7 @@ Red
     without one.
 
 No color
-    The page has no visible translation in this language. Whether it shows,
+    The page has no visible translation in this language. Whether it shows
     depends on the fallback type of the language in the site configuration.
 
 Yellow
