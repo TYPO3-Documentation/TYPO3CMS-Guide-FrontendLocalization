@@ -5,7 +5,9 @@
 ```
 Documentation/                   # the actual manual (reST source, published to docs.typo3.org)
 Build/Screenshots/               # takes the generated screenshots, see below
-Build/Scripts/runTests.sh        # runs the containers that make install and make screenshots need
+Build/Scripts/runTests.sh        # runs the containers that make install, make screenshots, and make test-extension need
+Documentation/CodeSnippets/      # the example extension, whose files the manual includes
+Tests/Functional/                # tests that the example extension installs
 CONTRIBUTING.md                  # how to contribute
 ```
 
@@ -19,6 +21,10 @@ CONTRIBUTING.md                  # how to contribute
   `Build/Screenshots/screenshots.mjs` from a throwaway TYPO3 instance;
   `Build/Scripts/runTests.sh -s screenshots Permissions/LimitToLanguages`
   takes only the named ones
+- `make test-extension` — install the example extension in
+  `Documentation/CodeSnippets/my_extension/` in a functional test, and
+  check that its TCA needs no migration and that its labels exist; CI runs
+  it on every push
 - `pre-commit run --all-files` — apply the whitespace hooks
   (`trailing-whitespace`, `end-of-file-fixer`) configured in
   `.pre-commit-config.yaml`; `pre-commit install` wires them into `git commit`
