@@ -6,29 +6,29 @@
 Permissions
 ===========
 
-You can restrict backend users and groups to edit records in specific languages
-only. The permissions are enforced across all tables by checking the language
-specified in the :ref:`TCA <t3tca:start>` configuration of the
-:ref:`"languageField" of the table <core-support-tca-languagefield>`.
-Navigate to the backend module :guilabel:`Administration > Users`. Select a
-backend user group. The :guilabel:`Limit to languages` setting is found in the
-:guilabel:`Record Permissions` tab:
+You can allow backend users and groups to edit records in some languages
+only. TYPO3 checks this permission in every table that has a
+`language field <https://docs.typo3.org/permalink/t3translate:core-support-tca-languagefield>`_.
+
+To limit a backend user group to some languages:
+
+#.  Go to the module :guilabel:`Administration > Users`.
+#.  Open the backend user group.
+#.  On the tab :guilabel:`Record Permissions`, check the languages in the
+    field :guilabel:`Limit to languages`.
 
 ..  figure:: /Images/GeneratedScreenshots/Permissions/LimitToLanguages.png
-    :alt: Setting language limitations
+    :alt: The field Limit to languages, with Español checked
     :class: with-shadow
 
-    Restricting backend users or groups to one or more languages
+    A group of translators who edit Spanish records only
 
-Settings from groups and sub-groups are merged.
+A backend user has the field :guilabel:`Limit to languages` as well. TYPO3
+merges the languages of the user and of all their groups and subgroups. If
+none of them checks a language, the user can edit all languages.
 
-If a user has no :guilabel:`Limit to languages` checkboxes set at all they can
-edit *all languages*.
+Every user can edit records in the language :guilabel:`[All]`.
 
-Regardless of :guilabel:`Limit to languages` all users can edit records with
-:guilabel:`[All]` language.
-
-Setting :guilabel:`Limit to languages` is not only good to protect translators
-from editing other languages or default content - it is also helpful
-to limit the confusion a user might have when faced with modules
-displaying translations for a variety of other languages!
+The limit protects the default language and the other languages from changes
+by a translator. The language menus of the modules offer the translator
+only the languages that they can edit.

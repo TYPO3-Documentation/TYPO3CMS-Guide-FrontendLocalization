@@ -11,25 +11,13 @@ Introduction
 About this document
 ===================
 
-Creating a website in multiple languages with TYPO3 can be done in a
-variety of ways (as is usual). Unfortunately, all the options are hard to
-understand unless described in a context where used. In addition, even
-if you understand the context you might like to get some suggestions
-for what others have found to be best-practices.
+TYPO3 offers several ways to create a website in more than one language.
+This guide explains these ways and the features that they use, so that you
+can choose the one that fits your project.
 
-This document tries to document everything you need to know about
-localizing websites with TYPO3. Ideally, it should mention every
-feature and what it is good for. However, be sure to use
-reference documents like the :ref:`TypoScript Reference <t3tsref:start>`,
-:ref:`TYPO3 Explained <t3coreapi:start>`, etc. to look up the
-exact syntax for the features mentioned.
-
-Since the main goal of this document is to include all knowledge areas
-of localization, it might suffer from a poor composition where advanced
-content is mixed here and there. A later revision could maybe make
-up for this by better prioritizing the content. For now that has not been
-a priority. On the other hand, you will come out as an expert in the
-other end.
+For the exact syntax of a feature, see the references, such as the
+`TypoScript Reference <https://docs.typo3.org/permalink/t3tsref:start>`_ and
+`TYPO3 Explained <https://docs.typo3.org/permalink/t3coreapi:start>`_.
 
 
 ..  _about-terms:
@@ -37,24 +25,21 @@ other end.
 Localization and translation
 ----------------------------
 
-The two terms are often used to express the same. Also in this
-document. But more precisely this is how we understand the difference:
+The two terms are often used for the same thing, also in this guide. More
+precisely, they differ as follows:
 
 Translation
-    means that a specific composition of words are translated to another
-    language. In other words: If there is a header and an image in the default
-    language, so there will be in the translation. No more, no less.
+    A page in another language with the same content. If the page in the
+    default language has a header and an image, its translation has a header
+    and an image as well.
 
 Localization
-    means more broadly that a page is represented in another language. This
-    means information in that language ("translation") but could also include
-    alternative templates, additional composition of content directed to
-    another audience, etc. In other words: There might be another number of
-    headers and images than in the default language.
+    A page for the audience of another language. Besides translated text, it
+    can have other content, other images, or another template. It can have
+    more or fewer content elements than the page in the default language.
 
-TYPO3 handles both types of approaches, but this flexibility has the
-price that you need to read this document to find out which approach
-to choose for your project!
+TYPO3 supports both. To choose between them, see
+`Localized content <https://docs.typo3.org/permalink/t3translate:localized-content>`_.
 
 
 ..  _credits:
@@ -62,7 +47,7 @@ to choose for your project!
 Credits
 =======
 
-This document was originally written by Kasper Skårhøj.
+Kasper Skårhøj wrote the first version of this guide.
 
 
 ..  _credits-dedication:
