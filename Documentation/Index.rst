@@ -23,7 +23,17 @@ Frontend Localization Guide
 
 ----
 
-This guide provides an introduction to localization and translation in TYPO3.
+This guide explains how to build a website in more than one language with
+TYPO3. It is written for integrators. It shows how to add languages to a
+site, translate pages and content, and show a language menu and translated
+labels in the frontend. It also shows how to make the tables of an extension
+translatable.
+
+To translate pages and content as an editor, see
+`Working with languages <https://docs.typo3.org/permalink/t3editors:languages>`_
+in the TYPO3 Editors Guide. To translate the backend of TYPO3 and its
+extensions, see the
+`TYPO3 Localization Team Guidelines <https://docs.typo3.org/m/typo3/localization-team-guidelines/main/en-us/Index.html>`_.
 
 ----
 
