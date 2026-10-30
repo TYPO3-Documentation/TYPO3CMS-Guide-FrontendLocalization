@@ -9,13 +9,13 @@ Localized labels
 
 ..  _localized-labels-typoscript:
 
-Using XLF labels in TypoScript structures
-=========================================
+Using XLIFF labels in TypoScript
+================================
 
-:ref:`XLIFF (XLF) <t3coreapi:xliff>` files are XML files containing labels that
-the system can retrieve in a localized version if the appropriate translations
-are installed. It is possible to retrieve values from XLF files using
-TypoScript:
+`XLIFF files <https://docs.typo3.org/permalink/t3coreapi:xliff>`_ hold the
+labels of an extension. TYPO3 reads XLIFF files of the versions 1.2 and 2.0.
+If a translation of the labels is installed, TYPO3 outputs a label in the
+language of the page. TypoScript can read a label from an XLIFF file:
 
 ..  code-block:: typoscript
     :caption: EXT:my_sitepackage/Configuration/Sets/Main/setup.typoscript
@@ -28,7 +28,8 @@ This looks for the label `menu.label` in the file
 :composer:`typo3/theme-camino`.
 
 A page in Spanish needs Spanish in the
-:ref:`site configuration <languages>`. TYPO3 then looks for the translation
+`site configuration <https://docs.typo3.org/permalink/t3translate:languages>`_.
+TYPO3 then looks for the translation
 in the :ref:`labels path <t3coreapi:Environment-labels-path>`, in
 :file:`es/theme_camino/Resources/Private/Language/es.messages.xlf`. A
 language pack installs the file there. If the file translates the label, the
@@ -37,17 +38,12 @@ output is "Menú". Otherwise, the output is the English label "Menu".
 
 ..  _localized-labels-plugins:
 
-Using XLF labels in frontend plugins
-====================================
+Using XLIFF labels in frontend plugins
+======================================
 
-Making your code ready for internationalization is covered in
-:ref:`Localization: translating labels in TYPO3
-<t3coreapi:internationalization>`
-and the basics about XLIFF files are found in
-:ref:`Translation files (XLIFF format) <t3coreapi:xliff>` ("TYPO3 Explained").
-Properly made plugins should use XLIFF files for every label that
-they used, so that they can be translated and thus generate a proper
-output when a specific language is requested.
+A plugin outputs every label from an XLIFF file, so that the label can be
+translated. To prepare the labels of an extension for translation, see
+`Localization in TYPO3 Explained <https://docs.typo3.org/permalink/t3coreapi:internationalization>`_.
 
 For instance, the Camino theme labels the button of its menu with an XLIFF
 label. With the translations installed, the Spanish and the Arabic pages
@@ -81,15 +77,11 @@ show the label in their language:
 
             The Arabic label
 
-Overriding an existing translation is possible using custom XLIFF files.
-This process is described in
-:ref:`Overriding or extending translations
-<t3coreapi:xliff-translating-custom>`.
+To override a translation with an XLIFF file of your own, see
+`Overriding or extending translations <https://docs.typo3.org/permalink/t3coreapi:xliff-translating-custom>`_.
+TypoScript can override a label as well, see
+`_LOCAL_LANG <https://docs.typo3.org/permalink/t3tsref:setup-plugin-local-lang-lang-key-label-key>`_.
 
-It is also possible to override a label using TypoScript. See the
-:ref:`TypoScript Reference for more information
-<t3tsref:setup-plugin-local-lang-lang-key-label-key>`.
-
-You can also create XLIFF files for a language into which
-TYPO3 is not translated yet. This process is described in
-:ref:`Adding custom languages <t3coreapi:xliff-translating-languages>`.
+For a language that TYPO3 has no translations for yet, create the XLIFF
+files yourself, see
+`Adding custom languages <https://docs.typo3.org/permalink/t3coreapi:xliff-translating-languages>`_.
