@@ -51,6 +51,11 @@ already, the wizard offers only their mode, so that the modes do not mix.
 For more details on how to translate, see the
 :ref:`TYPO3 Editors Guide <t3editors:languages>`.
 
+The backend offers to translate a content element only into the languages
+that its page has a translation in. To translate content into a new
+language, translate the page first. The translation wizard of the page can
+translate the content elements of the page together with it.
+
 
 ..  _localized-connected-content:
 
