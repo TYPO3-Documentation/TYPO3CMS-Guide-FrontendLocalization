@@ -1,0 +1,28 @@
+rootPageId: 1
+base: 'https://example.org/'
+dependencies:
+  - myvendor/my-sitepackage
+languages:
+  -
+    languageId: 0
+    title: English
+    navigationTitle: English
+    base: /
+    locale: en_US.UTF-8
+    flag: us
+  -
+    languageId: 1
+    title: Español
+    navigationTitle: Español
+    base: /es/
+    locale: es_ES.UTF-8
+    flag: es
+    fallbackType: free
+  -
+    languageId: 2
+    title: العربية
+    navigationTitle: العربية
+    base: /ar/
+    locale: ar_SA.UTF-8
+    flag: sa
+    fallbackType: strict
