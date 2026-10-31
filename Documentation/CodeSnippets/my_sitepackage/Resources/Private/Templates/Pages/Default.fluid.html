@@ -21,4 +21,10 @@
       </ul>
     </f:if>
   </header>
+
+  <main>
+    <f:for each="{content.main.records}" as="record">
+      <h2>{record.header}</h2>
+    </f:for>
+  </main>
 </f:section>

@@ -63,13 +63,10 @@ no further configuration in the
 :ref:`site configuration <t3coreapi:sitehandling>`. In the site configuration,
 the fallbackType "strict" would look like this:
 
-..  code-block:: yaml
+..  literalinclude:: /CodeSnippets/config/sites/my_site/config.yaml
     :caption: config/sites/my_site/config.yaml
-
-    languages:
-      -
-        # ... other language settings ...
-        fallbackType: strict
+    :visible-lines: 5, 23-24, 30
+    :emphasize-lines: 30
 
 In this connected mode, TYPO3 will first internally fetch the records of the
 default language, then overlay them with the target language. If a record is
@@ -104,15 +101,10 @@ Another way to view connected content in the frontend is by creating a fallback
 chain. For this we have to adjust the site configuration and provide a
 comma-separated list of fallback languages:
 
-..  code-block:: yaml
+..  literalinclude:: /CodeSnippets/config/sites/my_site/config.yaml
     :caption: config/sites/my_site/config.yaml
-
-    languages:
-      -
-        # ... other language settings ...
-        fallbackType: fallback
-        # 0 = English
-        fallbacks: '0'
+    :visible-lines: 5, 13-14, 20-22
+    :emphasize-lines: 20-22
 
 In this mode, TYPO3 also fetches the records of the default language first,
 and then overlays them with the target language. If a record has no
@@ -161,13 +153,10 @@ With the free mode content strategy, the
 :ref:`site configuration <t3coreapi:sitehandling>` will have to be
 adjusted accordingly:
 
-..  code-block:: yaml
+..  literalinclude:: /CodeSnippets/config/sites/my_site_free/config.yaml
     :caption: config/sites/my_site/config.yaml
-
-    languages:
-      -
-        # ... other language settings ...
-        fallbackType: free
+    :visible-lines: 5, 13-14, 20
+    :emphasize-lines: 20
 
 This means, TYPO3 will directly fetch the translated records and not care
 about the records in the default language at all.
