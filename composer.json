@@ -7,6 +7,10 @@
         {
             "type": "path",
             "url": "Documentation/CodeSnippets/my_extension"
+        },
+        {
+            "type": "path",
+            "url": "Documentation/CodeSnippets/my_sitepackage"
         }
     ],
     "require": {
@@ -14,6 +18,7 @@
     },
     "require-dev": {
         "myvendor/my-extension": "@dev",
+        "myvendor/my-sitepackage": "@dev",
         "typo3/cms-backend": "dev-main as 14.3",
         "typo3/cms-beuser": "dev-main as 14.3",
         "typo3/cms-extbase": "dev-main as 14.3",

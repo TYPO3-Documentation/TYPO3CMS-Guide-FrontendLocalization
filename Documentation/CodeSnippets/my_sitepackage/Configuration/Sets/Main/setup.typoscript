@@ -1,0 +1,22 @@
+page = PAGE
+page {
+  10 = PAGEVIEW
+  10 {
+    paths.10 = EXT:my_sitepackage/Resources/Private/Templates/
+
+    dataProcessing {
+      10 = menu
+      10 {
+        as = mainMenu
+        levels = 2
+        expandAll = 1
+      }
+
+      20 = language-menu
+      20 {
+        languages = auto
+        as = languagenavigation
+      }
+    }
+  }
+}

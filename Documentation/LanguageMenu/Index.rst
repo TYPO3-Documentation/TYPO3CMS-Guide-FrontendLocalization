@@ -6,21 +6,22 @@
 Language selection menu
 =======================
 
-To properly navigate a multilingual web site you probably want
-to have a language selection menu somewhere. This menu should
-show an entry for each possible, with variation of aspect
-depending on translation availability:
+A visitor of a multilingual website switches between the languages in a
+language menu. The menu shows an entry for each language of the site. Each
+entry can look different, depending on its state:
 
 *   Translation exists
-*   Translation exists - currently selected
-*   Missing translation
-*   Missing translation - currently selected
+*   Translation exists, currently selected
+*   Translation missing
+*   Translation missing, currently selected
 
-This kind of menu can be made by either using a
-:ref:`LanguageMenuProcessor <t3tsref:LanguageMenuProcessor>` on a
-:ref:`FLUIDTEMPLATE <t3tsref:cobj-fluidtemplate>` or using the
-:ref:`HMENU content object <t3tsref:cobj-hmenu>` with special type
-:ref:`language <t3tsref:hmenu-special-language>`.
+Create the menu with the
+`LanguageMenuProcessor <https://docs.typo3.org/permalink/t3tsref:languagemenuprocessor>`_
+of a
+`PAGEVIEW <https://docs.typo3.org/permalink/t3tsref:cobj-pageview>`_, or with
+the `HMENU <https://docs.typo3.org/permalink/t3tsref:cobj-hmenu>`_ content
+object of the
+`special type language <https://docs.typo3.org/permalink/t3tsref:hmenu-special-language>`_.
 
 ..  _language-menu-tmenu:
 
@@ -37,50 +38,25 @@ translation in:
 
     The language menu of a page that has no Spanish translation
 
-The following TypoScript code sets up such a menu with a
-:php-short:`\TYPO3\CMS\Frontend\DataProcessing\LanguageMenuProcessor`
-on the page level:
+The theme adds the processor with its identifier `language-menu` to the
+`PAGEVIEW` that renders the page. The following TypoScript does the same:
 
-..  code-block:: typoscript
+..  literalinclude:: /CodeSnippets/my_sitepackage/Configuration/Sets/Main/setup.typoscript
     :caption: EXT:my_sitepackage/Configuration/Sets/Main/setup.typoscript
+    :visible-lines: 1-4, 7, 15-22
+    :emphasize-lines: 15-19
 
-    page = PAGE
-    page {
-      10.dataProcessing {
-        40 = TYPO3\CMS\Frontend\DataProcessing\LanguageMenuProcessor
-        40 {
-          languages = <insert language-id> or "auto"
-          as = languagenavigation
-        }
-      }
-    }
+With `auto`, the menu lists the languages of the
+`site configuration <https://docs.typo3.org/permalink/t3coreapi:sitehandling>`_.
+The property
+`languages <https://docs.typo3.org/permalink/t3tsref:languagemenuprocessor-languages>`_
+also takes a comma-separated list of language IDs, such as `0,1,2`.
 
-The value for :typoscript:`languages <t3tsref:LanguageMenuProcessor-languages>`
-is a list of comma-separated language IDs (for example: `0,1,2`) or `auto` to
-load from :ref:`site configuration <t3coreapi:sitehandling>`.
+The processor passes the menu as an array to
+`Fluid <https://docs.typo3.org/permalink/t3coreapi:fluid>`_, in the variable
+:fluid:`{languagenavigation}`. The template loops over the array and links each
+language:
 
-The menu is then passed as a hierarchical array to
-:ref:`Fluid <t3coreapi:fluid>` in the variable :fluid:`{languagenavigation}`.
-The Fluid template iterates through the array and creates the language links:
-
-..  code-block:: html
-    :caption: EXT:my_sitepackage/Resources/Private/Templates/SomeTemplate.html
-
-    <f:if condition="{languagenavigation}">
-      <ul id="language_menu" class="language-menu">
-        <f:for each="{languagenavigation}" as="item">
-          <li class="{f:if(condition: item.active, then: 'active')} {f:if(condition: item.available, else: 'text-muted')}">
-            <f:if condition="{item.available}">
-              <f:then>
-                <a href="{item.link}" hreflang="{item.hreflang}" title="{item.title}">
-                  <span>{item.navigationTitle}</span>
-                </a>
-              </f:then>
-              <f:else>
-                <span>{item.navigationTitle}</span>
-              </f:else>
-            </f:if>
-          </li>
-        </f:for>
-      </ul>
-    </f:if>
+..  literalinclude:: /CodeSnippets/my_sitepackage/Resources/Private/Templates/Pages/Default.fluid.html
+    :caption: EXT:my_sitepackage/Resources/Private/Templates/Pages/Default.fluid.html
+    :language: html
