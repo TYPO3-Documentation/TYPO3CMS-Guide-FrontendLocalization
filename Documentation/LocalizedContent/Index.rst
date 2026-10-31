@@ -15,25 +15,24 @@ Localized content
 Introduction
 ============
 
-There are two strategies for handling the translation of content on pages:
+There are two ways to translate the content of a page:
 
 Connected mode
-    Translating content will create a direct connection between the original
-    language and the language you translate to. This means that moving an
-    element or setting meta information like start time or end time will be
-    taken from the original content and you will not be able to set these
-    values on a translated content element. Translated records will hold the
-    connection to their original language record in the `l10n_parent`
-    field. This mode is best for a strict translation workflow.
+    A translation stays connected to its original in the default language.
+    It points to the original in the field that
+    `transOrigPointerField <https://docs.typo3.org/permalink/t3translate:core-support-tca-transorigpointerfield>`_
+    names, which is `l18n_parent` in the table `tt_content`. The translation
+    takes its type and its column from the original. When you move the
+    original, TYPO3 moves its translations with it. In the frontend, TYPO3
+    shows a translation only where it shows the original. Use this mode for
+    a translation that follows the original closely.
 
 Free mode
-    Copying content will take the content elements from the source language
-    and create copies in a different language. This means that you will be able
-    to move content elements around freely, but you will not have the benefit
-    of being able to compare changes made in the source language later on.
-    Use this mode, when the translated pages content can largely differ from
-    the original language and you want to have that freedom in designing your
-    translated website.
+    A copy is a record of its own in the target language, with no
+    connection to the original. You can move, change, and delete it
+    without affecting the original, but you cannot compare it with the
+    changes that the original gets later. Use this mode when the content of
+    a language differs a lot from the content of the default language.
 
 When you translate a page or a content element, the translation wizard asks
 for this choice in its step **Mode**, see
@@ -48,8 +47,8 @@ for this choice in its step **Mode**, see
 :guilabel:`Translate` creates a translation in connected mode, and
 :guilabel:`Copy` creates a copy in free mode. If a record has translations
 already, the wizard offers only their mode, so that the modes do not mix.
-For more details on how to translate, see the
-:ref:`TYPO3 Editors Guide <t3editors:languages>`.
+The Editors Guide describes how to translate in detail, see
+`Working with languages <https://docs.typo3.org/permalink/t3editors:languages>`_.
 
 
 ..  _localized-connected-content:
@@ -57,21 +56,20 @@ For more details on how to translate, see the
 Connected content
 =================
 
-If you opted for the connected content strategy, this is the default way
-that translated pages will be handled in the frontend and requires
-no further configuration in the
-:ref:`site configuration <t3coreapi:sitehandling>`. In the site configuration,
-the fallbackType "strict" would look like this:
+In connected mode, the
+`site configuration <https://docs.typo3.org/permalink/t3coreapi:sitehandling>`_
+decides what a page shows for a content element without a translation. The
+fallback type `strict` is the default, so a language without a
+`fallbackType` uses it:
 
 ..  literalinclude:: /CodeSnippets/config/sites/my_site/config.yaml
     :caption: config/sites/my_site/config.yaml
     :visible-lines: 5, 23-24, 30
     :emphasize-lines: 30
 
-In this connected mode, TYPO3 will first internally fetch the records of the
-default language, then overlay them with the target language. If a record is
-not translated into the target language, then it is discarded and not shown at
-all.
+TYPO3 first fetches the records of the default language, and then overlays
+them with their translations in the target language. It leaves out a record
+that has no translation.
 
 A page in such a language shows only its translated content elements. Here,
 the title of the Arabic imprint is translated, but its text is not:
@@ -97,9 +95,9 @@ the title of the Arabic imprint is translated, but its text is not:
 
             The Arabic imprint shows only its translated title
 
-Another way to view connected content in the frontend is by creating a fallback
-chain. For this we have to adjust the site configuration and provide a
-comma-separated list of fallback languages:
+A fallback chain shows the content of another language instead. Set the
+fallback type `fallback`, and list the IDs of the languages to fall back to
+in `fallbacks`, separated by commas:
 
 ..  literalinclude:: /CodeSnippets/config/sites/my_site/config.yaml
     :caption: config/sites/my_site/config.yaml
@@ -137,34 +135,33 @@ title and the English text:
             The Spanish imprint falls back to the English text
 
 ..  warning::
-    If you want to use the "connected content" paradigm in conjunction with the
-    setting
+    TYPO3 renders the content of a page in connected mode starting from the
+    default language. If you use connected mode together with the setting
     `Hide default language of page <https://docs.typo3.org/permalink/t3translate:localization-overview-hide-default-language>`_,
-    you will need to provide placeholder content elements
-    in the default language and translate them, since the whole frontend
-    rendering process starts from the default language in such a configuration.
+    create the content elements in the default language anyway, and
+    translate them.
 
 ..  _localized-content-free-content:
 
 Free content
 ============
 
-With the free mode content strategy, the
-:ref:`site configuration <t3coreapi:sitehandling>` will have to be
-adjusted accordingly:
+In free mode, set the fallback type `free` in the
+`site configuration <https://docs.typo3.org/permalink/t3coreapi:sitehandling>`_:
 
 ..  literalinclude:: /CodeSnippets/config/sites/my_site_free/config.yaml
     :caption: config/sites/my_site/config.yaml
     :visible-lines: 5, 13-14, 20
     :emphasize-lines: 20
 
-This means, TYPO3 will directly fetch the translated records and not care
-about the records in the default language at all.
+TYPO3 then fetches the records of the target language directly, and ignores
+the records of the default language. A page shows the translations and the
+copies in its language, also a translation whose original is hidden.
 
 ..  tip::
-    For more information on how to add languages and configure their
-    behaviour in the site configuration, see
-    :ref:`Adding Languages <t3coreapi:sitehandling-addingLanguages>`.
+    To learn how to add languages and configure them in the site
+    configuration, see
+    `Adding languages <https://docs.typo3.org/permalink/t3coreapi:sitehandling-addinglanguages>`_.
 
 
 ..  _localized-content-all-language:
@@ -172,9 +169,8 @@ about the records in the default language at all.
 The "All" language
 ==================
 
-When using overlays, it becomes possible to use a particular
-language called "All", which will be automatically visible across all
-translations. The uid of that particular language is "-1".
+A record in the language "All" appears in every language of the site, in
+connected mode and in free mode. The ID of this language is -1.
 
 ..  figure:: /Images/GeneratedScreenshots/LocalizedContent/AllLanguagesField.png
     :alt: The Language field of a content element, set to All
