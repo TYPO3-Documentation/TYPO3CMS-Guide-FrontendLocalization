@@ -108,14 +108,13 @@ points to below its fields.
 [transOrigDiffSourceField]
 ==========================
 
-There is one more field which can be used on a translatable table, defined by
-the property
-`transOrigDiffSourceField <https://docs.typo3.org/permalink/t3tca:ctrl-reference-transorigdiffsourcefield>`_.
-It is optional. It points to a blob database field which will store the
-content of the default language record as it was when the translation was
-made. Then this is used to display any changes that have occurred in the
-default record since translation happened. For example, in the `tt_content`
-table, it may look like this for the header field:
+The property
+`transOrigDiffSourceField <https://docs.typo3.org/permalink/t3tca:ctrl-reference-transorigdiffsourcefield>`_
+defines a third field, which is optional. Each time a translation is saved,
+TYPO3 stores the values of the original in this field. The form of the
+translation then shows which fields of the original have changed since. In
+the table `tt_content`, the field is `l18n_diffsource`. A changed header
+looks like this:
 
 ..  figure:: /Images/GeneratedScreenshots/CoreSupport/TranslationChanged.png
     :alt: The header of a translation, with the change of the English header
@@ -123,8 +122,7 @@ table, it may look like this for the header field:
 
     Changes in the original content are highlighted below the input field
 
-This allows a translator to spot easily what has changed in order to adjust the
-translation accordingly.
+A translator sees what changed, and can update the translation.
 
 
 ..  _core-support-tca-translationsource:
@@ -132,22 +130,20 @@ translation accordingly.
 [translationSource]
 ===================
 
-The ":ref:`translationSource <t3tca:ctrl-reference-translationsource>`"
-property defines a name of the field used by translations to point back to the
-original record (that means, the record in any language of which they are a
-translation). This property is often set to `l10n_source` in Core tables.
+The property
+`translationSource <https://docs.typo3.org/permalink/t3tca:ctrl-reference-translationsource>`_
+defines the field that points to the record that a translation was made
+from. The Core tables name it `l10n_source`.
 
-This property is similar to
-:ref:`transOrigPointerField <core-support-tca-transorigpointerfield>`.
-In :ref:`connected mode <localized-content>`, while
-`transOrigPointerField` always contains the uid of the default language
-record, this field contains the uid of the record the translation was created
-from.
+A translation can be made from the record in the default language, or from
+a translation in another language. The field
+`transOrigPointerField <https://docs.typo3.org/permalink/t3translate:core-support-tca-transorigpointerfield>`_
+always points to the record in the default language. The field
+`translationSource` points to the record that the translation was made from.
 
-For example, if a `tt_content` record in default language (English) with
-uid 13 exists, this record is translated to French with uid 17, and the Danish
-translation is later created based on the French translation, then the Danish
-translation has uid 13 set as `l10n_parent` and 17 as `l10n_source`.
+For example, a `tt_content` record in English has the uid 13. Its French
+translation has the uid 17. A Danish translation made from the French one
+has 13 in `l18n_parent`, and 17 in `l10n_source`.
 
 
 ..  _core-support-tca-localization-command:
@@ -155,24 +151,24 @@ translation has uid 13 set as `l10n_parent` and 17 as `l10n_source`.
 DataHandler commands for localization
 =====================================
 
-The :ref:`DataHandler <t3coreapi:datahandler-basics>` writes the changes
-that the backend makes to records. Its
-:ref:`"localize" command <t3coreapi:tce-command-keywords>` translates a record.
-The backend sends this command when you translate an element in
-:guilabel:`Content > Records` or :guilabel:`Content > Layout`.
+The `DataHandler <https://docs.typo3.org/permalink/t3coreapi:datahandler-basics>`_
+writes the changes that the backend makes to records. Its
+`commands <https://docs.typo3.org/permalink/t3coreapi:tce-command-keywords>`_
+`localize` and `copyToLanguage` create a translation or a copy of a record
+in another language. The
+translation wizard sends `localize` for :guilabel:`Translate`, and
+`copyToLanguage` for :guilabel:`Copy`.
 
-When this command is issued an ordinary copy is made but the fields
-:ref:`languageField <core-support-tca-languagefield>` and
-:ref:`transOrigPointerField <core-support-tca-transorigpointerfield>` are
-updated accordingly.
+Both commands copy the record and set its
+`languageField <https://docs.typo3.org/permalink/t3translate:core-support-tca-languagefield>`_
+to the target language. `localize` also sets the
+`transOrigPointerField <https://docs.typo3.org/permalink/t3translate:core-support-tca-transorigpointerfield>`_
+to the record in the default language. `copyToLanguage` sets it to 0, so
+the copy has no connection to the original.
 
-You can only localize a record which is not already localized and which is in
-"default" or "All" language (a record in "All" language is supposed to be
-somehow valid for any language, but can still be translated if needed).
-
-It is possible to manually create two or more translations of the
-same record but this is considered an error in the system, although
-not fatal, yet producing unpredictable results.
+The command `localize` refuses to translate a record that has a translation
+in the target language already. Two translations of the same record in one
+language are an error, and lead to unpredictable results.
 
 
 ..  _core-support-tca-localization-command-options:
@@ -180,7 +176,8 @@ not fatal, yet producing unpredictable results.
 Localization command options per field
 --------------------------------------
 
-Each field may contain special instructions which will affect the "localize"
-command. Most important is the
-:ref:`"l10n\_mode" field <t3tca:columns-properties-l10n-mode>` with which,
-for example, a field can be entirely excluded from the translation process.
+The TCA property
+`l10n_mode <https://docs.typo3.org/permalink/t3tca:columns-properties-l10n-mode>`_
+of a field changes how the commands handle it. For example, `exclude`
+leaves the field out of the translation, so that the translation takes the
+value of the original.
