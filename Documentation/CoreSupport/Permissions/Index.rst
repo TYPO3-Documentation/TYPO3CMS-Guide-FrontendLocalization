@@ -10,9 +10,9 @@ You can allow backend users and groups to edit records in some languages
 only. TYPO3 checks this permission in every table that has a
 `language field <https://docs.typo3.org/permalink/t3translate:core-support-tca-languagefield>`_.
 
-To limit a backend user group to some languages:
+To limit a backend user group to certain languages:
 
-#.  Go to the module :guilabel:`Administration > Users`.
+#.  Go to the :guilabel:`Administration > Users` module.
 #.  Open the backend user group.
 #.  On the tab :guilabel:`Record Permissions`, check the languages in the
     field :guilabel:`Limit to languages`.
@@ -25,10 +25,10 @@ To limit a backend user group to some languages:
 
 A backend user has the field :guilabel:`Limit to languages` as well. TYPO3
 merges the languages of the user and of all their groups and subgroups. If
-none of them checks a language, the user can edit all languages.
+no languages are checked in any of these places, the user can edit all languages.
 
 Every user can edit records in the language :guilabel:`[All]`.
 
-The limit protects the default language and the other languages from changes
-by a translator. The language menus of the modules offer the translator
-only the languages that they can edit.
+This protects the default language and the other languages from being changed
+by translators. Language menus in the modules only list
+the languages that a translator can edit.

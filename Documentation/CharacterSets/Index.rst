@@ -6,24 +6,35 @@
 Character sets
 ==============
 
-All TYPO3 websites use UTF-8 as their character set. UTF-8 can store every
-character of every language, so a website in several languages needs no
-other character set.
+TYPO3 websites use the UTF-8 character set. UTF-8 can store characters from all
+languages. This means that TYPO3 websites in multiple languages do
+not need any other character sets.
 
 ..  _character-sets-database:
 
 The character set of the database
 =================================
 
-A new installation on MySQL or MariaDB uses the character set `utf8mb4`,
-which stores every character of UTF-8, including emoji. The length of a text
-field counts characters, not bytes. A field of the type :sql:`varchar(10)`
-stores ten Chinese characters, although each of them takes three bytes.
+New installations on MySQL or MariaDB use the `utf8mb4` character set. This
+character set can store UTF-8 characters (including emojis). The length of a text
+field is based on the number of characters rather than the number of bytes, for
+example, a :sql:`varchar(10)` field can store ten Chinese characters, even
+though each character is three bytes long.
 
-An older installation can still use the character set `utf8`, which MySQL
-also names `utf8mb3`. It stores characters of up to three bytes only, so it
-cannot store emoji and some rare Chinese characters. To store them, convert
+Some older installations may still use the `utf8` character set, which MySQL
+calls `utf8mb3`. It stores characters of up to three bytes only, so it
+cannot store emojis and some rare Chinese characters. To store them, convert
 the database to `utf8mb4`.
+
+New installations on MySQL or MariaDB use the `utf8mb4` character set. This
+character set can store the entire UTF-8 character repertoire, including emojis.
+The length of a text field is defined by the number of characters rather than
+the number of bytes; for example, a :sql:varchar(10) field can store ten Chinese
+characters, even though each character requires three bytes of storage. Some
+older installations may still use the utf8 character set, which MySQL refers to
+as utf8mb3. Because it only stores characters up to three bytes long, it cannot
+support emojis or certain rare Chinese characters. To enable full character
+support, convert the database to utf8mb4.
 
 ..  seealso::
     To set up the character set of your database, see:
