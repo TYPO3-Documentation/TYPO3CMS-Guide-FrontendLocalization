@@ -151,9 +151,9 @@ title and the English text:
 
 ..  warning::
     If you want to use the "connected content" paradigm in conjunction with the
-    :ref:`"Hide default translation of the page"
-    <localization-overview-hide-default-language>`
-    setting, you will need to provide placeholder content elements
+    setting
+    `Hide default language of page <https://docs.typo3.org/permalink/t3translate:localization-overview-hide-default-language>`_,
+    you will need to provide placeholder content elements
     in the default language and translate them, since the whole frontend
     rendering process starts from the default language in such a configuration.
 

@@ -106,8 +106,8 @@ A visitor who opens the address of the page in Spanish gets an error:
 
 ..  _localization-overview-hide-default-language:
 
-Hiding default translation of pages
-===================================
+Hiding the default language of a page
+=====================================
 
 A page that exists in other languages only still needs a page in the default
 language, which serves as a placeholder. On the :guilabel:`Language` tab of
@@ -148,12 +148,12 @@ Inverse control of hidden translations
 ======================================
 
 It is also possible to hide all untranslated pages by default
-with a global setting:
+with a global setting of the installation:
 
 ..  code-block:: php
-    :caption: EXT:my_sitepackage/ext_localconf.php
+    :caption: config/system/additional.php
 
-    $GLOBALS['TYPO3_CONF_VARS']['FE']['hidePagesIfNotTranslatedByDefault'] = 1;
+    $GLOBALS['TYPO3_CONF_VARS']['FE']['hidePagesIfNotTranslatedByDefault'] = true;
 
 The setting inverts the option of the page properties. A page without the
 option is now hidden in the languages that it has no translation in. The

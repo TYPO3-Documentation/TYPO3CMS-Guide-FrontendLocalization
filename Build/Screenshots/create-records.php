@@ -115,9 +115,8 @@ $uids['packingList'] = $find('pages', 'title', 'Packing List', $uids['root']);
 $arabicPage = $localize('pages', $uids['packingList'], 2);
 $process(['pages' => [$arabicPage => ['title' => 'قائمة الأمتعة', 'hidden' => 0]]]);
 
-// A content element of the packing list in Arabic, whose form shows the
-// English values below the fields, and which the Records module shows
-// below the English one
+// A content element of the packing list in Arabic, which the Records
+// module shows below the English one
 $uids['essentialItems'] = $find('tt_content', 'header', 'Essential Items', $uids['packingList']);
 $uids['arabicItems'] = $localize('tt_content', $uids['essentialItems'], 2);
 $process(['tt_content' => [$uids['arabicItems'] => ['header' => 'الأغراض الأساسية', 'hidden' => 0]]]);
@@ -205,6 +204,18 @@ GeneralUtility::makeInstance(ConnectionPool::class)->getConnectionForTable('page
     ['TSconfig' => 'TCEMAIN.default.disablePrependAtCopy = 0'],
     ['uid' => $uids['routeComparison']],
 );
+
+// A conference of the example extension and its Spanish translation, whose
+// form shows the English values below the fields. On the root page, which
+// no screenshot of the Records module shows.
+$dataHandler = $process(['tx_myextension_conference' => ['NEWconference' => [
+    'pid' => $uids['root'],
+    'title' => 'TYPO3 Conference',
+    'conference_date' => '2026-11-12',
+]]]);
+$conference = $dataHandler->substNEWwithIDs['NEWconference'];
+$uids['spanishConference'] = $localize('tx_myextension_conference', $conference, 1);
+$process(['tx_myextension_conference' => [$uids['spanishConference'] => ['title' => 'Conferencia TYPO3']]]);
 
 // A group of translators, who may edit Spanish records only, for the
 // screenshot of the language permissions

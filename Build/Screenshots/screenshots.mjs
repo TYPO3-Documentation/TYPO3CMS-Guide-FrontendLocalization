@@ -27,7 +27,7 @@ const margin = 12;
 const frontendWidth = 600;
 
 // The uids of the records that create-records.php looked up
-const { root, spanishTranslators, packingList, essentialItems, arabicItems, arabicToiletries, privacy, allLanguages, arabicRoutes, faqs, arabicOnly, routeComparison } =
+const { root, spanishTranslators, packingList, essentialItems, arabicToiletries, privacy, allLanguages, arabicRoutes, faqs, arabicOnly, routeComparison, spanishConference } =
   JSON.parse(readFileSync('../../var/screenshot-records.json', 'utf8'));
 
 // A field of a form, found by its label: the backend runs without debug
@@ -127,12 +127,16 @@ const screenshots = {
     from: '#t3-table-pages_translated',
     to: `#t3-table-tt_content tr[data-uid="${essentialItems}"] ~ tr >> nth=1`,
   },
-  // The form of a translation, with the values of the default language
-  // below the fields. The headlines only, as the text field of an instance
-  // without the rich text editor shows the HTML.
-  'CoreSupport/TranslationForm': {
-    url: editUrl('tt_content', arabicItems),
-    from: palette('Headlines'),
+  // The form of a translated record of the example extension, with the
+  // values of the default language below the fields
+  'CoreSupport/TranslatingRecord': {
+    url: editUrl('tx_myextension_conference', spanishConference),
+    prepare: async (frame) => {
+      await outline(frame.locator(field('title')));
+    },
+    window: true,
+    // Above the date, whose value below the field counts the days to it
+    until: '.form-section:has([name$="[title]"])',
   },
   // A translation whose original changed since it was translated
   'CoreSupport/TranslationChanged': {
