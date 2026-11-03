@@ -1,0 +1,20 @@
+{
+  "name": "myvendor/my-sitepackage",
+  "description": "Site package with a language menu, the example site package of the Frontend Localization Guide",
+  "license": "GPL-2.0-or-later",
+  "type": "typo3-cms-extension",
+  "require": {
+    "typo3/cms-core": "^14.3",
+    "typo3/cms-fluid": "^14.3",
+    "typo3/cms-frontend": "^14.3"
+  },
+  "extra": {
+    "typo3/cms": {
+      "extension-key": "my_sitepackage",
+      "version": "1.0.0",
+      "Package": {
+        "providesPackages": {}
+      }
+    }
+  }
+}
