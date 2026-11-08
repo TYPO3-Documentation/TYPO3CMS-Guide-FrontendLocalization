@@ -6,28 +6,38 @@
 Character sets
 ==============
 
-All TYPO3 websites use UTF-8 as their character set. Using UTF-8 means that you
-have a consistent data storage and can store any glyph from any language
-without worrying further about character sets.
+TYPO3 websites use the UTF-8 character set. UTF-8 can store characters from all
+languages. This means that TYPO3 websites in multiple languages do
+not need any other character sets.
 
 ..  _character-sets-database:
 
-Database field lengths
-======================
+The character set of the database
+=================================
 
-The TYPO3 Core is compatible with UTF-8.
+New installations on MySQL or MariaDB use the `utf8mb4` character set. This
+character set can store UTF-8 characters (including emojis). The length of a text
+field is based on the number of characters rather than the number of bytes, for
+example, a :sql:`varchar(10)` field can store ten Chinese characters, even
+though each character is three bytes long.
 
-However, you might face the problem that the database field lengths of some
-extensions need to be extended. For example, each Chinese glyph takes three
-bytes. So if a field is a :sql:`varchar(10)` and an author enters 10 Chinese
-glyphs, only the first 3 glyphs will be stored (as they require 9 bytes). UTF-8
-is tricky in this respect, as all ASCII characters only need 1 byte, while
-European special characters usually need 2 and Asian character sets 3 bytes -
-but some special characters can even need 5-6 bytes!
+Some older installations may still use the `utf8` character set, which MySQL
+calls `utf8mb3`. It stores characters of up to three bytes only, so it
+cannot store emojis and some rare Chinese characters. To store them, convert
+the database to `utf8mb4`.
+
+New installations on MySQL or MariaDB use the `utf8mb4` character set. This
+character set can store the entire UTF-8 character repertoire, including emojis.
+The length of a text field is defined by the number of characters rather than
+the number of bytes; for example, a :sql:varchar(10) field can store ten Chinese
+characters, even though each character requires three bytes of storage. Some
+older installations may still use the utf8 character set, which MySQL refers to
+as utf8mb3. Because it only stores characters up to three bytes long, it cannot
+support emojis or certain rare Chinese characters. To enable full character
+support, convert the database to utf8mb4.
 
 ..  seealso::
-    For more information on how to set up your database to use UTF-8, please
-    read here:
+    To set up the character set of your database, see:
 
     *   `MariaDB: Supported Character Sets and Collations <https://mariadb.com/kb/en/supported-character-sets-and-collations/>`__
     *   `MySQL: Unicode Support <https://dev.mysql.com/doc/refman/8.0/en/charset-unicode.html>`__
