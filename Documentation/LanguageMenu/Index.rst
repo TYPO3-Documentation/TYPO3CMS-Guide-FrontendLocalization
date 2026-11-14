@@ -43,8 +43,8 @@ The theme adds the processor with its identifier `language-menu` to the
 
 ..  literalinclude:: /CodeSnippets/my_sitepackage/Configuration/Sets/Main/setup.typoscript
     :caption: EXT:my_sitepackage/Configuration/Sets/Main/setup.typoscript
-    :visible-lines: 1-4, 7, 15-22
-    :emphasize-lines: 15-19
+    :visible-lines: 1-4, 7, 10-16, 20
+    :emphasize-lines: 10-14
 
 With `auto`, the menu lists the languages of the
 `site configuration <https://docs.typo3.org/permalink/t3coreapi:sitehandling>`_.
@@ -60,3 +60,4 @@ language:
 ..  literalinclude:: /CodeSnippets/my_sitepackage/Resources/Private/Templates/Pages/Default.fluid.html
     :caption: EXT:my_sitepackage/Resources/Private/Templates/Pages/Default.fluid.html
     :language: html
+    :visible-lines: 1-23, 30

@@ -5,12 +5,7 @@ page {
     paths.10 = EXT:my_sitepackage/Resources/Private/Templates/
 
     dataProcessing {
-      10 = menu
-      10 {
-        as = mainMenu
-        levels = 2
-        expandAll = 1
-      }
+      10 = page-content
 
       20 = language-menu
       20 {
@@ -19,4 +14,7 @@ page {
       }
     }
   }
+
+  20 = TEXT
+  20.data = LLL:EXT:theme_camino/Resources/Private/Language/messages.xlf:menu.label
 }

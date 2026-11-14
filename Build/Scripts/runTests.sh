@@ -25,8 +25,8 @@ Options:
   -s <...>
     Specifies which suite to run
       - composerUpdate: "composer update", handy if host has no PHP
-      - functional: functional tests of the example extension and the example
-       site package, on SQLite
+      - functional: functional tests of the example extension, site package,
+       and configuration, on SQLite
       - screenshots: screenshots from a TYPO3 instance, optionally only
        the ones named as arguments
 

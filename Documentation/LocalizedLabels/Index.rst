@@ -17,11 +17,10 @@ the system can retrieve in a localized version if the appropriate translations
 are installed. It is possible to retrieve values from XLF files using
 TypoScript:
 
-..  code-block:: typoscript
+..  literalinclude:: /CodeSnippets/my_sitepackage/Configuration/Sets/Main/setup.typoscript
     :caption: EXT:my_sitepackage/Configuration/Sets/Main/setup.typoscript
-
-    page.20 = TEXT
-    page.20.data = LLL:EXT:theme_camino/Resources/Private/Language/messages.xlf:menu.label
+    :visible-lines: 1-2, 18-20
+    :emphasize-lines: 18-19
 
 This looks for the label `menu.label` in the file
 :file:`Resources/Private/Language/messages.xlf` of the Camino theme,
