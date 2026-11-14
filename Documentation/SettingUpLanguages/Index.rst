@@ -6,16 +6,16 @@
 Setting up languages
 ====================
 
-Languages are defined in the :ref:`site configuration <t3coreapi:sitehandling>`
-for each root page. When creating a new page on root level via TYPO3 backend,
-a very basic site configuration is generated on the fly. It prevents immediate
-errors due to missing configuration and can also serve as a starting point for
-all further actions.
+A site defines its languages in its
+`site configuration <https://docs.typo3.org/permalink/t3coreapi:sitehandling>`_.
+When you create a page on the root level of the page tree, TYPO3 creates a
+site configuration for it. This configuration has one language, English, as
+the default language. Add the other languages of the website to it.
 
 ..  _languages-site-management:
 
-Sites module
-============
+Adding languages in the Sites module
+====================================
 
 Add the languages of a site in the :guilabel:`Sites > Setup` module, on the
 :guilabel:`Languages` tab of the site configuration.
@@ -24,16 +24,14 @@ Add the languages of a site in the :guilabel:`Sites > Setup` module, on the
     :alt: The Languages tab of a site configuration with three languages
     :class: with-shadow
 
-    A site with English as the default language, Español, and Arabic
+    A site with English as the default language, Español, and العربية
 
 ..  tip::
-    Detailed information on how to extend the site configuration
-    with additional languages can be found in the
-    :ref:`site handling documentation
-    <t3coreapi:sitehandling-addingLanguages>`.
+    `Adding languages <https://docs.typo3.org/permalink/t3coreapi:sitehandling-addinglanguages>`_
+    in TYPO3 Explained describes the properties of a language.
 
-Once you have defined at least one additional language, you can translate
-pages and content. The :guilabel:`Content > Records` module shows the
+As soon as a site has a second language, you can translate its pages and
+content. The :guilabel:`Content > Records` module shows the
 translations of a page in the languages that you check in its language menu,
 at the top right of the module. For each of these languages, it shows the
 following:
