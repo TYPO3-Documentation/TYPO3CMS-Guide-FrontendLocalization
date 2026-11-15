@@ -151,10 +151,12 @@ has 13 in `l18n_parent`, and 17 in `l10n_source`.
 DataHandler commands for localization
 =====================================
 
-The `DataHandler <https://docs.typo3.org/permalink/t3coreapi:datahandler-basics>`_
-writes the changes that the backend makes to records. Its
+When an editor changes a record in the backend, the
+`DataHandler <https://docs.typo3.org/permalink/t3coreapi:datahandler-basics>`_
+saves the change. The translation wizard sends the DataHandler one of two
 `commands <https://docs.typo3.org/permalink/t3coreapi:tce-command-keywords>`_
-`localize` and `copyToLanguage` create a translation or a copy of a record
+for each record:
+`localize` creates a translation and `copyToLanguage` creates a copy of a record
 in another language. The
 translation wizard sends `localize` for :guilabel:`Translate`, and
 `copyToLanguage` for :guilabel:`Copy`.
@@ -166,9 +168,9 @@ to the target language. `localize` also sets the
 to the record in the default language. `copyToLanguage` sets it to 0, so
 the copy has no connection to the original.
 
-The command `localize` refuses to translate a record that has a translation
-in the target language already. Two translations of the same record in one
-language are an error, and lead to unpredictable results.
+The command `localize` will not translate a record that already has a translation
+in the target language. Two translations of the same record in one
+language constitute an error, and would lead to unpredictable results.
 
 
 ..  _core-support-tca-localization-command-options:
