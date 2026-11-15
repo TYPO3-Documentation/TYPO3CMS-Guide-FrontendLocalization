@@ -34,8 +34,8 @@ Connected mode
     translation.
 
     ..  warning::
-        The upgrade wizard `synchronizeColPosAndCTypeWithDefaultLanguage`
-        of TYPO3 13.4 and 14.3 sets the type and the column of every
+        The `synchronizeColPosAndCTypeWithDefaultLanguage` upgrade wizard
+        in TYPO3 13.4 and 14.3 sets the type and the column of every
         connected translation to those of its original. This includes
         translations that use a different type on purpose. Back up the
         database before you run it.
