@@ -26,6 +26,20 @@ Connected mode
     connection to their original language record in the `l10n_parent`
     field. This mode is best for a strict translation workflow.
 
+    ..  versionchanged:: 13.3
+        :changelog: important-60357-1777301944
+
+    A translated content element always has the type and the column of its
+    original. The backend shows both fields as read-only in the
+    translation.
+
+    ..  warning::
+        The upgrade wizard `synchronizeColPosAndCTypeWithDefaultLanguage`
+        of TYPO3 13.4 and 14.3 sets the type and the column of every
+        connected translation to those of its original. This includes
+        translations that use a different type on purpose. Back up the
+        database before you run it.
+
 Free mode
     Copying content will take the content elements from the source language
     and create copies in a different language. This means that you will be able
