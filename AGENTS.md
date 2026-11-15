@@ -6,8 +6,8 @@
 Documentation/                   # the actual manual (reST source, published to docs.typo3.org)
 Build/Screenshots/               # takes the generated screenshots, see below
 Build/Scripts/runTests.sh        # runs the containers that make install, make screenshots, and make test-extension need
-Documentation/CodeSnippets/      # the example extension and site package, whose files the manual includes
-Tests/Functional/                # tests of the example extension and site package
+Documentation/CodeSnippets/      # the example extension, site package, and configuration, whose files the manual includes
+Tests/Functional/                # tests of the files in Documentation/CodeSnippets/
 CONTRIBUTING.md                  # how to contribute
 ```
 
@@ -24,9 +24,10 @@ CONTRIBUTING.md                  # how to contribute
 - `make test-extension` — install the example extension in
   `Documentation/CodeSnippets/my_extension/` in a functional test, and
   check that its TCA needs no migration and that its labels exist; render
-  a page with the example site package in
-  `Documentation/CodeSnippets/my_sitepackage/`, and check its language
-  menu; CI runs it on every push
+  pages with the example site package in
+  `Documentation/CodeSnippets/my_sitepackage/` and the site configurations
+  and `additional.php` in `Documentation/CodeSnippets/config/`, and check
+  that they work as the manual says; CI runs it on every push
 - `pre-commit run --all-files` — apply the whitespace hooks
   (`trailing-whitespace`, `end-of-file-fixer`) configured in
   `.pre-commit-config.yaml`; `pre-commit install` wires them into `git commit`

@@ -150,10 +150,8 @@ Inverse control of hidden translations
 It is also possible to hide all untranslated pages by default
 with a global setting of the installation:
 
-..  code-block:: php
+..  literalinclude:: /CodeSnippets/config/system/additional.php
     :caption: config/system/additional.php
-
-    $GLOBALS['TYPO3_CONF_VARS']['FE']['hidePagesIfNotTranslatedByDefault'] = true;
 
 The setting inverts the option of the page properties. A page without the
 option is now hidden in the languages that it has no translation in. The
