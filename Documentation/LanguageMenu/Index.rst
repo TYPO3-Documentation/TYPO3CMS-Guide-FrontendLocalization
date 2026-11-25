@@ -28,14 +28,34 @@ LanguageMenuProcessor example
 =============================
 
 The Camino theme shows a language menu in the header of the website. It lists
-the languages of the site, and grays out the languages that the page has no
-translation in:
+the languages of the site. It grays out the languages that the page is not
+available in.
+
+A page is available in a language if one of these conditions is true:
+
+*   The page has a translation in this language.
+*   The page has a translation in one of the fallback languages of this
+    language.
+*   The default language is one of the fallback languages of this language.
+
+For the fallback languages, see
+`Localized content <https://docs.typo3.org/permalink/t3translate:localized-content>`_.
+If the page has the option
+`Hide page if no translation for current language exists <https://docs.typo3.org/permalink/t3translate:localization-overview-hide-missing-translations>`_,
+the third condition does not apply.
+
+..  versionchanged:: 15.0
+    :changelog: important-103451-1793198547
+
+    Up to TYPO3 14, the third condition did not make a page available. The
+    menu grayed out such a language.
 
 ..  figure:: /Images/GeneratedScreenshots/LanguageMenu/CaminoLanguageMenu.png
-    :alt: The open language menu of the website, with Español grayed out
+    :alt: The open language menu of the website, with العربية grayed out
     :class: with-shadow
 
-    The language menu of a page that has no Spanish translation
+    The language menu of a page without translations. Español falls back to
+    English. العربية has no fallback.
 
 The following TypoScript code sets up such a menu with a
 :php-short:`\TYPO3\CMS\Frontend\DataProcessing\LanguageMenuProcessor`

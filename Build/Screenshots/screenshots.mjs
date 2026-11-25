@@ -202,10 +202,11 @@ const screenshots = {
     from: `${inlineField} >> nth=0`,
   },
   // The language menu in the header of the Camino website, open, on a page
-  // with an Arabic translation, but without a Spanish one
+  // without a translation: Español falls back to English and is available,
+  // العربية has no fallback and is grayed out
   'LanguageMenu/CaminoLanguageMenu': {
     loggedOut: true,
-    url: `${baseUrl}/camino/packing-list`,
+    url: `${baseUrl}/camino/camino-route-comparison`,
     prepare: async (window) => {
       await window.locator('#header-language-button').click();
       await window.locator('#header-language-menu').waitFor();

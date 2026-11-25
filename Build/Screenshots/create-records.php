@@ -108,9 +108,7 @@ $localize = static function (string $table, int $uid, int $language): int {
 };
 
 // The packing list in Arabic, as in the Editors Tutorial, so that the
-// Records module shows the translation of the page, and the language menu
-// of the page shows a language with a translation next to Spanish, which
-// has none
+// Records module shows the translation of the page
 $uids['packingList'] = $find('pages', 'title', 'Packing List', $uids['root']);
 $arabicPage = $localize('pages', $uids['packingList'], 2);
 $process(['pages' => [$arabicPage => ['title' => 'قائمة الأمتعة', 'hidden' => 0]]]);
